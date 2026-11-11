@@ -1,0 +1,69 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Barcode"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             x:Class="DevToolBox.App.Tools.Barcode.BarcodeView"
+             x:DataType="vm:BarcodeViewModel">
+  <Grid ColumnDefinitions="340,16,*" Margin="32,8,32,24">
+    <ScrollViewer>
+      <controls:ToolPanel Header="{l:Tr Password_Options}">
+      <StackPanel Spacing="14">
+        <StackPanel Spacing="4">
+          <TextBlock Classes="field-label" Text="{l:Tr EncodeDecode_Format}" />
+          <ComboBox Name="KindBox" ItemsSource="{Binding Kinds}" SelectedItem="{Binding SelectedKind}" HorizontalAlignment="Stretch"
+                    AutomationProperties.Name="{l:Tr Barcode_Format}" />
+        </StackPanel>
+        <StackPanel Spacing="4">
+          <TextBlock Classes="field-label" Text="{l:Tr Barcode_Content}" />
+          <TextBox Name="TextBox" Classes="mono" Text="{Binding Text}" AcceptsReturn="{Binding IsQr}" TextWrapping="Wrap" MinHeight="70"
+                   AutomationProperties.Name="{l:Tr Barcode_ContentName}" />
+          <TextBlock Classes="hint" Text="{Binding Hint}" FontSize="12" />
+        </StackPanel>
+        <StackPanel Spacing="4" IsVisible="{Binding IsQr}">
+          <TextBlock Classes="field-label" Text="{l:Tr Barcode_ErrorCorrection}" />
+          <ComboBox ItemsSource="{Binding ErrorCorrections}" SelectedItem="{Binding SelectedErrorCorrection}" HorizontalAlignment="Stretch"
+                    AutomationProperties.Name="{l:Tr Barcode_ErrorCorrection}" />
+        </StackPanel>
+        <StackPanel Spacing="4">
+          <TextBlock Classes="field-label" Text="{Binding ModuleSizeText}" />
+          <Slider Minimum="1" Maximum="20" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding ModuleSize}"
+                  AutomationProperties.Name="{l:Tr Barcode_ModuleSize}" />
+        </StackPanel>
+        <StackPanel Spacing="4" IsVisible="{Binding IsLinear}">
+          <TextBlock Classes="field-label" Text="{Binding BarHeightText}" />
+          <Slider Minimum="30" Maximum="300" TickFrequency="10" IsSnapToTickEnabled="True" Value="{Binding BarHeight}"
+                  AutomationProperties.Name="{l:Tr Barcode_BarHeight}" />
+          <CheckBox Content="{l:Tr Barcode_ShowText}" IsChecked="{Binding ShowText}" />
+        </StackPanel>
+      </StackPanel>
+      </controls:ToolPanel>
+    </ScrollViewer>
+
+    <Grid Grid.Column="2" RowDefinitions="Auto,*,Auto" RowSpacing="10">
+      <WrapPanel ItemSpacing="6" LineSpacing="6" HorizontalAlignment="Right">
+        <Button Name="SavePngButton" Classes="primary tool" Command="{Binding SavePngCommand}" IsEnabled="{Binding HasBarcode}"
+                AutomationProperties.Name="{l:Tr Barcode_SavePng}">
+          <StackPanel Orientation="Horizontal" Spacing="6">
+            <controls:LucideIcon Kind="Download" Width="14" Height="14" />
+            <TextBlock Text="{l:Tr Barcode_SavePng}" />
+          </StackPanel>
+        </Button>
+        <controls:CommandButton Name="SaveSvgButton" Icon="Download" Label="{l:Tr Barcode_SaveSvg}" Command="{Binding SaveSvgCommand}" IsEnabled="{Binding HasBarcode}" />
+        <controls:CommandButton Name="CopyImageButton" Icon="Copy" Label="{l:Tr Barcode_CopyImage}" Command="{Binding CopyImageCommand}" IsEnabled="{Binding HasBarcode}" />
+        <controls:CommandButton Icon="Copy" Label="{l:Tr Barcode_CopySvg}" Command="{Binding CopySvgCommand}" IsEnabled="{Binding HasBarcode}" />
+      </WrapPanel>
+      <Border Grid.Row="1" Classes="panel" Background="White" BorderBrush="{DynamicResource Brush.Border}">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+          <Image Name="PreviewImage" Source="{Binding Preview}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 RenderOptions.BitmapInterpolationMode="None" AutomationProperties.Name="{l:Tr Barcode_Preview}" />
+        </ScrollViewer>
+      </Border>
+      <StackPanel Grid.Row="2" Spacing="4">
+        <TextBlock Classes="error" Name="ErrorText" Text="{Binding ErrorMessage}" TextWrapping="Wrap"
+                   IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+        <TextBlock Classes="hint" Name="InfoText" Text="{Binding Info}" />
+      </StackPanel>
+    </Grid>
+  </Grid>
+</UserControl>

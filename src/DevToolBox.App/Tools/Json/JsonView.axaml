@@ -1,0 +1,133 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Json"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:conv="using:DevToolBox.App.Shared.Converters"
+             x:Class="DevToolBox.App.Tools.Json.JsonView"
+             x:DataType="vm:JsonViewModel">
+  <UserControl.Styles>
+    <Style Selector="TextBlock.json-string">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Json.String}" />
+    </Style>
+    <Style Selector="TextBlock.json-number">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Json.Number}" />
+    </Style>
+    <Style Selector="TextBlock.json-keyword">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Json.Keyword}" />
+    </Style>
+    <Style Selector="TextBlock.json-key">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Json.Key}" />
+    </Style>
+    <Style Selector="ListBox.json-tree">
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="ListBox.json-tree > ListBoxItem">
+      <Setter Property="Padding" Value="8,0" />
+      <Setter Property="MinHeight" Value="24" />
+    </Style>
+  </UserControl.Styles>
+
+  <DockPanel>
+    <Border DockPanel.Dock="Bottom" Classes="status-bar">
+      <Grid ColumnDefinitions="*,Auto">
+        <WrapPanel ItemSpacing="16">
+          <StackPanel Orientation="Horizontal" Spacing="6" IsVisible="{Binding IsValid}">
+            <controls:LucideIcon Kind="Check" Width="14" Height="14" Foreground="{DynamicResource Brush.Success}" />
+            <TextBlock Classes="success" Name="StatusText" Text="{l:Tr Json_Valid}" />
+          </StackPanel>
+          <TextBlock Classes="error" Text="{l:Tr Json_InvalidStatus}" IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+          <TextBlock Name="StatsText" Text="{Binding StatsText}" IsVisible="{Binding IsValid}" />
+          <TextBlock Name="SizeText" Text="{Binding SizeText}" IsVisible="{Binding IsValid}" />
+          <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsBusy}" Width="80" MinWidth="80" />
+        </WrapPanel>
+        <TextBlock Grid.Column="1" Classes="mono" FontSize="12" Text="{Binding #InputEditor.CaretText, StringFormat='{}{0} · UTF-8'}" />
+      </Grid>
+    </Border>
+
+    <Grid RowDefinitions="Auto,*" RowSpacing="16" Margin="32,8,32,16">
+      <Border Classes="toolbar">
+        <Grid ColumnDefinitions="*,Auto">
+          <WrapPanel ItemSpacing="14" LineSpacing="8">
+            <Border Classes="segmented" AutomationProperties.Name="{l:Tr Json_Indent}">
+              <StackPanel Orientation="Horizontal">
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="indent" Content="{l:Tr Json_TwoSpaces}"
+                             IsChecked="{Binding Indent, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=TwoSpaces}" />
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="indent" Content="{l:Tr Json_FourSpaces}"
+                             IsChecked="{Binding Indent, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=FourSpaces}" />
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="indent" Content="{l:Tr Json_Tab}"
+                             IsChecked="{Binding Indent, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Tab}" />
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="indent" Content="{l:Tr Json_Minify}" Name="MinifyMode"
+                             IsChecked="{Binding Indent, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Minified}" />
+              </StackPanel>
+            </Border>
+            <CheckBox Name="SortKeysBox" Content="{l:Tr Json_SortKeys}" IsChecked="{Binding SortKeys}" VerticalAlignment="Center" />
+          </WrapPanel>
+          <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="4">
+            <controls:PasteButton Text="{Binding Input}" />
+            <controls:CommandButton Icon="FileText" Label="{l:Tr Common_Sample}" Command="{Binding LoadSampleCommand}" />
+            <controls:ClearButton Text="{Binding Input}" />
+          </StackPanel>
+        </Grid>
+      </Border>
+
+      <Grid Grid.Row="1" ColumnDefinitions="*,16,*">
+        <Grid RowDefinitions="*,Auto" RowSpacing="8">
+          <controls:ToolPanel Header="{l:Tr Common_Input}" Padding="0">
+            <controls:CodeEditor Name="InputEditor" Classes="bare" Text="{Binding Input}" Language="Json"
+                                 PlaceholderText="{l:Tr Json_Placeholder}" AutomationProperties.Name="{l:Tr Json_InputName}" />
+          </controls:ToolPanel>
+          <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8"
+                IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}">
+            <TextBlock Classes="error" Name="ErrorText" Text="{Binding ErrorMessage}" TextWrapping="Wrap" VerticalAlignment="Center" />
+            <controls:CommandButton Grid.Column="1" Name="GoToErrorButton" Icon="CircleAlert" Label="{l:Tr Json_GoToError}" Click="OnGoToErrorClick" />
+          </Grid>
+        </Grid>
+
+        <controls:ToolPanel Grid.Column="2" Padding="0" ActionsAlignment="Stretch">
+          <controls:ToolPanel.Actions>
+            <Grid ColumnDefinitions="*,Auto">
+              <TabStrip Name="OutputTabs" SelectedIndex="0">
+                <TabStripItem Content="{l:Tr Json_TabText}" FontSize="13" MinHeight="32" Padding="10,0" />
+                <TabStripItem Content="{l:Tr Json_TabTree}" FontSize="13" MinHeight="32" Padding="10,0" />
+              </TabStrip>
+              <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="4">
+                <controls:CommandButton Classes="quiet" Icon="ChevronDown" Label="{l:Tr Json_Expand}" Command="{Binding ExpandAllCommand}"
+                                        IsVisible="{Binding #OutputTabs.SelectedIndex, Converter={x:Static conv:IntEqualsConverter.One}}" />
+                <controls:CommandButton Classes="quiet" Icon="ChevronRight" Label="{l:Tr Json_Collapse}" Command="{Binding CollapseAllCommand}"
+                                        IsVisible="{Binding #OutputTabs.SelectedIndex, Converter={x:Static conv:IntEqualsConverter.One}}" />
+                <controls:CopyButton Classes="quiet" Text="{Binding Output}" />
+              </StackPanel>
+            </Grid>
+          </controls:ToolPanel.Actions>
+          <Panel>
+            <controls:CodeEditor Name="OutputEditor" Classes="bare" Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" Language="Json"
+                                 AutomationProperties.Name="{l:Tr Json_Formatted}"
+                                 IsVisible="{Binding #OutputTabs.SelectedIndex, Converter={x:Static conv:IntEqualsConverter.Zero}}" />
+            <ListBox Name="TreeList" Classes="json-tree" ItemsSource="{Binding TreeRows}" AutomationProperties.Name="{l:Tr Json_Tree}"
+                     IsVisible="{Binding #OutputTabs.SelectedIndex, Converter={x:Static conv:IntEqualsConverter.One}}">
+              <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:JsonTreeRowViewModel">
+                  <StackPanel Orientation="Horizontal" Spacing="4">
+                    <Border Width="{Binding IndentWidth}" />
+                    <Button Classes="icon" Padding="2" Command="{Binding ToggleCommand}" IsVisible="{Binding IsExpandable}"
+                            AutomationProperties.Name="{l:Tr Json_ExpandOrCollapse}">
+                      <controls:LucideIcon Kind="{Binding ChevronIcon}" Width="12" Height="12" />
+                    </Button>
+                    <Border Width="20" IsVisible="{Binding !IsExpandable}" />
+                    <TextBlock Classes="mono json-key" Text="{Binding Label}" VerticalAlignment="Center" />
+                    <TextBlock Classes="mono" Text=":" VerticalAlignment="Center" Foreground="{DynamicResource Brush.TextFaint}" />
+                    <TextBlock Classes="mono" Classes.json-string="{Binding KindClass, Converter={x:Static vm:JsonKindClassConverter.String}}"
+                               Classes.json-number="{Binding KindClass, Converter={x:Static vm:JsonKindClassConverter.Number}}"
+                               Classes.json-keyword="{Binding KindClass, Converter={x:Static vm:JsonKindClassConverter.Keyword}}"
+                               Text="{Binding ValueText}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" MaxWidth="600" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+          </Panel>
+        </controls:ToolPanel>
+      </Grid>
+    </Grid>
+  </DockPanel>
+</UserControl>

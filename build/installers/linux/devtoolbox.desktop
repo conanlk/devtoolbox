@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=DevToolBox
+Comment=Offline developer utilities
+Exec=DevToolBox
+Icon=devtoolbox
+Terminal=false
+Categories=Development;Utility;
+Keywords=json;jwt;base64;hash;uuid;regex;timestamp;
+StartupWMClass=DevToolBox

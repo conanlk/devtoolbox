@@ -1,0 +1,5 @@
+<!-- DevToolBox tray / menu bar glyph (single colour, no tile). Use as a template image on macOS. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <path d="M400 200C300 200 300 260 300 340V440C300 490 280 512 210 512C280 512 300 534 300 584V684C300 764 300 824 400 824M624 200C724 200 724 260 724 340V440C724 490 744 512 814 512C744 512 724 534 724 584V684C724 764 724 824 624 824" fill="none" stroke="#000000" stroke-width="96" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="432" y="432" width="160" height="160" rx="28" fill="#000000"/>
+</svg>

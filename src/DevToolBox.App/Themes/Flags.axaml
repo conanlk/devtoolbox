@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Language switcher flags (DevToolBox design). Flag colors are fixed, not theme tokens. -->
+  <DrawingImage x:Key="Flag.English">
+    <DrawingGroup ClipGeometry="M0,0 H60 V30 H0 Z">
+      <GeometryDrawing Brush="#012169" Geometry="M0,0 H60 V30 H0 Z" />
+      <GeometryDrawing Geometry="M0,0 L60,30 M60,0 L0,30">
+        <GeometryDrawing.Pen>
+          <Pen Brush="#FFFFFF" Thickness="6" />
+        </GeometryDrawing.Pen>
+      </GeometryDrawing>
+      <GeometryDrawing Geometry="M0,0 L60,30 M60,0 L0,30">
+        <GeometryDrawing.Pen>
+          <Pen Brush="#C8102E" Thickness="2" />
+        </GeometryDrawing.Pen>
+      </GeometryDrawing>
+      <GeometryDrawing Geometry="M30,0 V30 M0,15 H60">
+        <GeometryDrawing.Pen>
+          <Pen Brush="#FFFFFF" Thickness="10" />
+        </GeometryDrawing.Pen>
+      </GeometryDrawing>
+      <GeometryDrawing Geometry="M30,0 V30 M0,15 H60">
+        <GeometryDrawing.Pen>
+          <Pen Brush="#C8102E" Thickness="6" />
+        </GeometryDrawing.Pen>
+      </GeometryDrawing>
+    </DrawingGroup>
+  </DrawingImage>
+
+  <DrawingImage x:Key="Flag.Vietnamese">
+    <DrawingGroup ClipGeometry="M0,0 H30 V20 H0 Z">
+      <GeometryDrawing Brush="#DA251D" Geometry="M0,0 H30 V20 H0 Z" />
+      <GeometryDrawing Brush="#FFDA00"
+                       Geometry="M15,4 L16.35,8.15 L20.71,8.15 L17.18,10.71 L18.53,14.85 L15,12.29 L11.47,14.85 L12.82,10.71 L9.29,8.15 L13.65,8.15 Z" />
+    </DrawingGroup>
+  </DrawingImage>
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+<Project>
+  <!-- After a successful `dotnet publish`, saves the build number it used to version.json (see Directory.Build.props). -->
+  <Target Name="SaveBuildNumber" AfterTargets="Publish" Condition="'$(IncrementBuildNumber)' == 'true'">
+    <PropertyGroup>
+      <_CurrentVersionJson>$([System.IO.File]::ReadAllText('$(VersionFile)'))</_CurrentVersionJson>
+      <_UpdatedVersionJson>$([System.Text.RegularExpressions.Regex]::Replace('$(_CurrentVersionJson)', '("build"\s*:\s*)\d+', '${1}$(BuildNumber)').TrimEnd())</_UpdatedVersionJson>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(VersionFile)" Lines="$(_UpdatedVersionJson)" Overwrite="true" />
+    <Message Importance="high" Text="$(MSBuildProjectName) -> version $(AppVersion), build $(BuildNumber) (saved to version.json)" />
+  </Target>
+</Project>

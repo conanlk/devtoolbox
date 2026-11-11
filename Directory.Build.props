@@ -1,0 +1,47 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Deterministic>true</Deterministic>
+    <!-- Required for IDE0005 (unused usings) to run during build; public API docs are not mandatory. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
+    <Company>DevToolBox</Company>
+    <Product>DevToolBox</Product>
+  </PropertyGroup>
+
+  <!--
+    App version: version.json is the single source ("version": major.minor.patch, "build": counter).
+    `dotnet publish` uses build + 1 and writes it back once the publish succeeds (build/BuildNumber.targets);
+    plain builds and tests use the number as is. Override with -p:BuildNumber=<n> (then nothing is written).
+  -->
+  <PropertyGroup>
+    <VersionFile>$(MSBuildThisFileDirectory)version.json</VersionFile>
+    <_VersionJson>$([System.IO.File]::ReadAllText('$(VersionFile)'))</_VersionJson>
+    <AppVersion>$([System.Text.RegularExpressions.Regex]::Match('$(_VersionJson)', '"version"\s*:\s*"(\d+\.\d+\.\d+)"').Groups[1].Value)</AppVersion>
+    <BuildNumberInFile>$([System.Text.RegularExpressions.Regex]::Match('$(_VersionJson)', '"build"\s*:\s*(\d+)').Groups[1].Value)</BuildNumberInFile>
+    <IncrementBuildNumber Condition="'$(BuildNumber)' == '' and '$(_IsPublishing)' == 'true' and '$(BuildNumberInFile)' != ''">true</IncrementBuildNumber>
+    <BuildNumber Condition="'$(IncrementBuildNumber)' == 'true'">$([MSBuild]::Add($(BuildNumberInFile), 1))</BuildNumber>
+    <BuildNumber Condition="'$(BuildNumber)' == ''">$(BuildNumberInFile)</BuildNumber>
+    <Version>$(AppVersion)</Version>
+    <AssemblyVersion>$(AppVersion).$(BuildNumber)</AssemblyVersion>
+    <FileVersion>$(AppVersion).$(BuildNumber)</FileVersion>
+    <InformationalVersion>$(AppVersion)+build.$(BuildNumber)</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
+  <Target Name="ValidateVersionFile" BeforeTargets="BeforeBuild" Condition="'$(AppVersion)' == '' or '$(BuildNumber)' == ''">
+    <Error Text="$(VersionFile) must contain &quot;version&quot;: &quot;major.minor.patch&quot; and &quot;build&quot;: &lt;number&gt;." />
+  </Target>
+
+  <!-- Offline principle: network APIs and non-cryptographic randomness are banned at compile time. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" PrivateAssets="all" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)BannedSymbols.txt" />
+  </ItemGroup>
+</Project>

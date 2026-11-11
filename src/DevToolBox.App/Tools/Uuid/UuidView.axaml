@@ -1,0 +1,68 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Uuid"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:shared="using:DevToolBox.App.Shared"
+             x:Class="DevToolBox.App.Tools.Uuid.UuidView"
+             x:DataType="vm:UuidViewModel">
+  <Grid RowDefinitions="Auto,*,Auto" RowSpacing="16" Margin="32,8,32,24">
+    <Border Classes="toolbar">
+      <WrapPanel ItemSpacing="14" LineSpacing="8">
+        <ComboBox ItemsSource="{Binding Versions}" SelectedItem="{Binding SelectedVersion}" AutomationProperties.Name="{l:Tr Uuid_VersionName}" />
+        <StackPanel Orientation="Horizontal" Spacing="8">
+          <TextBlock Classes="field-label" Text="{l:Tr Common_Count}" />
+          <NumericUpDown Name="CountBox" Value="{Binding Count}" Minimum="1" Maximum="10000" Increment="1" FormatString="0" Width="130"
+                         AutomationProperties.Name="{l:Tr Common_Count}" />
+        </StackPanel>
+        <CheckBox Content="{l:Tr Common_Uppercase}" IsChecked="{Binding Uppercase}" VerticalAlignment="Center" />
+        <CheckBox Content="{l:Tr Uuid_Hyphens}" IsChecked="{Binding Hyphens}" VerticalAlignment="Center" />
+        <CheckBox Content="{l:Tr Uuid_Braces}" IsChecked="{Binding Braces}" VerticalAlignment="Center" />
+        <Button Name="GenerateButton" Classes="primary tool" Command="{Binding GenerateCommand}" Height="36" Padding="16,0"
+                AutomationProperties.Name="{l:Tr Common_Generate}">
+          <StackPanel Orientation="Horizontal" Spacing="6">
+            <controls:LucideIcon Kind="RefreshCw" Width="14" Height="14" />
+            <TextBlock Text="{l:Tr Common_Generate}" />
+          </StackPanel>
+        </Button>
+      </WrapPanel>
+    </Border>
+
+    <controls:ToolPanel Grid.Row="1" Header="{l:Tr Uuid_Generated}" Padding="0">
+      <controls:ToolPanel.Actions>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+          <TextBlock Classes="error" Text="{Binding ErrorMessage}" VerticalAlignment="Center"
+                     IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+          <controls:CopyButton Classes="quiet" Text="{Binding Output}" />
+        </StackPanel>
+      </controls:ToolPanel.Actions>
+      <TextBox Name="OutputBox" Classes="mono bare" Text="{Binding Output, Mode=OneWay}" IsReadOnly="True" AcceptsReturn="True"
+               AutomationProperties.Name="{l:Tr Uuid_GeneratedName}" />
+    </controls:ToolPanel>
+
+    <controls:ToolPanel Grid.Row="2" Header="{l:Tr Uuid_Inspect}">
+      <controls:ToolPanel.Actions>
+        <StackPanel Orientation="Horizontal" Spacing="4">
+          <controls:PasteButton Classes="quiet" Text="{Binding InspectInput}" />
+          <controls:CommandButton Classes="quiet" Icon="Search" Label="{l:Tr Uuid_InspectFirst}" Command="{Binding InspectFirstCommand}" />
+        </StackPanel>
+      </controls:ToolPanel.Actions>
+      <StackPanel Spacing="8">
+        <TextBox Name="InspectBox" Classes="mono" Text="{Binding InspectInput}" PlaceholderText="{l:Tr Uuid_Placeholder}"
+                 AutomationProperties.Name="{l:Tr Uuid_ToInspect}" />
+        <TextBlock Classes="error" Name="InspectErrorText" Text="{Binding InspectError}"
+                   IsVisible="{Binding InspectError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+        <ItemsControl Name="InspectList" ItemsSource="{Binding InspectFields}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="shared:LabeledValue">
+              <Grid ColumnDefinitions="150,*" Margin="0,3">
+                <TextBlock Classes="field-label" Text="{Binding Label}" />
+                <SelectableTextBlock Grid.Column="1" Classes="mono" Text="{Binding Value}" />
+              </Grid>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </controls:ToolPanel>
+  </Grid>
+</UserControl>

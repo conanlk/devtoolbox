@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppIcons_NotSquare" xml:space="preserve">
+    <value>The image is {0}×{1}, not square — the centre {2}×{2} is used.</value>
+  </data>
+  <data name="AppIcons_TooSmall" xml:space="preserve">
+    <value>The image is {0}×{1}. App icons need at least {2}×{2} pixels.</value>
+  </data>
+  <data name="AppIcons_Transparent" xml:space="preserve">
+    <value>The image has transparent pixels. iOS and square Android icons are filled with the background colour (Apple rejects transparent icons).</value>
+  </data>
+  <data name="Barcode_Checksum" xml:space="preserve">
+    <value>Invalid check digit: the last digit should be {0}.</value>
+  </data>
+  <data name="Barcode_Code128Charset" xml:space="preserve">
+    <value>Code 128 accepts printable ASCII only; '{0}' isn't supported.</value>
+  </data>
+  <data name="Barcode_Code39Charset" xml:space="preserve">
+    <value>Code 39 can't encode '{0}'. Allowed: A–Z, 0–9, space and - . $ / + %.</value>
+  </data>
+  <data name="Barcode_DigitsOnly" xml:space="preserve">
+    <value>{0} accepts digits only.</value>
+  </data>
+  <data name="Barcode_Empty" xml:space="preserve">
+    <value>Enter the text to encode.</value>
+  </data>
+  <data name="Barcode_Encode" xml:space="preserve">
+    <value>Couldn't encode: {0}</value>
+  </data>
+  <data name="Barcode_Length" xml:space="preserve">
+    <value>{0} needs {1} digits (check digit added automatically) or {2} digits.</value>
+  </data>
+  <data name="Barcode_QrTooLong" xml:space="preserve">
+    <value>QR codes hold at most {0:N0} bytes (with error correction L).</value>
+  </data>
+  <data name="Barcode_TooLong" xml:space="preserve">
+    <value>{0} input is limited to {1} characters to stay scannable.</value>
+  </data>
+  <data name="Codec_BinaryWholeBytes" xml:space="preserve">
+    <value>Binary input must be whole bytes (groups of 8 bits).</value>
+  </data>
+  <data name="Codec_HexOdd" xml:space="preserve">
+    <value>Hex input must have an even number of digits (two per byte).</value>
+  </data>
+  <data name="Codec_InvalidBase64" xml:space="preserve">
+    <value>Not valid Base64: use A–Z, a–z, 0–9, +/ (or -_) with optional = padding.</value>
+  </data>
+  <data name="Codec_NotBinaryDigit" xml:space="preserve">
+    <value>'{0}' is not a binary digit (0 or 1).</value>
+  </data>
+  <data name="Codec_NotHexDigit" xml:space="preserve">
+    <value>'{0}' is not a hex digit (0–9, a–f).</value>
+  </data>
+  <data name="Codec_NotUtf8" xml:space="preserve">
+    <value>The decoded bytes are not valid UTF-8 text.</value>
+  </data>
+  <data name="Hash_Crypto" xml:space="preserve">
+    <value>The system crypto provider refused: {0}</value>
+  </data>
+  <data name="Hash_Io" xml:space="preserve">
+    <value>Couldn't read the file: {0}</value>
+  </data>
+  <data name="Image_DataEmpty" xml:space="preserve">
+    <value>The data is empty.</value>
+  </data>
+  <data name="Image_DecodedUnknownFormat" xml:space="preserve">
+    <value>The decoded data isn't a recognized image format.</value>
+  </data>
+  <data name="Image_EmptyInput" xml:space="preserve">
+    <value>Paste Base64 data or a data: URI.</value>
+  </data>
+  <data name="Image_FileEmpty" xml:space="preserve">
+    <value>The file is empty.</value>
+  </data>
+  <data name="Image_InvalidBase64" xml:space="preserve">
+    <value>Not valid Base64.</value>
+  </data>
+  <data name="Image_MalformedDataUri" xml:space="preserve">
+    <value>Malformed data URI: missing ',' before the data.</value>
+  </data>
+  <data name="Image_TooLarge" xml:space="preserve">
+    <value>Images up to {0} MB are supported.</value>
+  </data>
+  <data name="Image_UnknownFormat" xml:space="preserve">
+    <value>Not a recognized image (PNG, JPEG, GIF, WebP, BMP, ICO, SVG, AVIF, TIFF).</value>
+  </data>
+  <data name="Json_Empty" xml:space="preserve">
+    <value>Input is empty.</value>
+  </data>
+  <data name="Json_Invalid" xml:space="preserve">
+    <value>Line {0}, column {1}: {2}</value>
+  </data>
+  <data name="Jwt_AlgUnsupported" xml:space="preserve">
+    <value>Only HMAC signatures (HS256/HS384/HS512) can be verified with a shared secret; this token uses {0}.</value>
+  </data>
+  <data name="Jwt_Claim_Audience" xml:space="preserve">
+    <value>Audience</value>
+  </data>
+  <data name="Jwt_Claim_AuthenticatedAt" xml:space="preserve">
+    <value>Authenticated at</value>
+  </data>
+  <data name="Jwt_Claim_Expires" xml:space="preserve">
+    <value>Expires</value>
+  </data>
+  <data name="Jwt_Claim_IssuedAt" xml:space="preserve">
+    <value>Issued at</value>
+  </data>
+  <data name="Jwt_Claim_Issuer" xml:space="preserve">
+    <value>Issuer</value>
+  </data>
+  <data name="Jwt_Claim_JwtId" xml:space="preserve">
+    <value>JWT ID</value>
+  </data>
+  <data name="Jwt_Claim_NotBefore" xml:space="preserve">
+    <value>Not before</value>
+  </data>
+  <data name="Jwt_Claim_Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Jwt_Empty" xml:space="preserve">
+    <value>Paste a JWT (header.payload.signature).</value>
+  </data>
+  <data name="Jwt_Encrypted" xml:space="preserve">
+    <value>This is an encrypted JWT (JWE, 5 parts). It can't be decoded without the decryption key.</value>
+  </data>
+  <data name="Jwt_Header" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="Jwt_NoAlgorithm" xml:space="preserve">
+    <value>no algorithm</value>
+  </data>
+  <data name="Jwt_PartNotBase64Url" xml:space="preserve">
+    <value>{0} is not valid Base64URL.</value>
+    <comment>{0} = Header or Payload</comment>
+  </data>
+  <data name="Jwt_PartNotJsonObject" xml:space="preserve">
+    <value>{0} is not a JSON object.</value>
+  </data>
+  <data name="Jwt_PartNotUtf8" xml:space="preserve">
+    <value>{0} is not valid UTF-8 text.</value>
+  </data>
+  <data name="Jwt_Parts" xml:space="preserve">
+    <value>A JWT has 3 parts separated by dots (header.payload.signature); found {0}.</value>
+  </data>
+  <data name="Jwt_Payload" xml:space="preserve">
+    <value>Payload</value>
+  </data>
+  <data name="Jwt_SecretEmpty" xml:space="preserve">
+    <value>Enter the shared secret to verify the signature.</value>
+  </data>
+  <data name="Jwt_SecretNotBase64" xml:space="preserve">
+    <value>The secret is not valid Base64.</value>
+  </data>
+  <data name="Jwt_SignatureNotBase64Url" xml:space="preserve">
+    <value>The signature part is not valid Base64URL.</value>
+  </data>
+  <data name="Passphrase_Separator" xml:space="preserve">
+    <value>Separator can be at most {0} characters.</value>
+  </data>
+  <data name="Passphrase_Words" xml:space="preserve">
+    <value>Use between {0} and {1} words.</value>
+  </data>
+  <data name="Password_AllExcluded" xml:space="preserve">
+    <value>Every {0} character is excluded.</value>
+    <comment>{0} = character type</comment>
+  </data>
+  <data name="Password_Count" xml:space="preserve">
+    <value>Count must be between 1 and {0}.</value>
+  </data>
+  <data name="Password_Failed" xml:space="preserve">
+    <value>Couldn't satisfy the selected options. Increase the length or allow more characters.</value>
+  </data>
+  <data name="Password_Length" xml:space="preserve">
+    <value>Length must be between {0} and {1}.</value>
+  </data>
+  <data name="Password_NoTypes" xml:space="preserve">
+    <value>Select at least one character type.</value>
+  </data>
+  <data name="Password_TooShort" xml:space="preserve">
+    <value>Length must be at least {0} to include every selected character type.</value>
+  </data>
+  <data name="Password_Type_Digit" xml:space="preserve">
+    <value>digit</value>
+  </data>
+  <data name="Password_Type_Lowercase" xml:space="preserve">
+    <value>lowercase</value>
+  </data>
+  <data name="Password_Type_Symbol" xml:space="preserve">
+    <value>symbol</value>
+  </data>
+  <data name="Password_Type_Uppercase" xml:space="preserve">
+    <value>uppercase</value>
+  </data>
+  <data name="Regex_Timeout" xml:space="preserve">
+    <value>Matching took longer than {0:0.#} s — the pattern probably backtracks catastrophically. Simplify it or enable NonBacktracking.</value>
+  </data>
+  <data name="Relative_Ago" xml:space="preserve">
+    <value>{0} ago</value>
+  </data>
+  <data name="Relative_Day" xml:space="preserve">
+    <value>{0} day</value>
+  </data>
+  <data name="Relative_Days" xml:space="preserve">
+    <value>{0} days</value>
+  </data>
+  <data name="Relative_Hour" xml:space="preserve">
+    <value>{0} hour</value>
+  </data>
+  <data name="Relative_Hours" xml:space="preserve">
+    <value>{0} hours</value>
+  </data>
+  <data name="Relative_In" xml:space="preserve">
+    <value>in {0}</value>
+  </data>
+  <data name="Relative_JustNow" xml:space="preserve">
+    <value>just now</value>
+  </data>
+  <data name="Relative_Minute" xml:space="preserve">
+    <value>{0} minute</value>
+  </data>
+  <data name="Relative_Minutes" xml:space="preserve">
+    <value>{0} minutes</value>
+  </data>
+  <data name="Relative_Month" xml:space="preserve">
+    <value>{0} month</value>
+  </data>
+  <data name="Relative_Months" xml:space="preserve">
+    <value>{0} months</value>
+  </data>
+  <data name="Relative_Second" xml:space="preserve">
+    <value>{0} second</value>
+  </data>
+  <data name="Relative_Seconds" xml:space="preserve">
+    <value>{0} seconds</value>
+  </data>
+  <data name="Relative_Year" xml:space="preserve">
+    <value>{0} year</value>
+  </data>
+  <data name="Relative_Years" xml:space="preserve">
+    <value>{0} years</value>
+  </data>
+  <data name="SmartPaste_Base64Decode" xml:space="preserve">
+    <value>Base64 decode</value>
+  </data>
+  <data name="SmartPaste_Base64Encode" xml:space="preserve">
+    <value>Base64 encode</value>
+  </data>
+  <data name="SmartPaste_CompareHash" xml:space="preserve">
+    <value>Compare with a hash</value>
+  </data>
+  <data name="SmartPaste_ConvertTimestamp" xml:space="preserve">
+    <value>Convert timestamp</value>
+  </data>
+  <data name="SmartPaste_HashIt" xml:space="preserve">
+    <value>Hash it</value>
+  </data>
+  <data name="SmartPaste_HexDecode" xml:space="preserve">
+    <value>Hex decode</value>
+  </data>
+  <data name="SmartPaste_HtmlDecode" xml:space="preserve">
+    <value>HTML decode</value>
+  </data>
+  <data name="SmartPaste_HtmlEncode" xml:space="preserve">
+    <value>HTML encode</value>
+  </data>
+  <data name="SmartPaste_InspectUuid" xml:space="preserve">
+    <value>Inspect UUID</value>
+  </data>
+  <data name="SmartPaste_Kind_Hash" xml:space="preserve">
+    <value>Hash</value>
+  </data>
+  <data name="SmartPaste_Kind_HtmlEntities" xml:space="preserve">
+    <value>HTML entities</value>
+  </data>
+  <data name="SmartPaste_Kind_ImageDataUri" xml:space="preserve">
+    <value>Image data URI</value>
+  </data>
+  <data name="SmartPaste_Kind_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="SmartPaste_Kind_UnixTimestamp" xml:space="preserve">
+    <value>Unix timestamp</value>
+  </data>
+  <data name="SmartPaste_Kind_UrlEncodedText" xml:space="preserve">
+    <value>URL-encoded text</value>
+  </data>
+  <data name="SmartPaste_MakeAppIcons" xml:space="preserve">
+    <value>Make app icons</value>
+  </data>
+  <data name="SmartPaste_MakeQrCode" xml:space="preserve">
+    <value>Make a QR code</value>
+  </data>
+  <data name="SmartPaste_OpenJsonFormatter" xml:space="preserve">
+    <value>Open in JSON formatter</value>
+  </data>
+  <data name="SmartPaste_OpenJwtDecoder" xml:space="preserve">
+    <value>Open in JWT decoder</value>
+  </data>
+  <data name="SmartPaste_ParseUrl" xml:space="preserve">
+    <value>Parse URL</value>
+  </data>
+  <data name="SmartPaste_PreviewImage" xml:space="preserve">
+    <value>Preview image</value>
+  </data>
+  <data name="SmartPaste_TestRegex" xml:space="preserve">
+    <value>Test a regex on it</value>
+  </data>
+  <data name="SmartPaste_UrlDecode" xml:space="preserve">
+    <value>URL decode</value>
+  </data>
+  <data name="SmartPaste_UrlEncode" xml:space="preserve">
+    <value>URL encode</value>
+  </data>
+  <data name="Timestamp_DstGap" xml:space="preserve">
+    <value>{0} doesn't exist in {1} (skipped by a daylight-saving change).</value>
+  </data>
+  <data name="Timestamp_EmptyDate" xml:space="preserve">
+    <value>Enter a date and time, e.g. 2026-10-15 14:30:00.</value>
+  </data>
+  <data name="Timestamp_Field_DayOfWeek" xml:space="preserve">
+    <value>Day of week</value>
+  </data>
+  <data name="Timestamp_Field_DayOfYear" xml:space="preserve">
+    <value>Day of year</value>
+  </data>
+  <data name="Timestamp_Field_IsoWeek" xml:space="preserve">
+    <value>ISO week</value>
+  </data>
+  <data name="Timestamp_Field_Local" xml:space="preserve">
+    <value>Local ({0})</value>
+    <comment>{0} = time zone id</comment>
+  </data>
+  <data name="Timestamp_Field_Relative" xml:space="preserve">
+    <value>Relative</value>
+  </data>
+  <data name="Timestamp_Field_UnixMicroseconds" xml:space="preserve">
+    <value>Unix microseconds</value>
+  </data>
+  <data name="Timestamp_Field_UnixMilliseconds" xml:space="preserve">
+    <value>Unix milliseconds</value>
+  </data>
+  <data name="Timestamp_Field_UnixNanoseconds" xml:space="preserve">
+    <value>Unix nanoseconds</value>
+  </data>
+  <data name="Timestamp_Field_UnixSeconds" xml:space="preserve">
+    <value>Unix seconds</value>
+  </data>
+  <data name="Timestamp_InvalidDate" xml:space="preserve">
+    <value>Couldn't read that date. Try 2026-10-15 14:30:00 or 2026-10-15T07:30:00Z.</value>
+  </data>
+  <data name="Timestamp_NotANumber" xml:space="preserve">
+    <value>Enter a Unix timestamp as a number, e.g. 1760500000 or 1760500000123.</value>
+  </data>
+  <data name="Timestamp_OutOfRange" xml:space="preserve">
+    <value>That {0} value is outside years 0001–9999.</value>
+    <comment>{0} = unit name</comment>
+  </data>
+  <data name="Timestamp_Unit_Microseconds" xml:space="preserve">
+    <value>microseconds</value>
+  </data>
+  <data name="Timestamp_Unit_Milliseconds" xml:space="preserve">
+    <value>milliseconds</value>
+  </data>
+  <data name="Timestamp_Unit_Nanoseconds" xml:space="preserve">
+    <value>nanoseconds</value>
+  </data>
+  <data name="Timestamp_Unit_Seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="Url_InvalidUtf8" xml:space="preserve">
+    <value>The escape sequence starting at position {0} is not valid UTF-8.</value>
+  </data>
+  <data name="Url_LoneSurrogate" xml:space="preserve">
+    <value>Invalid character at position {0} (unpaired surrogate).</value>
+  </data>
+  <data name="Url_MalformedEscape" xml:space="preserve">
+    <value>Malformed escape sequence at position {0}: '%' must be followed by two hex digits.</value>
+  </data>
+  <data name="Url_NotAbsolute" xml:space="preserve">
+    <value>Not an absolute URL. Include the scheme, e.g. https://example.com/path?x=1.</value>
+  </data>
+  <data name="Uuid_Count" xml:space="preserve">
+    <value>Count must be between 1 and {0:N0}.</value>
+  </data>
+  <data name="Uuid_Invalid" xml:space="preserve">
+    <value>Not a valid UUID. Expected 32 hex digits, e.g. 550e8400-e29b-41d4-a716-446655440000.</value>
+  </data>
+  <data name="Uuid_Variant_Future" xml:space="preserve">
+    <value>Future (reserved)</value>
+  </data>
+  <data name="Uuid_Variant_Microsoft" xml:space="preserve">
+    <value>Microsoft (reserved)</value>
+  </data>
+  <data name="Uuid_Variant_Ncs" xml:space="preserve">
+    <value>NCS (reserved)</value>
+  </data>
+  <data name="Uuid_Version1" xml:space="preserve">
+    <value>Version 1 (time-based)</value>
+  </data>
+  <data name="Uuid_Version2" xml:space="preserve">
+    <value>Version 2 (DCE security)</value>
+  </data>
+  <data name="Uuid_Version3" xml:space="preserve">
+    <value>Version 3 (name-based, MD5)</value>
+  </data>
+  <data name="Uuid_Version4" xml:space="preserve">
+    <value>Version 4 (random)</value>
+  </data>
+  <data name="Uuid_Version5" xml:space="preserve">
+    <value>Version 5 (name-based, SHA-1)</value>
+  </data>
+  <data name="Uuid_Version6" xml:space="preserve">
+    <value>Version 6 (reordered time)</value>
+  </data>
+  <data name="Uuid_Version7" xml:space="preserve">
+    <value>Version 7 (Unix time-ordered)</value>
+  </data>
+  <data name="Uuid_Version8" xml:space="preserve">
+    <value>Version 8 (custom)</value>
+  </data>
+  <data name="Uuid_VersionUnknown" xml:space="preserve">
+    <value>Unknown version ({0})</value>
+  </data>
+</root>

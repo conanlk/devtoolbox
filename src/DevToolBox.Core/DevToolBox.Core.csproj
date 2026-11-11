@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Pure tool logic: no UI framework, no I/O beyond Stream, no network. -->
+  <PropertyGroup>
+    <RootNamespace>DevToolBox.Core</RootNamespace>
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Barcode encoding (pure managed, no rendering dependency). -->
+    <PackageReference Include="ZXing.Net" />
+    <!-- CRC32 for the Hash Generator. -->
+    <PackageReference Include="System.IO.Hashing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- EFF Large Wordlist for passphrases (7,776 words, CC BY 3.0 US). -->
+    <EmbeddedResource Include="Tools\Password\eff_large_wordlist.txt" LogicalName="DevToolBox.Core.eff_large_wordlist.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- User-facing messages: English (neutral) + Vietnamese satellite. Strongly typed class generated at build (Localization/CoreStrings.Designer.cs). -->
+    <EmbeddedResource Update="Localization\CoreStrings.resx">
+      <StronglyTypedFileName>Localization\CoreStrings.Designer.cs</StronglyTypedFileName>
+      <StronglyTypedLanguage>CSharp</StronglyTypedLanguage>
+      <StronglyTypedNamespace>DevToolBox.Core.Localization</StronglyTypedNamespace>
+      <StronglyTypedClassName>CoreStrings</StronglyTypedClassName>
+    </EmbeddedResource>
+    <!-- The generated class is kept next to the .resx so design-time tools (dotnet format, IDEs) see it; the real
+         build regenerates it and adds it to Compile itself, so it is taken out of the default glob there. -->
+    <Compile Remove="Localization\CoreStrings.Designer.cs" Condition="'$(DesignTimeBuild)' != 'true'" />
+  </ItemGroup>
+</Project>

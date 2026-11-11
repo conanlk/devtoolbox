@@ -1,0 +1,136 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Jwt"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:conv="using:DevToolBox.App.Shared.Converters"
+             x:Class="DevToolBox.App.Tools.Jwt.JwtView"
+             x:DataType="vm:JwtViewModel">
+  <UserControl.Resources>
+    <ControlTheme x:Key="LegendDot" TargetType="Border">
+      <Setter Property="Width" Value="10" />
+      <Setter Property="Height" Value="10" />
+      <Setter Property="CornerRadius" Value="2" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </ControlTheme>
+  </UserControl.Resources>
+
+  <DockPanel>
+    <Border DockPanel.Dock="Bottom" Classes="status-bar">
+      <WrapPanel ItemSpacing="16">
+        <TextBlock Text="{l:Tr Jwt_DecodedLocally}" />
+        <TextBlock Name="SummaryText" Text="{Binding SummaryText}" IsVisible="{Binding HasToken}" />
+      </WrapPanel>
+    </Border>
+
+    <ScrollViewer>
+      <StackPanel Margin="32,8,32,24" Spacing="16">
+        <controls:ToolPanel Header="{l:Tr Jwt_EncodedToken}">
+          <controls:ToolPanel.Actions>
+            <StackPanel Orientation="Horizontal" Spacing="14">
+              <StackPanel Orientation="Horizontal" Spacing="14" IsVisible="{Binding HasToken}">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                  <Border Theme="{StaticResource LegendDot}" Background="{DynamicResource Brush.Jwt.Header}" />
+                  <TextBlock Classes="hint" Text="{l:Tr Jwt_Header}" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                  <Border Theme="{StaticResource LegendDot}" Background="{DynamicResource Brush.Jwt.Payload}" />
+                  <TextBlock Classes="hint" Text="{l:Tr Jwt_Payload}" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                  <Border Theme="{StaticResource LegendDot}" Background="{DynamicResource Brush.Jwt.Signature}" />
+                  <TextBlock Classes="hint" Text="{l:Tr Jwt_Signature}" VerticalAlignment="Center" />
+                </StackPanel>
+              </StackPanel>
+              <StackPanel Orientation="Horizontal" Spacing="4">
+                <controls:PasteButton Classes="quiet" Text="{Binding Token}" />
+                <controls:CommandButton Classes="quiet" Icon="FileText" Label="{l:Tr Common_Sample}" Command="{Binding LoadSampleCommand}" />
+                <controls:ClearButton Classes="quiet" Text="{Binding Token}" />
+              </StackPanel>
+            </StackPanel>
+          </controls:ToolPanel.Actions>
+          <StackPanel Spacing="10">
+            <TextBox Name="TokenBox" Classes="mono" Text="{Binding Token}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="64" MaxHeight="140"
+                     PlaceholderText="{l:Tr Jwt_Placeholder}" AutomationProperties.Name="JWT" />
+            <controls:SegmentedText Name="TokenColored" Classes="mono" Segments="{Binding TokenSegments}" TextWrapping="Wrap" LineHeight="22"
+                                    IsVisible="{Binding HasToken}" />
+            <TextBlock Classes="error" Name="ErrorText" Text="{Binding ErrorMessage}" TextWrapping="Wrap"
+                       IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+          </StackPanel>
+        </controls:ToolPanel>
+
+        <Grid ColumnDefinitions="*,16,1.4*" IsVisible="{Binding HasToken}">
+          <StackPanel Spacing="16">
+            <Border Classes="badge" Name="StatusBadge" HorizontalAlignment="Left"
+                    Classes.success="{Binding StatusKind, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Success}"
+                    Classes.warning="{Binding StatusKind, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Warning}"
+                    Classes.error="{Binding StatusKind, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Error}">
+              <TextBlock Name="StatusText" Text="{Binding StatusText}" TextWrapping="Wrap" />
+            </Border>
+
+            <controls:ToolPanel Header="{l:Tr Jwt_Header}" HeaderBrush="{DynamicResource Brush.Jwt.Header}" Padding="0">
+              <controls:ToolPanel.Actions>
+                <controls:CopyButton Classes="quiet" Text="{Binding HeaderJson}" />
+              </controls:ToolPanel.Actions>
+              <controls:CodeEditor Name="HeaderEditor" Classes="bare" Text="{Binding HeaderJson, Mode=OneWay}" IsReadOnly="True" Language="Json"
+                                   Height="120" AutomationProperties.Name="{l:Tr Jwt_HeaderJson}" />
+            </controls:ToolPanel>
+
+            <controls:ToolPanel Header="{l:Tr Jwt_VerifySignature}" HeaderBrush="{DynamicResource Brush.Jwt.Signature}">
+              <controls:ToolPanel.Actions>
+                <Border Classes="chip" IsVisible="{Binding AlgorithmLabel, Converter={x:Static ObjectConverters.IsNotNull}}">
+                  <TextBlock Text="{Binding AlgorithmLabel}" />
+                </Border>
+              </controls:ToolPanel.Actions>
+              <StackPanel Spacing="10">
+                <TextBlock Classes="field-label" Text="{l:Tr Jwt_Secret}" />
+                <TextBox Name="SecretBox" Classes="mono" Text="{Binding Secret}" PasswordChar="•" RevealPassword="{Binding #RevealSecret.IsChecked}"
+                         PlaceholderText="{l:Tr Jwt_SecretPlaceholder}" AutomationProperties.Name="{l:Tr Jwt_SharedSecret}" />
+                <WrapPanel ItemSpacing="16">
+                  <CheckBox Name="RevealSecret" Content="{l:Tr Jwt_ShowSecret}" />
+                  <CheckBox Content="{l:Tr Jwt_SecretIsBase64}" IsChecked="{Binding SecretIsBase64}" />
+                </WrapPanel>
+                <Border Classes="badge" Name="VerificationBadge" HorizontalAlignment="Stretch" CornerRadius="8" Padding="12,10"
+                        Classes.success="{Binding VerificationKind, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Success}"
+                        Classes.warning="{Binding VerificationKind, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Warning}"
+                        Classes.error="{Binding VerificationKind, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Error}"
+                        IsVisible="{Binding VerificationText, Converter={x:Static ObjectConverters.IsNotNull}}">
+                  <TextBlock Text="{Binding VerificationText}" TextWrapping="Wrap" FontSize="13" />
+                </Border>
+              </StackPanel>
+            </controls:ToolPanel>
+          </StackPanel>
+
+          <controls:ToolPanel Grid.Column="2" Header="{l:Tr Jwt_Payload}" HeaderBrush="{DynamicResource Brush.Jwt.Payload}" Padding="0">
+            <controls:ToolPanel.Actions>
+              <controls:CopyButton Classes="quiet" Text="{Binding PayloadJson}" />
+            </controls:ToolPanel.Actions>
+            <DockPanel>
+              <Border DockPanel.Dock="Bottom" BorderBrush="{DynamicResource Brush.Border}" BorderThickness="0,1,0,0" Padding="14,12"
+                      IsVisible="{Binding HasClaims}">
+                <StackPanel Spacing="4">
+                  <TextBlock Classes="section-label" Text="{l:Tr Jwt_RegisteredClaimsHeader}" Margin="0,0,0,6" />
+                  <ItemsControl Name="ClaimsList" ItemsSource="{Binding ClaimRows}">
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate x:DataType="vm:JwtClaimRow">
+                        <Border BorderBrush="{DynamicResource Brush.BorderSubtle}" BorderThickness="0,0,0,1" Padding="0,6">
+                          <Grid ColumnDefinitions="48,110,*" ColumnSpacing="12">
+                            <TextBlock Classes="mono" Text="{Binding Key}" Foreground="{DynamicResource Brush.Json.Key}" />
+                            <TextBlock Grid.Column="1" Classes="field-label" Text="{Binding Label}" />
+                            <SelectableTextBlock Grid.Column="2" Text="{Binding Value}" FontSize="13" TextWrapping="Wrap" />
+                          </Grid>
+                        </Border>
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                </StackPanel>
+              </Border>
+              <controls:CodeEditor Name="PayloadEditor" Classes="bare" Text="{Binding PayloadJson, Mode=OneWay}" IsReadOnly="True" Language="Json"
+                                   MinHeight="200" AutomationProperties.Name="{l:Tr Jwt_PayloadJson}" />
+            </DockPanel>
+          </controls:ToolPanel>
+        </Grid>
+      </StackPanel>
+    </ScrollViewer>
+  </DockPanel>
+</UserControl>

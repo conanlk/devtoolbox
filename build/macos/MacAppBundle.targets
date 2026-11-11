@@ -1,0 +1,40 @@
+<Project>
+  <!--
+    After a macOS publish, wraps the published files in DevToolBox.app next to them
+    (<PublishDir>/DevToolBox.app). With a real bundle, macOS shows the DevToolBox name and icon in Finder,
+    the Dock and System Settings › Login Items instead of the generic "exec" one. Turn off with
+    -p:CreateMacAppBundle=false.
+  -->
+  <PropertyGroup>
+    <CreateMacAppBundle Condition="'$(CreateMacAppBundle)' == ''">true</CreateMacAppBundle>
+    <MacAppBundleTemplateDir>$(MSBuildThisFileDirectory)</MacAppBundleTemplateDir>
+    <MacAppBundleIcon>$(MSBuildThisFileDirectory)..\icons\app\DevToolBox.icns</MacAppBundleIcon>
+  </PropertyGroup>
+
+  <Target Name="CreateMacAppBundle"
+          AfterTargets="Publish"
+          Condition="'$(CreateMacAppBundle)' == 'true' and $(RuntimeIdentifier.StartsWith('osx'))">
+    <PropertyGroup>
+      <_MacAppBundleDir>$([System.IO.Path]::GetFullPath('$(PublishDir)'))$(AssemblyName).app</_MacAppBundleDir>
+      <_MacAppBundleInfoPlist>$([System.IO.File]::ReadAllText('$(MacAppBundleTemplateDir)Info.plist').Replace('{BundleIdentifier}', '$(ApplicationId)').Replace('{Version}', '$(Version)').Replace('{BuildNumber}', '$(BuildNumber)'))</_MacAppBundleInfoPlist>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <!-- Everything the app needs at run time; debug symbols, docs and an older bundle stay out. -->
+      <_MacAppBundleFile Include="$(PublishDir)**\*"
+                         Exclude="$(PublishDir)$(AssemblyName).app\**;$(PublishDir)**\*.dSYM\**;$(PublishDir)**\*.pdb;$(PublishDir)**\*.xml;$(PublishDir)**\.DS_Store" />
+    </ItemGroup>
+
+    <RemoveDir Directories="$(_MacAppBundleDir)" />
+    <Copy SourceFiles="@(_MacAppBundleFile)"
+          DestinationFiles="@(_MacAppBundleFile->'$(_MacAppBundleDir)\Contents\MacOS\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="$(MacAppBundleIcon)" DestinationFolder="$(_MacAppBundleDir)\Contents\Resources" />
+    <WriteLinesToFile File="$(_MacAppBundleDir)\Contents\Info.plist" Lines="$(_MacAppBundleInfoPlist)" Overwrite="true" />
+    <!-- Copy drops the executable bit. -->
+    <Exec Command="chmod +x &quot;$(_MacAppBundleDir)/Contents/MacOS/$(AssemblyName)&quot;" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
+    <!-- Ad-hoc signature over the whole bundle (seals Info.plist and resources); Apple Silicon refuses unsigned code. -->
+    <Exec Command="codesign --force --deep --sign - &quot;$(_MacAppBundleDir)&quot;" Condition="$([MSBuild]::IsOSPlatform('OSX'))" />
+
+    <Message Importance="high" Text="$(MSBuildProjectName) -> $(_MacAppBundleDir)" />
+  </Target>
+</Project>

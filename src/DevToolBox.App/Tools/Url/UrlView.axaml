@@ -1,0 +1,119 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Url"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:conv="using:DevToolBox.App.Shared.Converters"
+             xmlns:shared="using:DevToolBox.App.Shared"
+             x:Class="DevToolBox.App.Tools.Url.UrlView"
+             x:DataType="vm:UrlViewModel">
+  <TabControl Classes="tool-tabs" Margin="32,0,32,20" SelectedIndex="{Binding SelectedTab}">
+    <TabItem Header="{l:Tr Url_TabEncodeDecode}">
+      <Grid RowDefinitions="Auto,*,Auto" RowSpacing="16">
+        <Border Classes="toolbar">
+          <WrapPanel ItemSpacing="12" LineSpacing="8">
+            <Border Classes="segmented">
+              <StackPanel Orientation="Horizontal">
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="direction" Content="{l:Tr Common_Encode}" Name="EncodeMode"
+                             IsChecked="{Binding Direction, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Encode}" />
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="direction" Content="{l:Tr Common_Decode}" Name="DecodeMode"
+                             IsChecked="{Binding Direction, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Decode}" />
+              </StackPanel>
+            </Border>
+            <ComboBox ItemsSource="{Binding Modes}" SelectedItem="{Binding SelectedMode}" AutomationProperties.Name="{l:Tr Url_EncodingMode}" />
+            <CheckBox Content="{l:Tr Url_PlusForSpace}" IsChecked="{Binding PlusForSpace}" VerticalAlignment="Center" />
+          </WrapPanel>
+        </Border>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,16,*">
+          <controls:ToolPanel Header="{l:Tr Common_Input}" Padding="0">
+            <controls:ToolPanel.Actions>
+              <StackPanel Orientation="Horizontal" Spacing="4">
+                <controls:PasteButton Classes="quiet" Text="{Binding Input}" />
+                <controls:CommandButton Classes="quiet" Icon="FileText" Label="{l:Tr Common_Sample}" Command="{Binding LoadSampleCommand}" />
+                <controls:ClearButton Classes="quiet" Text="{Binding Input}" />
+              </StackPanel>
+            </controls:ToolPanel.Actions>
+            <TextBox Name="InputBox" Classes="mono bare" Text="{Binding Input}" AcceptsReturn="True" TextWrapping="Wrap"
+                     PlaceholderText="{l:Tr Url_Placeholder}" AutomationProperties.Name="{l:Tr Common_Input}" />
+          </controls:ToolPanel>
+          <controls:ToolPanel Grid.Column="2" Header="{l:Tr Common_Output}" Padding="0">
+            <controls:ToolPanel.Actions>
+              <StackPanel Orientation="Horizontal" Spacing="4">
+                <controls:CommandButton Classes="quiet" Icon="ArrowDownUp" Label="{l:Tr Common_Swap}" Command="{Binding SwapCommand}" />
+                <controls:CopyButton Classes="quiet" Text="{Binding Output}" />
+              </StackPanel>
+            </controls:ToolPanel.Actions>
+            <TextBox Name="OutputBox" Classes="mono bare" Text="{Binding Output, Mode=OneWay}" IsReadOnly="True"
+                     AcceptsReturn="True" TextWrapping="Wrap" AutomationProperties.Name="{l:Tr Common_Output}" />
+          </controls:ToolPanel>
+        </Grid>
+        <TextBlock Grid.Row="2" Classes="error" Name="ErrorText" Text="{Binding ErrorMessage}"
+                   IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+      </Grid>
+    </TabItem>
+
+    <TabItem Header="{l:Tr Url_TabParser}">
+      <ScrollViewer>
+        <StackPanel Spacing="16">
+          <controls:ToolPanel Header="URL">
+            <controls:ToolPanel.Actions>
+              <StackPanel Orientation="Horizontal" Spacing="4">
+                <controls:PasteButton Classes="quiet" Text="{Binding UrlToParse}" />
+                <controls:CommandButton Classes="quiet" Icon="FileText" Label="{l:Tr Common_Sample}" Command="{Binding LoadSampleUrlCommand}" />
+              </StackPanel>
+            </controls:ToolPanel.Actions>
+            <StackPanel Spacing="8">
+              <TextBox Name="UrlBox" Classes="mono" Text="{Binding UrlToParse}" PlaceholderText="https://example.com/path?key=value#fragment"
+                       AutomationProperties.Name="{l:Tr Url_UrlToParse}" />
+              <TextBlock Classes="error" Text="{Binding ParseError}"
+                         IsVisible="{Binding ParseError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+            </StackPanel>
+          </controls:ToolPanel>
+
+          <StackPanel Spacing="16" IsVisible="{Binding HasParsedUrl}">
+            <controls:ToolPanel Header="{l:Tr Url_Parts}">
+              <ItemsControl Name="UrlPartsList" ItemsSource="{Binding UrlParts}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="shared:LabeledValue">
+                    <Grid ColumnDefinitions="110,*" Margin="0,4">
+                      <TextBlock Classes="field-label" Text="{Binding Label}" />
+                      <SelectableTextBlock Grid.Column="1" Classes="mono" Text="{Binding Value}" TextWrapping="Wrap" />
+                    </Grid>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </controls:ToolPanel>
+
+            <controls:ToolPanel Header="{l:Tr Url_QueryParameters}">
+              <controls:ToolPanel.Actions>
+                <controls:CommandButton Classes="quiet" Icon="Plus" Label="{l:Tr Common_Add}" Command="{Binding AddParameterCommand}" />
+              </controls:ToolPanel.Actions>
+              <ItemsControl Name="QueryList" ItemsSource="{Binding QueryParameters}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vm:QueryParameterViewModel">
+                    <Grid ColumnDefinitions="*,2*,Auto" ColumnSpacing="8" Margin="0,0,0,8">
+                      <TextBox Classes="mono" Text="{Binding Key}" PlaceholderText="{l:Tr Url_KeyPlaceholder}" AutomationProperties.Name="{l:Tr Url_ParameterName}" />
+                      <TextBox Grid.Column="1" Classes="mono" Text="{Binding Value}" PlaceholderText="{l:Tr Url_ValuePlaceholder}" AutomationProperties.Name="{l:Tr Url_ParameterValue}" />
+                      <Button Grid.Column="2" Classes="icon" Command="{Binding RemoveCommand}" ToolTip.Tip="{l:Tr Common_Remove}"
+                              AutomationProperties.Name="{l:Tr Url_RemoveParameter}">
+                        <controls:LucideIcon Kind="Trash2" />
+                      </Button>
+                    </Grid>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </controls:ToolPanel>
+
+            <controls:ToolPanel Header="{l:Tr Url_Rebuilt}">
+              <controls:ToolPanel.Actions>
+                <controls:CopyButton Classes="quiet" Text="{Binding RebuiltUrl}" />
+              </controls:ToolPanel.Actions>
+              <SelectableTextBlock Name="RebuiltUrlText" Classes="mono" Text="{Binding RebuiltUrl}" TextWrapping="Wrap" />
+            </controls:ToolPanel>
+          </StackPanel>
+        </StackPanel>
+      </ScrollViewer>
+    </TabItem>
+  </TabControl>
+</UserControl>

@@ -1,0 +1,75 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Timestamp"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:shared="using:DevToolBox.App.Shared"
+             x:Class="DevToolBox.App.Tools.Timestamp.TimestampView"
+             x:DataType="vm:TimestampViewModel">
+  <UserControl.Resources>
+    <DataTemplate x:Key="FieldRow" x:DataType="shared:LabeledValue">
+      <Border BorderBrush="{DynamicResource Brush.BorderSubtle}" BorderThickness="0,0,0,1" Padding="0,4">
+        <Grid ColumnDefinitions="170,*,Auto" ColumnSpacing="12">
+          <TextBlock Classes="field-label" Text="{Binding Label}" TextTrimming="CharacterEllipsis" />
+          <SelectableTextBlock Grid.Column="1" Classes="mono" Text="{Binding Value}" VerticalAlignment="Center" />
+          <controls:CopyButton Grid.Column="2" Classes="quiet" Text="{Binding Value}" />
+        </Grid>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <ScrollViewer>
+    <StackPanel Margin="32,8,32,24" Spacing="16">
+      <Border Classes="toolbar">
+        <WrapPanel ItemSpacing="16" LineSpacing="8">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Classes="field-label" Text="{l:Tr Timestamp_TimeZone}" />
+            <ComboBox Name="ZoneBox" ItemsSource="{Binding TimeZones}" SelectedItem="{Binding SelectedZone}" MaxDropDownHeight="400"
+                      MinWidth="300" AutomationProperties.Name="{l:Tr Timestamp_TimeZone}" />
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Classes="field-label" Text="{l:Tr Timestamp_Now}" />
+            <Border Classes="chip">
+              <SelectableTextBlock Classes="mono" Name="CurrentEpoch" Text="{Binding CurrentEpochSeconds}" />
+            </Border>
+            <controls:CopyButton Classes="quiet" Text="{Binding CurrentEpochSeconds}" />
+            <Border Classes="chip">
+              <SelectableTextBlock Classes="mono" Text="{Binding CurrentEpochMilliseconds}" />
+            </Border>
+            <controls:CopyButton Classes="quiet" Text="{Binding CurrentEpochMilliseconds}" />
+          </StackPanel>
+        </WrapPanel>
+      </Border>
+
+      <controls:ToolPanel Header="{l:Tr Timestamp_ToDate}">
+        <controls:ToolPanel.Actions>
+          <TextBlock Classes="accent-text" FontSize="12" Name="DetectedUnitText" Text="{Binding DetectedUnit}"
+                     IsVisible="{Binding DetectedUnit, Converter={x:Static ObjectConverters.IsNotNull}}" />
+        </controls:ToolPanel.Actions>
+        <StackPanel Spacing="10">
+          <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+            <TextBox Name="EpochBox" Classes="mono" Text="{Binding EpochInput}"
+                     PlaceholderText="{l:Tr Timestamp_EpochPlaceholder}" AutomationProperties.Name="{l:Tr Timestamp_UnixTimestamp}" />
+            <ComboBox Grid.Column="1" ItemsSource="{Binding Units}" SelectedItem="{Binding SelectedUnit}" AutomationProperties.Name="{l:Tr Timestamp_Unit}" />
+            <Button Grid.Column="2" Name="NowButton" Classes="primary tool" Command="{Binding NowCommand}" Content="{l:Tr Timestamp_Now}" Height="36" Padding="16,0"
+                    AutomationProperties.Name="{l:Tr Timestamp_Now}" />
+          </Grid>
+          <TextBlock Classes="error" Name="EpochErrorText" Text="{Binding EpochError}"
+                     IsVisible="{Binding EpochError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+          <ItemsControl Name="EpochFieldsList" ItemsSource="{Binding EpochFields}" ItemTemplate="{StaticResource FieldRow}" />
+        </StackPanel>
+      </controls:ToolPanel>
+
+      <controls:ToolPanel Header="{l:Tr Timestamp_ToTimestamp}">
+        <StackPanel Spacing="10">
+          <TextBox Name="DateBox" Classes="mono" Text="{Binding DateInput}"
+                   PlaceholderText="{l:Tr Timestamp_DatePlaceholder}"
+                   AutomationProperties.Name="{l:Tr Timestamp_DateAndTime}" />
+          <TextBlock Classes="error" Name="DateErrorText" Text="{Binding DateError}"
+                     IsVisible="{Binding DateError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+          <ItemsControl Name="DateFieldsList" ItemsSource="{Binding DateFields}" ItemTemplate="{StaticResource FieldRow}" />
+        </StackPanel>
+      </controls:ToolPanel>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

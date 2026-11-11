@@ -1,0 +1,1374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppIcons_AdaptiveIcon" xml:space="preserve">
+    <value>Biểu tượng adaptive (API 26+)</value>
+  </data>
+  <data name="AppIcons_AndroidExtras" xml:space="preserve">
+    <value>Tùy chọn thêm cho Android</value>
+  </data>
+  <data name="AppIcons_BackgroundColour" xml:space="preserve">
+    <value>Màu nền</value>
+  </data>
+  <data name="AppIcons_BackgroundError" xml:space="preserve">
+    <value>Dùng mã màu hex, ví dụ #FFFFFF.</value>
+  </data>
+  <data name="AppIcons_BackgroundHint" xml:space="preserve">
+    <value>Dùng cho iOS (không cho phép trong suốt) và lớp nền adaptive của Android.</value>
+  </data>
+  <data name="AppIcons_CheckSize" xml:space="preserve">
+    <value>Tối thiểu 1024 px</value>
+  </data>
+  <data name="AppIcons_CheckSquare" xml:space="preserve">
+    <value>Hình vuông, tối thiểu 1024 px</value>
+  </data>
+  <data name="AppIcons_ChooseImageTitle" xml:space="preserve">
+    <value>Chọn ảnh biểu tượng (1024×1024 trở lên)</value>
+  </data>
+  <data name="AppIcons_DropHint" xml:space="preserve">
+    <value>Thả ảnh vuông tối thiểu 1024×1024 — PNG, JPEG hoặc WebP.</value>
+  </data>
+  <data name="AppIcons_DropToReplace" xml:space="preserve">
+    <value>Thả ảnh mới vào đây để thay thế</value>
+  </data>
+  <data name="AppIcons_EmptyStatus" xml:space="preserve">
+    <value>Thêm ảnh tối thiểu 1024×1024 pixel</value>
+  </data>
+  <data name="AppIcons_ExportZip" xml:space="preserve">
+    <value>Xuất ZIP · {0} tệp</value>
+  </data>
+  <data name="AppIcons_ExportZipName" xml:space="preserve">
+    <value>Xuất ZIP</value>
+  </data>
+  <data name="AppIcons_FileCount" xml:space="preserve">
+    <value>{0} tệp</value>
+  </data>
+  <data name="AppIcons_MaskCircle" xml:space="preserve">
+    <value>Android tròn</value>
+  </data>
+  <data name="AppIcons_MaskRoundedSquare" xml:space="preserve">
+    <value>Vuông bo góc</value>
+  </data>
+  <data name="AppIcons_MaskSquircle" xml:space="preserve">
+    <value>Squircle</value>
+  </data>
+  <data name="AppIcons_MaskTeardrop" xml:space="preserve">
+    <value>Giọt nước</value>
+  </data>
+  <data name="AppIcons_OutputFiles" xml:space="preserve">
+    <value>Tệp kết quả</value>
+  </data>
+  <data name="AppIcons_Padding" xml:space="preserve">
+    <value>Lề</value>
+  </data>
+  <data name="AppIcons_PaddingTip" xml:space="preserve">
+    <value>Khoảng trống quanh hình trên mọi biểu tượng</value>
+  </data>
+  <data name="AppIcons_Platform" xml:space="preserve">
+    <value>Nền tảng</value>
+  </data>
+  <data name="AppIcons_PlatformOff" xml:space="preserve">
+    <value>Nền tảng này đang tắt trong Tùy chọn nên không có gì được xuất.</value>
+  </data>
+  <data name="AppIcons_Platforms" xml:space="preserve">
+    <value>Nền tảng</value>
+  </data>
+  <data name="AppIcons_PlayStoreIcon" xml:space="preserve">
+    <value>Biểu tượng Play Store 512 px</value>
+  </data>
+  <data name="AppIcons_PreviewBackground" xml:space="preserve">
+    <value>Nền xem trước</value>
+  </data>
+  <data name="AppIcons_PreviewByMask" xml:space="preserve">
+    <value>Xem trước theo mặt nạ</value>
+  </data>
+  <data name="AppIcons_Replace" xml:space="preserve">
+    <value>Thay ảnh…</value>
+  </data>
+  <data name="AppIcons_ReplaceImage" xml:space="preserve">
+    <value>Thay ảnh</value>
+  </data>
+  <data name="AppIcons_Reset" xml:space="preserve">
+    <value>Đặt lại</value>
+  </data>
+  <data name="AppIcons_RoundIcon" xml:space="preserve">
+    <value>Biểu tượng tròn</value>
+  </data>
+  <data name="AppIcons_SaveFile" xml:space="preserve">
+    <value>Lưu {0}</value>
+  </data>
+  <data name="AppIcons_SaveIconTitle" xml:space="preserve">
+    <value>Lưu biểu tượng</value>
+  </data>
+  <data name="AppIcons_SaveThisPng" xml:space="preserve">
+    <value>Lưu PNG này</value>
+  </data>
+  <data name="AppIcons_SaveZipTitle" xml:space="preserve">
+    <value>Lưu biểu tượng ứng dụng</value>
+  </data>
+  <data name="AppIcons_SelectPlatform" xml:space="preserve">
+    <value>Chọn ít nhất một nền tảng để xuất</value>
+  </data>
+  <data name="AppIcons_Size" xml:space="preserve">
+    <value>Kích thước</value>
+  </data>
+  <data name="AppIcons_SourceImage" xml:space="preserve">
+    <value>Ảnh gốc</value>
+  </data>
+  <data name="AppIcons_UnreadableImage" xml:space="preserve">
+    <value>Công cụ không đọc được tệp ảnh này (dùng PNG, JPEG, WebP hoặc BMP).</value>
+  </data>
+  <data name="AppIcons_Use" xml:space="preserve">
+    <value>Công dụng</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveBackground" xml:space="preserve">
+    <value>Màu nền adaptive</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveDefinition" xml:space="preserve">
+    <value>Định nghĩa biểu tượng adaptive</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveForeground" xml:space="preserve">
+    <value>Lớp trước adaptive</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveRoundDefinition" xml:space="preserve">
+    <value>Định nghĩa biểu tượng adaptive tròn</value>
+  </data>
+  <data name="AppIcons_Use_App" xml:space="preserve">
+    <value>Ứng dụng</value>
+  </data>
+  <data name="AppIcons_Use_AppIpadPro" xml:space="preserve">
+    <value>Ứng dụng (iPad Pro)</value>
+  </data>
+  <data name="AppIcons_Use_AppStore" xml:space="preserve">
+    <value>App Store</value>
+  </data>
+  <data name="AppIcons_Use_AssetCatalog" xml:space="preserve">
+    <value>Manifest asset catalog</value>
+  </data>
+  <data name="AppIcons_Use_Launcher" xml:space="preserve">
+    <value>Launcher</value>
+  </data>
+  <data name="AppIcons_Use_LauncherRound" xml:space="preserve">
+    <value>Launcher (tròn)</value>
+  </data>
+  <data name="AppIcons_Use_Notification" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="AppIcons_Use_PlayStore" xml:space="preserve">
+    <value>Trang Play Store</value>
+  </data>
+  <data name="AppIcons_Use_Settings" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="AppIcons_Use_Spotlight" xml:space="preserve">
+    <value>Spotlight</value>
+  </data>
+  <data name="AppIcons_ZipArchive" xml:space="preserve">
+    <value>Tệp nén ZIP</value>
+  </data>
+  <data name="Barcode_BarHeight" xml:space="preserve">
+    <value>Chiều cao vạch</value>
+  </data>
+  <data name="Barcode_BarHeightValue" xml:space="preserve">
+    <value>Chiều cao vạch: {0:0} px</value>
+  </data>
+  <data name="Barcode_Content" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="Barcode_ContentName" xml:space="preserve">
+    <value>Nội dung mã vạch</value>
+  </data>
+  <data name="Barcode_CopyImage" xml:space="preserve">
+    <value>Chép ảnh</value>
+  </data>
+  <data name="Barcode_CopySvg" xml:space="preserve">
+    <value>Chép SVG</value>
+  </data>
+  <data name="Barcode_EncodedAs" xml:space="preserve">
+    <value>Mã hóa thành {0} (đã thêm chữ số kiểm tra)</value>
+  </data>
+  <data name="Barcode_ErrorCorrection" xml:space="preserve">
+    <value>Mức sửa lỗi</value>
+  </data>
+  <data name="Barcode_Format" xml:space="preserve">
+    <value>Định dạng mã vạch</value>
+  </data>
+  <data name="Barcode_HintCode128" xml:space="preserve">
+    <value>Ký tự ASCII in được, tối đa 80 ký tự</value>
+  </data>
+  <data name="Barcode_HintCode39" xml:space="preserve">
+    <value>A–Z, 0–9, dấu cách và - . $ / + %</value>
+  </data>
+  <data name="Barcode_HintEan13" xml:space="preserve">
+    <value>12 chữ số (tự thêm chữ số kiểm tra) hoặc 13 chữ số</value>
+  </data>
+  <data name="Barcode_HintQr" xml:space="preserve">
+    <value>Văn bản hoặc URL bất kỳ (UTF-8)</value>
+  </data>
+  <data name="Barcode_HintUpcA" xml:space="preserve">
+    <value>11 chữ số (tự thêm chữ số kiểm tra) hoặc 12 chữ số</value>
+  </data>
+  <data name="Barcode_Modules" xml:space="preserve">
+    <value>{0}×{1} module</value>
+  </data>
+  <data name="Barcode_ModuleSize" xml:space="preserve">
+    <value>Cỡ module</value>
+  </data>
+  <data name="Barcode_ModuleSizeValue" xml:space="preserve">
+    <value>Cỡ module: {0:0} px</value>
+  </data>
+  <data name="Barcode_ModulesWide" xml:space="preserve">
+    <value>Rộng {0} module</value>
+  </data>
+  <data name="Barcode_Preview" xml:space="preserve">
+    <value>Xem trước mã vạch</value>
+  </data>
+  <data name="Barcode_SavePng" xml:space="preserve">
+    <value>Lưu PNG</value>
+  </data>
+  <data name="Barcode_SavePngTitle" xml:space="preserve">
+    <value>Lưu mã vạch dạng PNG</value>
+  </data>
+  <data name="Barcode_SaveSvg" xml:space="preserve">
+    <value>Lưu SVG</value>
+  </data>
+  <data name="Barcode_SaveSvgTitle" xml:space="preserve">
+    <value>Lưu mã vạch dạng SVG</value>
+  </data>
+  <data name="Barcode_ShowText" xml:space="preserve">
+    <value>Hiện chữ bên dưới</value>
+  </data>
+  <data name="Category_Convert" xml:space="preserve">
+    <value>Chuyển đổi</value>
+  </data>
+  <data name="Category_EncodeDecode" xml:space="preserve">
+    <value>Mã hóa / Giải mã</value>
+  </data>
+  <data name="Category_EncodeShort" xml:space="preserve">
+    <value>Mã hóa</value>
+  </data>
+  <data name="Category_FormatAndTest" xml:space="preserve">
+    <value>Định dạng &amp; kiểm thử</value>
+  </data>
+  <data name="Category_Generate" xml:space="preserve">
+    <value>Tạo</value>
+  </data>
+  <data name="Common_Add" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="Common_Auto" xml:space="preserve">
+    <value>Tự động</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Common_CaretPosition" xml:space="preserve">
+    <value>Dòng {0}, Cột {1}</value>
+  </data>
+  <data name="Common_ChooseFile" xml:space="preserve">
+    <value>Chọn tệp…</value>
+  </data>
+  <data name="Common_ChooseFileName" xml:space="preserve">
+    <value>Chọn tệp</value>
+  </data>
+  <data name="Common_Clear" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Common_Copied" xml:space="preserve">
+    <value>Đã chép</value>
+  </data>
+  <data name="Common_Copy" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="Common_Count" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="Common_Decode" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="Common_DropFileOr" xml:space="preserve">
+    <value>Thả tệp vào đây, hoặc</value>
+  </data>
+  <data name="Common_Empty" xml:space="preserve">
+    <value>Trống</value>
+  </data>
+  <data name="Common_Encode" xml:space="preserve">
+    <value>Mã hóa</value>
+  </data>
+  <data name="Common_Generate" xml:space="preserve">
+    <value>Tạo</value>
+  </data>
+  <data name="Common_Input" xml:space="preserve">
+    <value>Đầu vào</value>
+  </data>
+  <data name="Common_Output" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="Common_Paste" xml:space="preserve">
+    <value>Dán</value>
+  </data>
+  <data name="Common_PngImage" xml:space="preserve">
+    <value>Ảnh PNG</value>
+  </data>
+  <data name="Common_Remove" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Common_Sample" xml:space="preserve">
+    <value>Mẫu</value>
+  </data>
+  <data name="Common_SizeInOut" xml:space="preserve">
+    <value>Vào {0} → ra {1:N0} ký tự</value>
+  </data>
+  <data name="Common_SvgImage" xml:space="preserve">
+    <value>Ảnh SVG</value>
+  </data>
+  <data name="Common_Swap" xml:space="preserve">
+    <value>Đảo chiều</value>
+  </data>
+  <data name="Common_Uppercase" xml:space="preserve">
+    <value>Chữ hoa</value>
+  </data>
+  <data name="EncodeDecode_AutoDirection" xml:space="preserve">
+    <value>Tự động: {0}</value>
+  </data>
+  <data name="EncodeDecode_Binary" xml:space="preserve">
+    <value>Nhị phân</value>
+  </data>
+  <data name="EncodeDecode_Decoding" xml:space="preserve">
+    <value>giải mã</value>
+  </data>
+  <data name="EncodeDecode_Encoding" xml:space="preserve">
+    <value>mã hóa</value>
+  </data>
+  <data name="EncodeDecode_Format" xml:space="preserve">
+    <value>Định dạng</value>
+  </data>
+  <data name="EncodeDecode_Placeholder" xml:space="preserve">
+    <value>Nhập hoặc dán văn bản, Base64, hex hoặc nhị phân…</value>
+  </data>
+  <data name="Hash_Algorithm" xml:space="preserve">
+    <value>{0} thuật toán</value>
+  </data>
+  <data name="Hash_Algorithms" xml:space="preserve">
+    <value>{0} thuật toán</value>
+  </data>
+  <data name="Hash_Cancelled" xml:space="preserve">
+    <value>Đã hủy</value>
+  </data>
+  <data name="Hash_ChooseFileTitle" xml:space="preserve">
+    <value>Chọn tệp để tính mã băm</value>
+  </data>
+  <data name="Hash_CompareHeader" xml:space="preserve">
+    <value>So sánh với mã băm mong đợi</value>
+  </data>
+  <data name="Hash_ExpectedHash" xml:space="preserve">
+    <value>Mã băm mong đợi</value>
+  </data>
+  <data name="Hash_ExpectedPlaceholder" xml:space="preserve">
+    <value>Dán mã băm (hex hoặc Base64)…</value>
+  </data>
+  <data name="Hash_Hashes" xml:space="preserve">
+    <value>Mã băm</value>
+  </data>
+  <data name="Hash_HexLower" xml:space="preserve">
+    <value>hex (chữ thường)</value>
+  </data>
+  <data name="Hash_HexUpper" xml:space="preserve">
+    <value>HEX (chữ hoa)</value>
+  </data>
+  <data name="Hash_HmacKey" xml:space="preserve">
+    <value>Khóa HMAC</value>
+  </data>
+  <data name="Hash_MatchBadge" xml:space="preserve">
+    <value>✓ khớp</value>
+  </data>
+  <data name="Hash_Matches" xml:space="preserve">
+    <value>✓ Khớp {0}</value>
+  </data>
+  <data name="Hash_NoHmacForCrc" xml:space="preserve">
+    <value>— (CRC32 không có HMAC)</value>
+  </data>
+  <data name="Hash_NoInput" xml:space="preserve">
+    <value>Chưa có dữ liệu</value>
+  </data>
+  <data name="Hash_NoMatch" xml:space="preserve">
+    <value>✗ Không thuật toán nào khớp với mã băm cần so</value>
+  </data>
+  <data name="Hash_OutputFormat" xml:space="preserve">
+    <value>Định dạng kết quả</value>
+  </data>
+  <data name="Hash_ReadFailed" xml:space="preserve">
+    <value>Không đọc được tệp: {0}</value>
+  </data>
+  <data name="Hash_Sha3Unsupported" xml:space="preserve">
+    <value>Thư viện mã hóa của hệ điều hành này không hỗ trợ SHA-3 nên mục này bị ẩn.</value>
+  </data>
+  <data name="Hash_SourceFile" xml:space="preserve">
+    <value>Tệp</value>
+  </data>
+  <data name="Hash_SourceText" xml:space="preserve">
+    <value>Văn bản</value>
+  </data>
+  <data name="Hash_StatusFile" xml:space="preserve">
+    <value>Tệp · {0} · {1}</value>
+  </data>
+  <data name="Hash_StatusText" xml:space="preserve">
+    <value>Văn bản · {0} (UTF-8)</value>
+  </data>
+  <data name="Hash_StreamNote" xml:space="preserve">
+    <value>Tệp được đọc theo từng khối 1 MB — tệp lớn không bao giờ bị nạp hết vào bộ nhớ.</value>
+  </data>
+  <data name="Hash_TextHeader" xml:space="preserve">
+    <value>Văn bản (UTF-8)</value>
+  </data>
+  <data name="Hash_TextPlaceholder" xml:space="preserve">
+    <value>Văn bản cần tính mã băm…</value>
+  </data>
+  <data name="Hash_TextToHash" xml:space="preserve">
+    <value>Văn bản cần tính mã băm</value>
+  </data>
+  <data name="Home_ClipboardNote" xml:space="preserve">
+    <value>Chỉ văn bản bạn dán vào ô này mới được phân tích. Ứng dụng không bao giờ tự đọc clipboard.</value>
+  </data>
+  <data name="Home_Detected" xml:space="preserve">
+    <value>Nhận diện: {0}</value>
+  </data>
+  <data name="Home_Favorites" xml:space="preserve">
+    <value>Yêu thích</value>
+  </data>
+  <data name="Home_FilterAll" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="Home_FilterByCategory" xml:space="preserve">
+    <value>Lọc theo nhóm</value>
+  </data>
+  <data name="Home_NoFavorites" xml:space="preserve">
+    <value>Chưa có mục yêu thích — gắn sao cho công cụ ở thanh bên để ghim lên đây.</value>
+  </data>
+  <data name="Home_PastedContent" xml:space="preserve">
+    <value>Nội dung đã dán</value>
+  </data>
+  <data name="Home_SmartPaste" xml:space="preserve">
+    <value>Dán thông minh</value>
+  </data>
+  <data name="Home_SmartPasteHint" xml:space="preserve">
+    <value>Dán bất cứ thứ gì — ứng dụng sẽ gợi ý công cụ phù hợp</value>
+  </data>
+  <data name="Home_SmartPastePlaceholder" xml:space="preserve">
+    <value>JWT, JSON, timestamp, UUID, URL, Base64, mã băm…</value>
+  </data>
+  <data name="Home_Subtitle" xml:space="preserve">
+    <value>{0} tiện ích chạy ngay trên máy Windows, macOS và Linux — dữ liệu của bạn không bao giờ rời khỏi máy.</value>
+  </data>
+  <data name="Home_Title" xml:space="preserve">
+    <value>Tất cả công cụ</value>
+  </data>
+  <data name="Home_Tools" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="Html_CharactersToEncode" xml:space="preserve">
+    <value>Ký tự cần mã hóa</value>
+  </data>
+  <data name="Html_Placeholder" xml:space="preserve">
+    <value>Nhập hoặc dán HTML hay văn bản có thực thể…</value>
+  </data>
+  <data name="Html_PreferNamed" xml:space="preserve">
+    <value>Ưu tiên thực thể có tên (&amp;eacute;)</value>
+  </data>
+  <data name="Html_ScopeAllNonAscii" xml:space="preserve">
+    <value>Không an toàn + mọi ký tự ngoài ASCII</value>
+  </data>
+  <data name="Html_ScopeUnsafeOnly" xml:space="preserve">
+    <value>Chỉ ký tự không an toàn (&amp; &lt; &gt; " ')</value>
+  </data>
+  <data name="ImageBase64_Base64Input" xml:space="preserve">
+    <value>Base64 đầu vào</value>
+  </data>
+  <data name="ImageBase64_Base64Output" xml:space="preserve">
+    <value>Kết quả Base64</value>
+  </data>
+  <data name="ImageBase64_ChooseImage" xml:space="preserve">
+    <value>Chọn ảnh</value>
+  </data>
+  <data name="ImageBase64_ChooseImageEllipsis" xml:space="preserve">
+    <value>Chọn ảnh…</value>
+  </data>
+  <data name="ImageBase64_ChooseImageTitle" xml:space="preserve">
+    <value>Chọn ảnh</value>
+  </data>
+  <data name="ImageBase64_DropHint" xml:space="preserve">
+    <value>Thả ảnh vào đây, chọn tệp, hoặc dán từ clipboard.</value>
+  </data>
+  <data name="ImageBase64_Images" xml:space="preserve">
+    <value>Ảnh</value>
+  </data>
+  <data name="ImageBase64_ImgTag" xml:space="preserve">
+    <value>Thẻ &lt;img&gt;</value>
+  </data>
+  <data name="ImageBase64_InputHeader" xml:space="preserve">
+    <value>Base64 hoặc data: URI</value>
+  </data>
+  <data name="ImageBase64_InputPlaceholder" xml:space="preserve">
+    <value>data:image/png;base64,iVBORw0KGgo… hoặc Base64 thuần</value>
+  </data>
+  <data name="ImageBase64_LargeWarning" xml:space="preserve">
+    <value>Ảnh trên 1 MB tạo data URI rất dài; hãy cân nhắc phục vụ tệp ảnh trực tiếp.</value>
+  </data>
+  <data name="ImageBase64_NoClipboardImage" xml:space="preserve">
+    <value>Clipboard không chứa ảnh.</value>
+  </data>
+  <data name="ImageBase64_NoPreview" xml:space="preserve">
+    <value> · không xem trước được định dạng này</value>
+  </data>
+  <data name="ImageBase64_PastedImageName" xml:space="preserve">
+    <value>Ảnh đã dán.png</value>
+  </data>
+  <data name="ImageBase64_PasteImage" xml:space="preserve">
+    <value>Dán ảnh</value>
+  </data>
+  <data name="ImageBase64_SaveImage" xml:space="preserve">
+    <value>Lưu ảnh</value>
+  </data>
+  <data name="ImageBase64_SaveImageEllipsis" xml:space="preserve">
+    <value>Lưu ảnh…</value>
+  </data>
+  <data name="ImageBase64_SaveImageTitle" xml:space="preserve">
+    <value>Lưu ảnh</value>
+  </data>
+  <data name="ImageBase64_SourceInfo" xml:space="preserve">
+    <value>{0} · {1} · {2} → {3} Base64</value>
+  </data>
+  <data name="ImageBase64_TabDecode" xml:space="preserve">
+    <value>Base64 → Ảnh</value>
+  </data>
+  <data name="ImageBase64_TabEncode" xml:space="preserve">
+    <value>Ảnh → Base64</value>
+  </data>
+  <data name="ImageBase64_TooLarge" xml:space="preserve">
+    <value>Chỉ hỗ trợ ảnh tối đa {0} MB.</value>
+  </data>
+  <data name="ImageBase64_Truncated" xml:space="preserve">
+    <value>… (còn {0:N0} ký tự — dùng Sao chép để lấy toàn bộ)</value>
+  </data>
+  <data name="Json_Chars" xml:space="preserve">
+    <value>{0} ký tự</value>
+  </data>
+  <data name="Json_Collapse" xml:space="preserve">
+    <value>Thu gọn</value>
+  </data>
+  <data name="Json_Expand" xml:space="preserve">
+    <value>Mở rộng</value>
+  </data>
+  <data name="Json_ExpandOrCollapse" xml:space="preserve">
+    <value>Mở rộng hoặc thu gọn</value>
+  </data>
+  <data name="Json_Formatted" xml:space="preserve">
+    <value>JSON đã định dạng</value>
+  </data>
+  <data name="Json_FourSpaces" xml:space="preserve">
+    <value>4 dấu cách</value>
+  </data>
+  <data name="Json_GoToError" xml:space="preserve">
+    <value>Đến chỗ lỗi</value>
+  </data>
+  <data name="Json_Indent" xml:space="preserve">
+    <value>Thụt lề</value>
+  </data>
+  <data name="Json_InputName" xml:space="preserve">
+    <value>JSON đầu vào</value>
+  </data>
+  <data name="Json_InvalidStatus" xml:space="preserve">
+    <value>JSON không hợp lệ</value>
+  </data>
+  <data name="Json_Item" xml:space="preserve">
+    <value>{0} phần tử</value>
+  </data>
+  <data name="Json_Items" xml:space="preserve">
+    <value>{0} phần tử</value>
+  </data>
+  <data name="Json_KChars" xml:space="preserve">
+    <value>{0:0.#} K ký tự</value>
+  </data>
+  <data name="Json_Key" xml:space="preserve">
+    <value>{0} khóa</value>
+  </data>
+  <data name="Json_Keys" xml:space="preserve">
+    <value>{0} khóa</value>
+  </data>
+  <data name="Json_MChars" xml:space="preserve">
+    <value>{0:0.#} M ký tự</value>
+  </data>
+  <data name="Json_Minify" xml:space="preserve">
+    <value>Thu gọn</value>
+  </data>
+  <data name="Json_Placeholder" xml:space="preserve">
+    <value>Dán JSON vào đây…</value>
+  </data>
+  <data name="Json_SortKeys" xml:space="preserve">
+    <value>Sắp xếp khóa</value>
+  </data>
+  <data name="Json_Stats" xml:space="preserve">
+    <value>{0} · độ sâu {1}</value>
+  </data>
+  <data name="Json_Status" xml:space="preserve">
+    <value>JSON hợp lệ · {0:N0} giá trị · {1}</value>
+  </data>
+  <data name="Json_Tab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="Json_Tabs" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="Json_TabText" xml:space="preserve">
+    <value>Văn bản</value>
+  </data>
+  <data name="Json_TabTree" xml:space="preserve">
+    <value>Cây</value>
+  </data>
+  <data name="Json_TopLevelKey" xml:space="preserve">
+    <value>{0} khóa cấp cao nhất</value>
+  </data>
+  <data name="Json_TopLevelKeys" xml:space="preserve">
+    <value>{0} khóa cấp cao nhất</value>
+  </data>
+  <data name="Json_Tree" xml:space="preserve">
+    <value>Cây JSON</value>
+  </data>
+  <data name="Json_TwoSpaces" xml:space="preserve">
+    <value>2 dấu cách</value>
+  </data>
+  <data name="Json_Valid" xml:space="preserve">
+    <value>JSON hợp lệ</value>
+  </data>
+  <data name="Jwt_Algorithm" xml:space="preserve">
+    <value>Thuật toán</value>
+  </data>
+  <data name="Jwt_DecodedLocally" xml:space="preserve">
+    <value>Giải mã ngay trên máy — token không bao giờ được gửi đi đâu.</value>
+  </data>
+  <data name="Jwt_EncodedToken" xml:space="preserve">
+    <value>Token đã mã hóa</value>
+  </data>
+  <data name="Jwt_Header" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="Jwt_HeaderJson" xml:space="preserve">
+    <value>JSON của header</value>
+  </data>
+  <data name="Jwt_InvalidSignature" xml:space="preserve">
+    <value>Chữ ký không hợp lệ</value>
+  </data>
+  <data name="Jwt_NoAlg" xml:space="preserve">
+    <value>không có alg</value>
+  </data>
+  <data name="Jwt_None" xml:space="preserve">
+    <value>(không có)</value>
+  </data>
+  <data name="Jwt_NoTyp" xml:space="preserve">
+    <value>không có typ</value>
+  </data>
+  <data name="Jwt_OutOfRange" xml:space="preserve">
+    <value>{0} (ngoài phạm vi)</value>
+  </data>
+  <data name="Jwt_Payload" xml:space="preserve">
+    <value>Payload</value>
+  </data>
+  <data name="Jwt_PayloadJson" xml:space="preserve">
+    <value>JSON của payload</value>
+  </data>
+  <data name="Jwt_Placeholder" xml:space="preserve">
+    <value>Dán một JWT (header.payload.signature)</value>
+  </data>
+  <data name="Jwt_RegisteredClaim" xml:space="preserve">
+    <value>{0} claim đăng ký</value>
+  </data>
+  <data name="Jwt_RegisteredClaims" xml:space="preserve">
+    <value>{0} claim đăng ký</value>
+  </data>
+  <data name="Jwt_RegisteredClaimsHeader" xml:space="preserve">
+    <value>CLAIM ĐĂNG KÝ</value>
+  </data>
+  <data name="Jwt_Secret" xml:space="preserve">
+    <value>Khóa bí mật</value>
+  </data>
+  <data name="Jwt_SecretIsBase64" xml:space="preserve">
+    <value>Khóa bí mật dạng Base64</value>
+  </data>
+  <data name="Jwt_SecretPlaceholder" xml:space="preserve">
+    <value>Khóa bí mật dùng chung (không bắt buộc)</value>
+  </data>
+  <data name="Jwt_SharedSecret" xml:space="preserve">
+    <value>Khóa bí mật dùng chung</value>
+  </data>
+  <data name="Jwt_ShowSecret" xml:space="preserve">
+    <value>Hiện khóa bí mật</value>
+  </data>
+  <data name="Jwt_Signature" xml:space="preserve">
+    <value>Chữ ký</value>
+  </data>
+  <data name="Jwt_SignatureVerified" xml:space="preserve">
+    <value>Chữ ký hợp lệ</value>
+  </data>
+  <data name="Jwt_StatusExpired" xml:space="preserve">
+    <value>Đã hết hạn {0}</value>
+  </data>
+  <data name="Jwt_StatusNoExpiry" xml:space="preserve">
+    <value>Không có claim hết hạn (exp)</value>
+  </data>
+  <data name="Jwt_StatusNotYetValid" xml:space="preserve">
+    <value>Chưa có hiệu lực — bắt đầu {0}</value>
+  </data>
+  <data name="Jwt_StatusValid" xml:space="preserve">
+    <value>Hợp lệ — hết hạn {0}</value>
+  </data>
+  <data name="Jwt_Summary" xml:space="preserve">
+    <value>{0} · {1} · {2}</value>
+  </data>
+  <data name="Jwt_Type" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="Jwt_Unsigned" xml:space="preserve">
+    <value> · không ký (alg: none)</value>
+  </data>
+  <data name="Jwt_VerifySignature" xml:space="preserve">
+    <value>Xác minh chữ ký</value>
+  </data>
+  <data name="Password_AddNumber" xml:space="preserve">
+    <value>Thêm một chữ số</value>
+  </data>
+  <data name="Password_AllGenerated" xml:space="preserve">
+    <value>Tất cả đã tạo</value>
+  </data>
+  <data name="Password_AtOnce" xml:space="preserve">
+    <value>cùng lúc</value>
+  </data>
+  <data name="Password_Capitalize" xml:space="preserve">
+    <value>Viết hoa chữ đầu</value>
+  </data>
+  <data name="Password_ClearHistory" xml:space="preserve">
+    <value>Xóa lịch sử</value>
+  </data>
+  <data name="Password_DigitsOption" xml:space="preserve">
+    <value>Chữ số  0–9</value>
+  </data>
+  <data name="Password_Entropy" xml:space="preserve">
+    <value>≈ {0:0} bit entropy</value>
+  </data>
+  <data name="Password_Exclude" xml:space="preserve">
+    <value>Loại trừ</value>
+  </data>
+  <data name="Password_ExcludeAmbiguous" xml:space="preserve">
+    <value>Loại ký tự dễ nhầm  0 O 1 l I</value>
+  </data>
+  <data name="Password_ExcludeName" xml:space="preserve">
+    <value>Ký tự loại trừ</value>
+  </data>
+  <data name="Password_ExcludePlaceholder" xml:space="preserve">
+    <value>ký tự cần tránh</value>
+  </data>
+  <data name="Password_Fair" xml:space="preserve">
+    <value>Trung bình</value>
+  </data>
+  <data name="Password_GeneratedPassword" xml:space="preserve">
+    <value>Mật khẩu đã tạo</value>
+  </data>
+  <data name="Password_GeneratedPasswords" xml:space="preserve">
+    <value>Các mật khẩu đã tạo</value>
+  </data>
+  <data name="Password_HowMany" xml:space="preserve">
+    <value>Số mật khẩu cần tạo</value>
+  </data>
+  <data name="Password_Length" xml:space="preserve">
+    <value>Độ dài</value>
+  </data>
+  <data name="Password_LowercaseOption" xml:space="preserve">
+    <value>Chữ thường  a–z</value>
+  </data>
+  <data name="Password_MemoryOnly" xml:space="preserve">
+    <value>Chỉ giữ trong bộ nhớ và bị xóa khi đóng ứng dụng.</value>
+  </data>
+  <data name="Password_Mode" xml:space="preserve">
+    <value>Chế độ</value>
+  </data>
+  <data name="Password_ModePassphrase" xml:space="preserve">
+    <value>Cụm mật khẩu</value>
+  </data>
+  <data name="Password_ModePassword" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="Password_NoHistory" xml:space="preserve">
+    <value>Chưa có gì — tạo lại để lưu các giá trị trước ở đây.</value>
+  </data>
+  <data name="Password_NumberOfWords" xml:space="preserve">
+    <value>Số lượng từ</value>
+  </data>
+  <data name="Password_Options" xml:space="preserve">
+    <value>Tùy chọn</value>
+  </data>
+  <data name="Password_PoolCharacters" xml:space="preserve">
+    <value>ký tự</value>
+  </data>
+  <data name="Password_PoolWords" xml:space="preserve">
+    <value>từ</value>
+  </data>
+  <data name="Password_Regenerate" xml:space="preserve">
+    <value>Tạo lại</value>
+  </data>
+  <data name="Password_Separator" xml:space="preserve">
+    <value>Dấu phân cách</value>
+  </data>
+  <data name="Password_SeparatorDot" xml:space="preserve">
+    <value>Dấu chấm  .</value>
+  </data>
+  <data name="Password_SeparatorHyphen" xml:space="preserve">
+    <value>Gạch nối  -</value>
+  </data>
+  <data name="Password_SeparatorNone" xml:space="preserve">
+    <value>Không có</value>
+  </data>
+  <data name="Password_SeparatorSpace" xml:space="preserve">
+    <value>Dấu cách</value>
+  </data>
+  <data name="Password_SeparatorUnderscore" xml:space="preserve">
+    <value>Gạch dưới  _</value>
+  </data>
+  <data name="Password_StrengthStatus" xml:space="preserve">
+    <value>{0} · {1:0} bit entropy · tập {2:N0} {3}</value>
+  </data>
+  <data name="Password_Strong" xml:space="preserve">
+    <value>Mạnh</value>
+  </data>
+  <data name="Password_SymbolsOption" xml:space="preserve">
+    <value>Ký hiệu  !@#$</value>
+  </data>
+  <data name="Password_ThisSession" xml:space="preserve">
+    <value>Phiên này</value>
+  </data>
+  <data name="Password_UppercaseOption" xml:space="preserve">
+    <value>Chữ hoa  A–Z</value>
+  </data>
+  <data name="Password_VeryStrong" xml:space="preserve">
+    <value>Rất mạnh</value>
+  </data>
+  <data name="Password_VeryWeak" xml:space="preserve">
+    <value>Rất yếu</value>
+  </data>
+  <data name="Password_Weak" xml:space="preserve">
+    <value>Yếu</value>
+  </data>
+  <data name="Password_WordlistNote" xml:space="preserve">
+    <value>Từ lấy trong EFF Large Wordlist (7.776 từ), chọn bằng nguồn ngẫu nhiên mật mã của hệ điều hành.</value>
+  </data>
+  <data name="Password_Words" xml:space="preserve">
+    <value>Số từ</value>
+  </data>
+  <data name="Regex_AtPosition" xml:space="preserve">
+    <value>{0} (tại vị trí {1})</value>
+  </data>
+  <data name="Regex_ColumnGroups" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="Regex_ColumnIndex" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
+  <data name="Regex_ColumnMatch" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="Regex_CultureInvariant" xml:space="preserve">
+    <value>Không phụ thuộc văn hóa</value>
+  </data>
+  <data name="Regex_ExplicitCapture" xml:space="preserve">
+    <value>Bắt tường minh</value>
+  </data>
+  <data name="Regex_ExplicitCaptureTip" xml:space="preserve">
+    <value>Bắt tường minh: chỉ nhóm có tên mới bắt</value>
+  </data>
+  <data name="Regex_Flavor" xml:space="preserve">
+    <value>cú pháp .NET</value>
+  </data>
+  <data name="Regex_Group" xml:space="preserve">
+    <value>{0} nhóm</value>
+  </data>
+  <data name="Regex_Groups" xml:space="preserve">
+    <value>{0} nhóm</value>
+  </data>
+  <data name="Regex_IgnoreCase" xml:space="preserve">
+    <value>Không phân biệt hoa thường</value>
+  </data>
+  <data name="Regex_IgnoreWhitespace" xml:space="preserve">
+    <value>Bỏ qua khoảng trắng trong mẫu</value>
+  </data>
+  <data name="Regex_IgnoreWhitespaceTip" xml:space="preserve">
+    <value>Bỏ qua khoảng trắng và chú thích # trong mẫu</value>
+  </data>
+  <data name="Regex_Match" xml:space="preserve">
+    <value>{0} kết quả khớp</value>
+  </data>
+  <data name="Regex_MatchDetails" xml:space="preserve">
+    <value>Chi tiết kết quả khớp</value>
+  </data>
+  <data name="Regex_Matches" xml:space="preserve">
+    <value>{0} kết quả khớp</value>
+  </data>
+  <data name="Regex_MatchesName" xml:space="preserve">
+    <value>Kết quả khớp</value>
+  </data>
+  <data name="Regex_Multiline" xml:space="preserve">
+    <value>Nhiều dòng</value>
+  </data>
+  <data name="Regex_MultilineTip" xml:space="preserve">
+    <value>Multiline: ^ và $ khớp tại chỗ xuống dòng</value>
+  </data>
+  <data name="Regex_NoMatches" xml:space="preserve">
+    <value>Không có kết quả khớp</value>
+  </data>
+  <data name="Regex_NonBacktrackingTip" xml:space="preserve">
+    <value>Bộ máy thời gian tuyến tính: miễn nhiễm quay lui thảm họa, nhưng không hỗ trợ tham chiếu ngược hay lookaround.</value>
+  </data>
+  <data name="Regex_Options" xml:space="preserve">
+    <value>Tùy chọn</value>
+  </data>
+  <data name="Regex_Pattern" xml:space="preserve">
+    <value>Mẫu</value>
+  </data>
+  <data name="Regex_PatternHeader" xml:space="preserve">
+    <value>MẪU</value>
+  </data>
+  <data name="Regex_Placeholder" xml:space="preserve">
+    <value>Biểu thức chính quy</value>
+  </data>
+  <data name="Regex_QuickReference" xml:space="preserve">
+    <value>TRA CỨU NHANH</value>
+  </data>
+  <data name="Regex_Ref_Anchors" xml:space="preserve">
+    <value>đầu / cuối (Multiline: theo dòng)</value>
+  </data>
+  <data name="Regex_Ref_Backreference" xml:space="preserve">
+    <value>tham chiếu ngược</value>
+  </data>
+  <data name="Regex_Ref_CharacterClass" xml:space="preserve">
+    <value>lớp ký tự / phủ định</value>
+  </data>
+  <data name="Regex_Ref_Classes" xml:space="preserve">
+    <value>chữ số, ký tự từ, khoảng trắng</value>
+  </data>
+  <data name="Regex_Ref_Dot" xml:space="preserve">
+    <value>mọi ký tự trừ \n (Singleline: mọi ký tự)</value>
+  </data>
+  <data name="Regex_Ref_Group" xml:space="preserve">
+    <value>nhóm bắt $1</value>
+  </data>
+  <data name="Regex_Ref_Lookahead" xml:space="preserve">
+    <value>nhìn trước / phủ định</value>
+  </data>
+  <data name="Regex_Ref_Lookbehind" xml:space="preserve">
+    <value>nhìn sau / phủ định</value>
+  </data>
+  <data name="Regex_Ref_NamedGroup" xml:space="preserve">
+    <value>nhóm có tên ${name}</value>
+  </data>
+  <data name="Regex_Ref_NegatedClasses" xml:space="preserve">
+    <value>không phải chữ số, ký tự từ, khoảng trắng</value>
+  </data>
+  <data name="Regex_Ref_NonCapturing" xml:space="preserve">
+    <value>nhóm không bắt</value>
+  </data>
+  <data name="Regex_Ref_Quantifiers" xml:space="preserve">
+    <value>0+, 1+, 0 hoặc 1 (thêm ? = lazy)</value>
+  </data>
+  <data name="Regex_Ref_Range" xml:space="preserve">
+    <value>từ n đến m lần</value>
+  </data>
+  <data name="Regex_Ref_WordBoundary" xml:space="preserve">
+    <value>ranh giới từ</value>
+  </data>
+  <data name="Regex_Replacement" xml:space="preserve">
+    <value>Chuỗi thay thế</value>
+  </data>
+  <data name="Regex_ReplaceResult" xml:space="preserve">
+    <value>Kết quả thay thế</value>
+  </data>
+  <data name="Regex_ReplaceWith" xml:space="preserve">
+    <value>THAY THẾ BẰNG</value>
+  </data>
+  <data name="Regex_RightToLeft" xml:space="preserve">
+    <value>Phải sang trái</value>
+  </data>
+  <data name="Regex_ShowingFirst" xml:space="preserve">
+    <value> (hiển thị {0} kết quả đầu)</value>
+  </data>
+  <data name="Regex_Singleline" xml:space="preserve">
+    <value>Một dòng</value>
+  </data>
+  <data name="Regex_SinglelineTip" xml:space="preserve">
+    <value>Singleline: . khớp cả \n</value>
+  </data>
+  <data name="Regex_Status" xml:space="preserve">
+    <value>{0} · {1} · {2:0.#} ms · {3}</value>
+  </data>
+  <data name="Regex_TestPlaceholder" xml:space="preserve">
+    <value>Văn bản để thử mẫu…</value>
+  </data>
+  <data name="Regex_TestString" xml:space="preserve">
+    <value>Chuỗi kiểm thử</value>
+  </data>
+  <data name="Shell_AddToFavorites" xml:space="preserve">
+    <value>Thêm vào yêu thích</value>
+  </data>
+  <data name="Shell_ChangeTheme" xml:space="preserve">
+    <value>Đổi giao diện</value>
+  </data>
+  <data name="Shell_FavoriteCurrentTool" xml:space="preserve">
+    <value>Yêu thích công cụ hiện tại</value>
+  </data>
+  <data name="Shell_FavoriteTool" xml:space="preserve">
+    <value>Yêu thích {0}</value>
+  </data>
+  <data name="Shell_Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Shell_Language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="Shell_Offline" xml:space="preserve">
+    <value>Ngoại tuyến</value>
+  </data>
+  <data name="Shell_Version" xml:space="preserve">
+    <value>v{0} (bản dựng {1})</value>
+  </data>
+  <data name="Shell_SearchPlaceholder" xml:space="preserve">
+    <value>Tìm công cụ…</value>
+  </data>
+  <data name="Shell_SearchTools" xml:space="preserve">
+    <value>Tìm công cụ</value>
+  </data>
+  <data name="Shell_ThemeTip" xml:space="preserve">
+    <value>Giao diện: {0} (nhấn để đổi)</value>
+  </data>
+  <data name="Shell_ToggleFavorite" xml:space="preserve">
+    <value>Bật/tắt yêu thích</value>
+  </data>
+  <data name="Shell_ToggleSidebar" xml:space="preserve">
+    <value>Ẩn/hiện thanh bên</value>
+  </data>
+  <data name="Shell_ToggleSidebarTip" xml:space="preserve">
+    <value>Ẩn/hiện thanh bên (Cmd/Ctrl+B)</value>
+  </data>
+  <data name="Theme_Dark" xml:space="preserve">
+    <value>Tối</value>
+  </data>
+  <data name="Theme_Light" xml:space="preserve">
+    <value>Sáng</value>
+  </data>
+  <data name="Theme_System" xml:space="preserve">
+    <value>Theo hệ thống</value>
+  </data>
+  <data name="Timestamp_AutoDetect" xml:space="preserve">
+    <value>Tự nhận diện</value>
+  </data>
+  <data name="Timestamp_DateAndTime" xml:space="preserve">
+    <value>Ngày và giờ</value>
+  </data>
+  <data name="Timestamp_DatePlaceholder" xml:space="preserve">
+    <value>2026-10-15 14:30:00 (theo múi giờ đã chọn) hoặc 2026-10-15T07:30:00Z</value>
+  </data>
+  <data name="Timestamp_EpochPlaceholder" xml:space="preserve">
+    <value>Unix timestamp: giây, ms, µs hoặc ns</value>
+  </data>
+  <data name="Timestamp_InterpretedAs" xml:space="preserve">
+    <value>Hiểu là {0}</value>
+  </data>
+  <data name="Timestamp_IsoUtc" xml:space="preserve">
+    <value>ISO 8601 (UTC)</value>
+  </data>
+  <data name="Timestamp_LocalZone" xml:space="preserve">
+    <value>Giờ địa phương — {0}</value>
+  </data>
+  <data name="Timestamp_Microseconds" xml:space="preserve">
+    <value>Micro giây</value>
+  </data>
+  <data name="Timestamp_Milliseconds" xml:space="preserve">
+    <value>Mili giây</value>
+  </data>
+  <data name="Timestamp_Nanoseconds" xml:space="preserve">
+    <value>Nano giây</value>
+  </data>
+  <data name="Timestamp_Now" xml:space="preserve">
+    <value>Bây giờ</value>
+  </data>
+  <data name="Timestamp_Seconds" xml:space="preserve">
+    <value>Giây</value>
+  </data>
+  <data name="Timestamp_TimeZone" xml:space="preserve">
+    <value>Múi giờ</value>
+  </data>
+  <data name="Timestamp_ToDate" xml:space="preserve">
+    <value>Timestamp → ngày giờ</value>
+  </data>
+  <data name="Timestamp_ToTimestamp" xml:space="preserve">
+    <value>Ngày giờ → timestamp</value>
+  </data>
+  <data name="Timestamp_Unit" xml:space="preserve">
+    <value>Đơn vị</value>
+  </data>
+  <data name="Timestamp_UnixTimestamp" xml:space="preserve">
+    <value>Unix timestamp</value>
+  </data>
+  <data name="Tool_AppIcons_Description" xml:space="preserve">
+    <value>Tải lên một ảnh và nhận đủ bộ biểu tượng launcher cho iOS và Android, đặt tên và kích thước đúng cho từng nền tảng.</value>
+  </data>
+  <data name="Tool_AppIcons_Name" xml:space="preserve">
+    <value>Tạo biểu tượng ứng dụng</value>
+  </data>
+  <data name="Tool_AppIcons_ShortName" xml:space="preserve">
+    <value>Biểu tượng ứng dụng</value>
+  </data>
+  <data name="Tool_Barcode_Description" xml:space="preserve">
+    <value>QR, Code 128, EAN-13, UPC-A và Code 39 — xuất ra PNG hoặc SVG.</value>
+  </data>
+  <data name="Tool_Barcode_Name" xml:space="preserve">
+    <value>Tạo mã vạch</value>
+  </data>
+  <data name="Tool_Barcode_ShortName" xml:space="preserve">
+    <value>Mã vạch</value>
+  </data>
+  <data name="Tool_EncodeDecode_Description" xml:space="preserve">
+    <value>Base64, Base64URL, hex và nhị phân — an toàn với UTF-8, tự nhận diện chiều chuyển đổi.</value>
+  </data>
+  <data name="Tool_EncodeDecode_Name" xml:space="preserve">
+    <value>Mã hóa / giải mã Base64</value>
+  </data>
+  <data name="Tool_EncodeDecode_ShortName" xml:space="preserve">
+    <value>Base64 / Hex</value>
+  </data>
+  <data name="Tool_Hash_Description" xml:space="preserve">
+    <value>MD5, SHA-1, SHA-2, SHA-3 và CRC32 kèm HMAC — cho văn bản hoặc tệp lớn.</value>
+  </data>
+  <data name="Tool_Hash_Name" xml:space="preserve">
+    <value>Tạo mã băm</value>
+  </data>
+  <data name="Tool_Hash_ShortName" xml:space="preserve">
+    <value>Mã băm</value>
+  </data>
+  <data name="Tool_Html_Description" xml:space="preserve">
+    <value>Mã hóa và giải mã thực thể HTML, dạng tên hoặc dạng số.</value>
+  </data>
+  <data name="Tool_Html_Name" xml:space="preserve">
+    <value>Mã hóa / giải mã HTML</value>
+  </data>
+  <data name="Tool_Html_ShortName" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="Tool_ImageBase64_Description" xml:space="preserve">
+    <value>Thả ảnh PNG, JPG, SVG hoặc WebP để lấy data URI — hoặc chuyển Base64 ngược lại thành ảnh.</value>
+  </data>
+  <data name="Tool_ImageBase64_Name" xml:space="preserve">
+    <value>Ảnh ⇄ Base64</value>
+  </data>
+  <data name="Tool_ImageBase64_ShortName" xml:space="preserve">
+    <value>Ảnh ⇄ Base64</value>
+  </data>
+  <data name="Tool_Json_Description" xml:space="preserve">
+    <value>Làm đẹp, thu gọn, kiểm tra hợp lệ và sắp xếp khóa. Lỗi chỉ rõ dòng và cột.</value>
+  </data>
+  <data name="Tool_Json_Name" xml:space="preserve">
+    <value>Định dạng JSON</value>
+  </data>
+  <data name="Tool_Json_ShortName" xml:space="preserve">
+    <value>Định dạng JSON</value>
+  </data>
+  <data name="Tool_Jwt_Description" xml:space="preserve">
+    <value>Giải mã header và payload, kiểm tra hạn dùng, xác minh chữ ký HMAC.</value>
+  </data>
+  <data name="Tool_Jwt_Name" xml:space="preserve">
+    <value>Giải mã JWT</value>
+  </data>
+  <data name="Tool_Jwt_ShortName" xml:space="preserve">
+    <value>Giải mã JWT</value>
+  </data>
+  <data name="Tool_Password_Description" xml:space="preserve">
+    <value>Mật khẩu và cụm mật khẩu mạnh từ nguồn ngẫu nhiên mật mã của hệ điều hành.</value>
+  </data>
+  <data name="Tool_Password_Name" xml:space="preserve">
+    <value>Tạo mật khẩu</value>
+  </data>
+  <data name="Tool_Password_ShortName" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="Tool_Regex_Description" xml:space="preserve">
+    <value>Tô sáng kết quả khớp trực tiếp, nhóm, tùy chọn và xem trước thay thế (cú pháp .NET).</value>
+  </data>
+  <data name="Tool_Regex_Name" xml:space="preserve">
+    <value>Kiểm thử Regex</value>
+  </data>
+  <data name="Tool_Regex_ShortName" xml:space="preserve">
+    <value>Kiểm thử Regex</value>
+  </data>
+  <data name="Tool_Timestamp_Description" xml:space="preserve">
+    <value>Chuyển epoch giây, ms, µs hoặc ns sang giờ địa phương, UTC, ISO 8601 và RFC 2822 — và ngược lại.</value>
+  </data>
+  <data name="Tool_Timestamp_Name" xml:space="preserve">
+    <value>Timestamp ⇄ Ngày giờ</value>
+  </data>
+  <data name="Tool_Timestamp_ShortName" xml:space="preserve">
+    <value>Timestamp</value>
+  </data>
+  <data name="Tool_Url_Description" xml:space="preserve">
+    <value>Mã hóa phần trăm các thành phần và phân tích query string thành bảng có thể chỉnh sửa.</value>
+  </data>
+  <data name="Tool_Url_Name" xml:space="preserve">
+    <value>Mã hóa / giải mã URL</value>
+  </data>
+  <data name="Tool_Url_ShortName" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Tool_Uuid_Description" xml:space="preserve">
+    <value>UUID v4 và v7, tạo hàng loạt và kiểm tra phiên bản, thời gian của bất kỳ UUID nào.</value>
+  </data>
+  <data name="Tool_Uuid_Name" xml:space="preserve">
+    <value>Tạo UUID</value>
+  </data>
+  <data name="Tool_Uuid_ShortName" xml:space="preserve">
+    <value>UUID</value>
+  </data>
+  <data name="Tray_NoFavorites" xml:space="preserve">
+    <value>Chưa có mục yêu thích — hãy gắn sao cho công cụ</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Mở DevToolBox</value>
+  </data>
+  <data name="Tray_OpenAtLogin" xml:space="preserve">
+    <value>Mở khi đăng nhập</value>
+  </data>
+  <data name="Tray_Quit" xml:space="preserve">
+    <value>Thoát DevToolBox</value>
+  </data>
+  <data name="Url_DefaultPort" xml:space="preserve">
+    <value>(mặc định)</value>
+  </data>
+  <data name="Url_EncodingMode" xml:space="preserve">
+    <value>Chế độ mã hóa</value>
+  </data>
+  <data name="Url_Fragment" xml:space="preserve">
+    <value>Fragment</value>
+  </data>
+  <data name="Url_Host" xml:space="preserve">
+    <value>Máy chủ</value>
+  </data>
+  <data name="Url_KeyPlaceholder" xml:space="preserve">
+    <value>khóa</value>
+  </data>
+  <data name="Url_ModeComponent" xml:space="preserve">
+    <value>Thành phần — encodeURIComponent</value>
+  </data>
+  <data name="Url_ModeFullUri" xml:space="preserve">
+    <value>Toàn bộ URL — encodeURI</value>
+  </data>
+  <data name="Url_ParameterName" xml:space="preserve">
+    <value>Tên tham số</value>
+  </data>
+  <data name="Url_ParameterValue" xml:space="preserve">
+    <value>Giá trị tham số</value>
+  </data>
+  <data name="Url_Parts" xml:space="preserve">
+    <value>Thành phần</value>
+  </data>
+  <data name="Url_Path" xml:space="preserve">
+    <value>Đường dẫn</value>
+  </data>
+  <data name="Url_Placeholder" xml:space="preserve">
+    <value>Văn bản cần mã hóa phần trăm, hoặc văn bản dạng %XX cần giải mã…</value>
+  </data>
+  <data name="Url_PlusForSpace" xml:space="preserve">
+    <value>Dấu cách thành '+' (mã hóa form)</value>
+  </data>
+  <data name="Url_Port" xml:space="preserve">
+    <value>Cổng</value>
+  </data>
+  <data name="Url_QueryParameters" xml:space="preserve">
+    <value>Tham số truy vấn</value>
+  </data>
+  <data name="Url_Rebuilt" xml:space="preserve">
+    <value>URL dựng lại</value>
+  </data>
+  <data name="Url_RemoveParameter" xml:space="preserve">
+    <value>Xóa tham số</value>
+  </data>
+  <data name="Url_Scheme" xml:space="preserve">
+    <value>Giao thức</value>
+  </data>
+  <data name="Url_TabEncodeDecode" xml:space="preserve">
+    <value>Mã hóa / Giải mã</value>
+  </data>
+  <data name="Url_TabParser" xml:space="preserve">
+    <value>Phân tích URL</value>
+  </data>
+  <data name="Url_UrlToParse" xml:space="preserve">
+    <value>URL cần phân tích</value>
+  </data>
+  <data name="Url_UserInfo" xml:space="preserve">
+    <value>Thông tin người dùng</value>
+  </data>
+  <data name="Url_ValuePlaceholder" xml:space="preserve">
+    <value>giá trị</value>
+  </data>
+  <data name="Uuid_Braces" xml:space="preserve">
+    <value>Ngoặc nhọn {}</value>
+  </data>
+  <data name="Uuid_Canonical" xml:space="preserve">
+    <value>Dạng chuẩn</value>
+  </data>
+  <data name="Uuid_Generated" xml:space="preserve">
+    <value>Đã tạo</value>
+  </data>
+  <data name="Uuid_GeneratedName" xml:space="preserve">
+    <value>Các UUID đã tạo</value>
+  </data>
+  <data name="Uuid_Hyphens" xml:space="preserve">
+    <value>Dấu gạch nối</value>
+  </data>
+  <data name="Uuid_Inspect" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="Uuid_InspectFirst" xml:space="preserve">
+    <value>Kiểm tra cái đầu</value>
+  </data>
+  <data name="Uuid_Placeholder" xml:space="preserve">
+    <value>Dán một UUID để kiểm tra…</value>
+  </data>
+  <data name="Uuid_TimestampLocal" xml:space="preserve">
+    <value>Thời điểm (giờ địa phương)</value>
+  </data>
+  <data name="Uuid_TimestampUtc" xml:space="preserve">
+    <value>Thời điểm (UTC)</value>
+  </data>
+  <data name="Uuid_ToInspect" xml:space="preserve">
+    <value>UUID cần kiểm tra</value>
+  </data>
+  <data name="Uuid_V4" xml:space="preserve">
+    <value>v4 — ngẫu nhiên</value>
+  </data>
+  <data name="Uuid_V7" xml:space="preserve">
+    <value>v7 — sắp theo thời gian</value>
+  </data>
+  <data name="Uuid_Variant" xml:space="preserve">
+    <value>Biến thể</value>
+  </data>
+  <data name="Uuid_Version" xml:space="preserve">
+    <value>Phiên bản</value>
+  </data>
+  <data name="Uuid_VersionName" xml:space="preserve">
+    <value>Phiên bản UUID</value>
+  </data>
+</root>

@@ -1,0 +1,4 @@
+#!/bin/sh
+# AppImage entry point: starts the bundled Native AOT executable with the user's arguments.
+HERE="$(dirname "$(readlink -f "$0")")"
+exec "$HERE/usr/bin/DevToolBox" "$@"

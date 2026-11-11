@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DevToolBox.App</RootNamespace>
+    <AssemblyName>DevToolBox</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <!-- Placeholder bundle identifier; finalize before signing in M4. -->
+    <ApplicationId>com.devtoolbox.app</ApplicationId>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <!-- Native AOT: enables trim/AOT analyzers at build time; applied on publish. -->
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <!-- LibraryImport (macOS Dock icon interop) generates unsafe marshalling code. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="DevToolBox.App.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Bundled fonts (SIL OFL 1.1): the app is offline, so nothing is loaded from the web. -->
+    <AvaloniaResource Include="Assets\Fonts\*.ttf" />
+    <AvaloniaResource Include="Assets\AppIcon.png" />
+    <AvaloniaResource Include="Assets\AppIcon-macOS.png" />
+    <AvaloniaResource Include="Assets\TrayIcon.png" />
+    <AvaloniaResource Include="Assets\TrayIcon-macOS.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- UI text: English (neutral) + Vietnamese satellite. Strongly typed class generated at build (Localization/Strings.Designer.cs). -->
+    <EmbeddedResource Update="Localization\Strings.resx">
+      <StronglyTypedFileName>Localization\Strings.Designer.cs</StronglyTypedFileName>
+      <StronglyTypedLanguage>CSharp</StronglyTypedLanguage>
+      <StronglyTypedNamespace>DevToolBox.App.Localization</StronglyTypedNamespace>
+      <StronglyTypedClassName>Strings</StronglyTypedClassName>
+    </EmbeddedResource>
+    <!-- The generated class is kept next to the .resx so design-time tools (dotnet format, IDEs) see it; the real
+         build regenerates it and adds it to Compile itself, so it is taken out of the default glob there. -->
+    <Compile Remove="Localization\Strings.Designer.cs" Condition="'$(DesignTimeBuild)' != 'true'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DevToolBox.Core\DevToolBox.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Publish bumps the build number in version.json. -->
+  <Import Project="..\..\build\BuildNumber.targets" />
+  <!-- macOS publish: also produce DevToolBox.app (Info.plist, .icns, ad-hoc signature). -->
+  <Import Project="..\..\build\macos\MacAppBundle.targets" />
+</Project>

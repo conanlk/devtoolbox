@@ -1,0 +1,296 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.AppIcons"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:behaviors="using:DevToolBox.App.Shared.Behaviors"
+             xmlns:conv="using:DevToolBox.App.Shared.Converters"
+             x:Class="DevToolBox.App.Tools.AppIcons.AppIconsView"
+             x:DataType="vm:AppIconsViewModel">
+  <UserControl.Styles>
+    <Style Selector="TextBlock.option-label">
+      <Setter Property="FontSize" Value="13" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush.TextSubtle}" />
+    </Style>
+    <Style Selector="Border.platform">
+      <Setter Property="Background" Value="{DynamicResource Brush.Well}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.InputBorder}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Padding" Value="12,0" />
+      <Setter Property="MinHeight" Value="44" />
+    </Style>
+    <Style Selector="Border.platform.on">
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.Accent}" />
+    </Style>
+    <Style Selector="Border.file-row">
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.BorderSubtle}" />
+      <Setter Property="BorderThickness" Value="0,1,0,0" />
+      <Setter Property="Padding" Value="14,6,8,6" />
+    </Style>
+    <Style Selector="Border.file-row Button.icon">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
+    <Style Selector="Border.file-row:pointerover Button.icon, Border.file-row Button.icon:focus-visible">
+      <Setter Property="Opacity" Value="1" />
+    </Style>
+    <Style Selector="Border.footer">
+      <Setter Property="Background" Value="{DynamicResource Brush.Chrome}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.Border}" />
+      <Setter Property="BorderThickness" Value="0,1,0,0" />
+      <Setter Property="Padding" Value="32,12" />
+    </Style>
+  </UserControl.Styles>
+
+  <DockPanel>
+    <!-- Footer: where the files go + export -->
+    <Border DockPanel.Dock="Bottom" Classes="footer">
+      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+        <TextBlock Name="StatusBarText" Classes="mono" FontSize="12" Foreground="{DynamicResource Brush.TextMuted}"
+                   Text="{Binding StatusText}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
+          <Button Name="ResetButton" Classes="tool" Content="{l:Tr AppIcons_Reset}" Command="{Binding ResetCommand}" Height="40" Padding="16,0"
+                  AutomationProperties.Name="{l:Tr AppIcons_Reset}" />
+          <Button Name="DownloadZipButton" Classes="primary tool" Command="{Binding DownloadZipCommand}" Height="40" Padding="18,0"
+                  AutomationProperties.Name="{l:Tr AppIcons_ExportZipName}">
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <controls:LucideIcon Kind="Download" Width="16" Height="16" />
+              <TextBlock Text="{Binding ExportText}" FontWeight="SemiBold" />
+            </StackPanel>
+          </Button>
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <ScrollViewer>
+      <Grid Name="Columns" Margin="32,8,32,24" ColumnDefinitions="*,16,1.7*" RowDefinitions="Auto,Auto">
+        <!-- Left: source + options -->
+        <StackPanel Name="LeftColumn" Spacing="16">
+          <controls:ToolPanel Header="{l:Tr AppIcons_SourceImage}" Padding="14">
+            <controls:ToolPanel.Actions>
+              <Button Name="ReplaceButton" Classes="tool quiet" Content="{l:Tr AppIcons_Replace}" Foreground="{DynamicResource Brush.AccentText}"
+                      FontWeight="SemiBold" Command="{Binding OpenImageCommand}" IsVisible="{Binding HasIcons}"
+                      AutomationProperties.Name="{l:Tr AppIcons_ReplaceImage}" />
+            </controls:ToolPanel.Actions>
+            <StackPanel Spacing="12">
+              <Panel Name="DropZone" behaviors:FileDrop.Command="{Binding LoadFileCommand}">
+                <Border Classes="drop-zone" Background="{DynamicResource Brush.Well}" BorderThickness="0" Padding="14">
+                  <Panel>
+                    <!-- Loaded -->
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14" IsVisible="{Binding HasIcons}">
+                      <Border Width="88" Height="88" CornerRadius="8" ClipToBounds="True" Background="{DynamicResource Brush.Badge}">
+                        <Image Name="SourceImage" Source="{Binding SourceThumbnail}" Stretch="Uniform"
+                               RenderOptions.BitmapInterpolationMode="HighQuality" />
+                      </Border>
+                      <StackPanel Grid.Column="1" Spacing="4" VerticalAlignment="Center">
+                        <TextBlock Classes="mono" FontSize="14" FontWeight="Medium" Text="{Binding SourceName}" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Name="SourceInfoText" FontSize="12" Foreground="{DynamicResource Brush.TextSecondary}" Text="{Binding SourceInfo}" />
+                        <TextBlock Classes="hint" Text="{l:Tr AppIcons_DropToReplace}" TextWrapping="Wrap" />
+                      </StackPanel>
+                    </Grid>
+                    <!-- Empty -->
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14" IsVisible="{Binding !HasIcons}">
+                      <Border Width="88" Height="88" CornerRadius="8" Background="{DynamicResource Brush.Badge}" VerticalAlignment="Top">
+                        <controls:LucideIcon Kind="Image" Width="28" Height="28" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                      </Border>
+                      <StackPanel Grid.Column="1" Spacing="10" VerticalAlignment="Center">
+                        <TextBlock Text="{l:Tr AppIcons_DropHint}" FontSize="13" TextWrapping="Wrap" />
+                        <WrapPanel ItemSpacing="8" LineSpacing="8">
+                          <Button Name="ChooseImageButton" Classes="primary tool" Command="{Binding OpenImageCommand}" Height="36" Padding="14,0"
+                                  AutomationProperties.Name="{l:Tr ImageBase64_ChooseImage}">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                              <controls:LucideIcon Kind="FolderOpen" Width="14" Height="14" />
+                              <TextBlock Text="{l:Tr ImageBase64_ChooseImageEllipsis}" />
+                            </StackPanel>
+                          </Button>
+                          <controls:CommandButton Name="PasteImageButton" Icon="ClipboardPaste" Label="{l:Tr ImageBase64_PasteImage}" Command="{Binding PasteImageCommand}" Height="36" />
+                        </WrapPanel>
+                      </StackPanel>
+                    </Grid>
+                  </Panel>
+                </Border>
+                <Rectangle Stroke="{DynamicResource Brush.BorderStrong}" StrokeThickness="1.5" StrokeDashArray="4,3" RadiusX="10" RadiusY="10"
+                           IsHitTestVisible="False" />
+              </Panel>
+
+              <ItemsControl Name="SourceChecksList" ItemsSource="{Binding SourceChecks}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vm:SourceCheck">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,6">
+                      <controls:LucideIcon Kind="Check" Width="14" Height="14" VerticalAlignment="Top" Margin="0,1,0,0"
+                                           Foreground="{DynamicResource Brush.Success}" IsVisible="{Binding !IsWarning}" />
+                      <controls:LucideIcon Kind="CircleAlert" Width="14" Height="14" VerticalAlignment="Top" Margin="0,1,0,0"
+                                           Foreground="{DynamicResource Brush.Warning}" IsVisible="{Binding IsWarning}" />
+                      <TextBlock Grid.Column="1" FontSize="12" Text="{Binding Text}" TextWrapping="Wrap"
+                                 Classes.success="{Binding !IsWarning}" Classes.warning="{Binding IsWarning}" />
+                    </Grid>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+              <TextBlock Classes="error" Name="ErrorText" Text="{Binding ErrorMessage}" TextWrapping="Wrap"
+                         IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+            </StackPanel>
+          </controls:ToolPanel>
+
+          <controls:ToolPanel Header="{l:Tr Password_Options}" Padding="14">
+            <StackPanel Spacing="16">
+              <StackPanel Spacing="8">
+                <TextBlock Classes="option-label" Text="{l:Tr AppIcons_Platforms}" />
+                <UniformGrid Columns="2" ColumnSpacing="8">
+                  <Border Classes="platform" Classes.on="{Binding IncludeIos}">
+                    <Grid ColumnDefinitions="*,Auto">
+                      <CheckBox Name="IosBox" Content="iOS" IsChecked="{Binding IncludeIos}" />
+                      <TextBlock Grid.Column="1" Classes="hint" Text="{Binding IosFileCountText}" VerticalAlignment="Center" />
+                    </Grid>
+                  </Border>
+                  <Border Classes="platform" Classes.on="{Binding IncludeAndroid}">
+                    <Grid ColumnDefinitions="*,Auto">
+                      <CheckBox Name="AndroidBox" Content="Android" IsChecked="{Binding IncludeAndroid}" />
+                      <TextBlock Grid.Column="1" Classes="hint" Text="{Binding AndroidFileCountText}" VerticalAlignment="Center" />
+                    </Grid>
+                  </Border>
+                </UniformGrid>
+              </StackPanel>
+
+              <StackPanel Spacing="8">
+                <TextBlock Classes="option-label" Text="{l:Tr AppIcons_BackgroundColour}" />
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                  <Border Width="36" Height="36" CornerRadius="8" Background="{Binding BackgroundBrush}"
+                          BorderBrush="{DynamicResource Brush.BorderStrong}" BorderThickness="1" />
+                  <TextBox Grid.Column="1" Name="BackgroundBox" Classes="mono" Text="{Binding BackgroundHex}" Height="36"
+                           AutomationProperties.Name="{l:Tr AppIcons_BackgroundColour}" />
+                </Grid>
+                <TextBlock Classes="error" FontSize="12" Text="{Binding BackgroundError}"
+                           IsVisible="{Binding BackgroundError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+                <TextBlock Classes="hint" Text="{l:Tr AppIcons_BackgroundHint}" TextWrapping="Wrap" />
+              </StackPanel>
+
+              <StackPanel Spacing="8">
+                <Grid ColumnDefinitions="*,Auto">
+                  <TextBlock Classes="option-label" Text="{l:Tr AppIcons_Padding}" VerticalAlignment="Center" />
+                  <Border Grid.Column="1" Classes="chip" Background="{DynamicResource Brush.Well}" BorderBrush="{DynamicResource Brush.InputBorder}" BorderThickness="1">
+                    <TextBlock Classes="mono" Text="{Binding Padding, StringFormat='{}{0:0}%'}" FontSize="13" />
+                  </Border>
+                </Grid>
+                <Slider Name="PaddingSlider" Minimum="0" Maximum="30" Value="{Binding Padding}" TickFrequency="1" IsSnapToTickEnabled="True"
+                        ToolTip.Tip="{l:Tr AppIcons_PaddingTip}" AutomationProperties.Name="{l:Tr AppIcons_Padding}" />
+              </StackPanel>
+
+              <StackPanel Spacing="8" IsEnabled="{Binding IncludeAndroid}">
+                <TextBlock Classes="option-label" Text="{l:Tr AppIcons_AndroidExtras}" />
+                <CheckBox Name="AdaptiveBox" Content="{l:Tr AppIcons_AdaptiveIcon}" IsChecked="{Binding AdaptiveIcon}" />
+                <CheckBox Name="RoundBox" IsChecked="{Binding RoundIcon}" AutomationProperties.Name="{l:Tr AppIcons_RoundIcon}">
+                  <StackPanel Orientation="Horizontal" Spacing="6">
+                    <TextBlock Text="{l:Tr AppIcons_RoundIcon}" />
+                    <TextBlock Classes="mono" FontSize="12" Text="ic_launcher_round" Foreground="{DynamicResource Brush.TextMuted}" VerticalAlignment="Center" />
+                  </StackPanel>
+                </CheckBox>
+                <CheckBox Name="PlayStoreBox" Content="{l:Tr AppIcons_PlayStoreIcon}" IsChecked="{Binding PlayStoreIcon}" />
+              </StackPanel>
+            </StackPanel>
+          </controls:ToolPanel>
+        </StackPanel>
+
+        <!-- Right: preview + output -->
+        <StackPanel Name="RightColumn" Grid.Column="2" Spacing="16">
+          <controls:ToolPanel Header="{l:Tr AppIcons_PreviewByMask}" Padding="0">
+            <controls:ToolPanel.Actions>
+              <Border Classes="segmented" AutomationProperties.Name="{l:Tr AppIcons_PreviewBackground}">
+                <StackPanel Orientation="Horizontal">
+                  <RadioButton Theme="{StaticResource SegmentButton}" GroupName="backdrop" Content="{l:Tr Theme_Dark}" Name="DarkBackdropButton" Height="28" Padding="10,0"
+                               IsChecked="{Binding Backdrop, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Dark}" />
+                  <RadioButton Theme="{StaticResource SegmentButton}" GroupName="backdrop" Content="{l:Tr Theme_Light}" Name="LightBackdropButton" Height="28" Padding="10,0"
+                               IsChecked="{Binding Backdrop, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Light}" />
+                </StackPanel>
+              </Border>
+            </controls:ToolPanel.Actions>
+            <Border Background="{Binding PreviewWallpaper}" CornerRadius="0,0,10,10" Padding="14,20">
+              <ItemsControl Name="MaskPreviewList" ItemsSource="{Binding MaskPreviews}">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <UniformGrid Rows="1" ColumnSpacing="8" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vm:MaskPreviewViewModel">
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                      <Image Width="76" Height="76" Source="{Binding Image}" RenderOptions.BitmapInterpolationMode="HighQuality" />
+                      <TextBlock Text="{Binding Label}" FontSize="12" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"
+                                 Foreground="{Binding $parent[ItemsControl].((vm:AppIconsViewModel)DataContext).PreviewLabelBrush}" />
+                    </StackPanel>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Border>
+          </controls:ToolPanel>
+
+          <controls:ToolPanel Header="{l:Tr AppIcons_OutputFiles}" Padding="0">
+            <controls:ToolPanel.Actions>
+              <Border Classes="segmented" AutomationProperties.Name="{l:Tr AppIcons_Platform}">
+                <StackPanel Orientation="Horizontal">
+                  <RadioButton Theme="{StaticResource SegmentButton}" GroupName="platform" Content="{Binding IosTabText}" Name="IosTab" Height="28" Padding="12,0"
+                               IsChecked="{Binding Platform, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Ios}" />
+                  <RadioButton Theme="{StaticResource SegmentButton}" GroupName="platform" Content="{Binding AndroidTabText}" Name="AndroidTab" Height="28" Padding="12,0"
+                               IsChecked="{Binding Platform, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Android}" />
+                </StackPanel>
+              </Border>
+            </controls:ToolPanel.Actions>
+            <ScrollViewer MaxHeight="340" HorizontalScrollBarVisibility="Auto">
+              <StackPanel Grid.IsSharedSizeScope="True" MinWidth="480">
+                <Grid Margin="14,8,8,8">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="File" />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Size" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="36" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="1" Classes="hint" Text="{l:Tr Hash_SourceFile}" Margin="0,0,24,0" />
+                  <TextBlock Grid.Column="2" Classes="hint" Text="{l:Tr AppIcons_Size}" Margin="0,0,24,0" />
+                  <TextBlock Grid.Column="3" Classes="hint" Text="{l:Tr AppIcons_Use}" />
+                </Grid>
+                <ItemsControl Name="OutputFilesList" ItemsSource="{Binding CurrentFiles}">
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="vm:OutputFileViewModel">
+                      <Border Classes="file-row" Background="Transparent">
+                        <Grid>
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="38" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="File" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Size" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="36" />
+                          </Grid.ColumnDefinitions>
+                          <Border Width="24" Height="24" HorizontalAlignment="Left" CornerRadius="{Binding ThumbnailRadius}" ClipToBounds="True"
+                                  Background="{DynamicResource Brush.Badge}">
+                            <Panel>
+                              <Image Source="{Binding Image}" RenderOptions.BitmapInterpolationMode="HighQuality" />
+                              <controls:LucideIcon Kind="FileText" Width="13" Height="13" Opacity="0.7" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   IsVisible="{Binding !IsImage}" />
+                            </Panel>
+                          </Border>
+                          <TextBlock Grid.Column="1" Classes="mono" FontSize="13" Text="{Binding DisplayPath}" Margin="0,0,24,0"
+                                     Foreground="{DynamicResource Brush.TextSubtle}" VerticalAlignment="Center" />
+                          <TextBlock Grid.Column="2" Classes="mono" FontSize="13" Text="{Binding SizeText}" Margin="0,0,24,0"
+                                     Foreground="{DynamicResource Brush.Json.Number}" VerticalAlignment="Center" />
+                          <TextBlock Grid.Column="3" FontSize="13" Text="{Binding Use}" Foreground="{DynamicResource Brush.TextSecondary}"
+                                     VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                          <Button Grid.Column="4" Classes="icon" Command="{Binding SaveCommand}" CommandParameter="{Binding}" IsVisible="{Binding HasImage}"
+                                  ToolTip.Tip="{l:Tr AppIcons_SaveThisPng}" AutomationProperties.Name="{Binding SaveAutomationName}">
+                            <controls:LucideIcon Kind="Download" />
+                          </Button>
+                        </Grid>
+                      </Border>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <TextBlock Classes="hint" Margin="14,4,14,14" IsVisible="{Binding CurrentPlatformExcluded}"
+                           Text="{l:Tr AppIcons_PlatformOff}" TextWrapping="Wrap" />
+              </StackPanel>
+            </ScrollViewer>
+          </controls:ToolPanel>
+        </StackPanel>
+      </Grid>
+    </ScrollViewer>
+  </DockPanel>
+</UserControl>

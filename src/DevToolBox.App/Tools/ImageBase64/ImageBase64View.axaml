@@ -1,0 +1,92 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.ImageBase64"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:behaviors="using:DevToolBox.App.Shared.Behaviors"
+             x:Class="DevToolBox.App.Tools.ImageBase64.ImageBase64View"
+             x:DataType="vm:ImageBase64ViewModel">
+  <TabControl Classes="tool-tabs" Margin="32,0,32,20" SelectedIndex="{Binding SelectedTab}">
+    <TabItem Header="{l:Tr ImageBase64_TabEncode}">
+      <Grid RowDefinitions="Auto,Auto,Auto,*" RowSpacing="10">
+        <Border Classes="drop-zone" Name="DropZone" behaviors:FileDrop.Command="{Binding LoadFileCommand}">
+          <Grid ColumnDefinitions="Auto,*" ColumnSpacing="16">
+            <Border Width="96" Height="96" CornerRadius="8" ClipToBounds="True" Background="{DynamicResource Brush.Well}">
+              <Panel>
+                <controls:LucideIcon Kind="Image" Width="32" Height="32" Opacity="0.5"
+                                     IsVisible="{Binding SourcePreview, Converter={x:Static ObjectConverters.IsNull}}" />
+                <Image Name="SourceImage" Source="{Binding SourcePreview}" Stretch="Uniform" />
+              </Panel>
+            </Border>
+            <StackPanel Grid.Column="1" Spacing="8" VerticalAlignment="Center">
+              <TextBlock Text="{l:Tr ImageBase64_DropHint}" TextWrapping="Wrap" />
+              <WrapPanel ItemSpacing="6" LineSpacing="6">
+                <Button Name="ChooseImageButton" Classes="primary tool" Command="{Binding OpenImageCommand}" AutomationProperties.Name="{l:Tr ImageBase64_ChooseImage}">
+                  <StackPanel Orientation="Horizontal" Spacing="6">
+                    <controls:LucideIcon Kind="FolderOpen" Width="14" Height="14" />
+                    <TextBlock Text="{l:Tr ImageBase64_ChooseImageEllipsis}" />
+                  </StackPanel>
+                </Button>
+                <controls:CommandButton Name="PasteImageButton" Icon="ClipboardPaste" Label="{l:Tr ImageBase64_PasteImage}" Command="{Binding PasteImageCommand}" />
+              </WrapPanel>
+              <TextBlock Classes="hint" Name="SourceInfoText" Text="{Binding SourceInfo}" TextWrapping="Wrap" />
+            </StackPanel>
+          </Grid>
+        </Border>
+
+        <StackPanel Grid.Row="1" Spacing="4">
+          <TextBlock Classes="error" Name="EncodeErrorText" Text="{Binding EncodeError}"
+                     IsVisible="{Binding EncodeError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+          <TextBlock Classes="warning" Text="{Binding EncodeWarning}"
+                     IsVisible="{Binding EncodeWarning, Converter={x:Static ObjectConverters.IsNotNull}}" />
+        </StackPanel>
+
+        <controls:ToolPanel Grid.Row="2" Grid.RowSpan="2" Header="{l:Tr Common_Output}" Padding="0">
+          <controls:ToolPanel.Actions>
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <ComboBox Name="OutputKindBox" ItemsSource="{Binding OutputKinds}" SelectedItem="{Binding SelectedOutputKind}" MinHeight="30"
+                        AutomationProperties.Name="{l:Tr Hash_OutputFormat}" />
+              <controls:CopyButton Classes="quiet" Text="{Binding Output}" />
+            </StackPanel>
+          </controls:ToolPanel.Actions>
+          <TextBox Name="OutputBox" Classes="mono bare" Text="{Binding OutputDisplay, Mode=OneWay}" IsReadOnly="True"
+                   AcceptsReturn="True" TextWrapping="Wrap" AutomationProperties.Name="{l:Tr ImageBase64_Base64Output}" />
+        </controls:ToolPanel>
+      </Grid>
+    </TabItem>
+
+    <TabItem Header="{l:Tr ImageBase64_TabDecode}">
+      <Grid RowDefinitions="Auto,*,Auto,Auto" RowSpacing="10">
+        <controls:ToolPanel Grid.RowSpan="2" Header="{l:Tr ImageBase64_InputHeader}" Padding="0">
+          <controls:ToolPanel.Actions>
+            <StackPanel Orientation="Horizontal" Spacing="4">
+              <controls:PasteButton Classes="quiet" Text="{Binding Base64Input}" />
+              <controls:ClearButton Classes="quiet" Text="{Binding Base64Input}" />
+            </StackPanel>
+          </controls:ToolPanel.Actions>
+          <TextBox Name="Base64Box" Classes="mono bare" Text="{Binding Base64Input}" AcceptsReturn="True" TextWrapping="Wrap"
+                   PlaceholderText="{l:Tr ImageBase64_InputPlaceholder}" AutomationProperties.Name="{l:Tr ImageBase64_Base64Input}" />
+        </controls:ToolPanel>
+        <TextBlock Grid.Row="2" Classes="error" Name="DecodeErrorText" Text="{Binding DecodeError}"
+                   IsVisible="{Binding DecodeError, Converter={x:Static ObjectConverters.IsNotNull}}" />
+        <Border Grid.Row="3" Classes="panel" IsVisible="{Binding HasDecodedImage}">
+          <Grid ColumnDefinitions="Auto,*" ColumnSpacing="16">
+            <Border MaxWidth="240" MaxHeight="240" MinWidth="64" MinHeight="64" Background="{DynamicResource Brush.Card}" CornerRadius="6">
+              <Image Name="DecodedImage" Source="{Binding DecodedPreview}" Stretch="Uniform" />
+            </Border>
+            <StackPanel Grid.Column="1" Spacing="8" VerticalAlignment="Center">
+              <TextBlock Classes="mono" Name="DecodedInfoText" Text="{Binding DecodedInfo}" TextWrapping="Wrap" />
+              <Button Name="SaveImageButton" Classes="primary tool" Command="{Binding SaveDecodedCommand}" HorizontalAlignment="Left"
+                      AutomationProperties.Name="{l:Tr ImageBase64_SaveImage}">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                  <controls:LucideIcon Kind="Download" Width="14" Height="14" />
+                  <TextBlock Text="{l:Tr ImageBase64_SaveImageEllipsis}" />
+                </StackPanel>
+              </Button>
+            </StackPanel>
+          </Grid>
+        </Border>
+      </Grid>
+    </TabItem>
+  </TabControl>
+</UserControl>

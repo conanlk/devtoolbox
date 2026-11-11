@@ -1,0 +1,139 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="using:DevToolBox.App.Shell"
+        xmlns:controls="using:DevToolBox.App.Shared.Controls"
+        xmlns:chrome="using:Avalonia.Controls.Chrome"
+        xmlns:l="using:DevToolBox.App.Localization"
+        x:Class="DevToolBox.App.Shell.MainWindow"
+        x:DataType="shell:ShellViewModel"
+        Title="DevToolBox"
+        Icon="/Assets/AppIcon.png"
+        Width="1280" Height="820" MinWidth="720" MinHeight="480"
+        WindowStartupLocation="CenterScreen">
+  <DockPanel>
+
+    <!-- App header: logo, tool search, language, theme. On macOS it is the window's title bar: the OS drags the window
+         from its empty areas and handles double-click; controls inside are marked "User" so they get clicks. -->
+    <Border Name="AppHeader" DockPanel.Dock="Top" chrome:WindowDecorationProperties.ElementRole="TitleBar">
+      <Grid ColumnDefinitions="Auto,Auto,*,Auto,Auto" ColumnSpacing="10">
+        <Button Classes="icon" Name="SidebarToggleButton" chrome:WindowDecorationProperties.ElementRole="User" Command="{Binding ToggleSidebarCommand}"
+                ToolTip.Tip="{l:Tr Shell_ToggleSidebarTip}" AutomationProperties.Name="{l:Tr Shell_ToggleSidebar}">
+          <controls:LucideIcon Kind="PanelLeft" />
+        </Button>
+        <Button Grid.Column="1" Name="HomeButton" chrome:WindowDecorationProperties.ElementRole="User" Classes="icon" Padding="4,2" Command="{Binding GoHomeCommand}"
+                ToolTip.Tip="{l:Tr Home_Title}" AutomationProperties.Name="{l:Tr Shell_Home}">
+          <StackPanel Orientation="Horizontal" Spacing="10">
+            <Border Width="28" Height="28" CornerRadius="7" Background="{DynamicResource Brush.Accent}">
+              <TextBlock Text="{}{ }" FontFamily="{StaticResource Font.Mono}" FontSize="12" FontWeight="SemiBold"
+                         Foreground="{DynamicResource Brush.OnAccent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <TextBlock Text="DevToolBox" FontSize="15" FontWeight="SemiBold" LetterSpacing="-0.2" VerticalAlignment="Center"
+                       Foreground="{DynamicResource Brush.TextPrimary}" />
+          </StackPanel>
+        </Button>
+        <Border Grid.Column="2" Name="SearchField" chrome:WindowDecorationProperties.ElementRole="User" MaxWidth="520" HorizontalAlignment="Stretch" Margin="16,0">
+          <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+            <controls:LucideIcon Kind="Search" Width="16" Height="16" Foreground="{DynamicResource Brush.TextMuted}" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Name="SearchBox" Text="{Binding SearchText}" PlaceholderText="{l:Tr Shell_SearchPlaceholder}"
+                     AutomationProperties.Name="{l:Tr Shell_SearchTools}">
+              <TextBox.KeyBindings>
+                <KeyBinding Gesture="Enter" Command="{Binding OpenFirstSearchResultCommand}" />
+              </TextBox.KeyBindings>
+            </TextBox>
+            <Border Grid.Column="2" Classes="kbd">
+              <TextBlock Name="SearchShortcutText" Text="Ctrl K" />
+            </Border>
+          </Grid>
+        </Border>
+        <Border Grid.Column="3" Classes="language-switch" Name="LanguageSwitch" chrome:WindowDecorationProperties.ElementRole="User"
+                AutomationProperties.Name="{l:Tr Shell_Language}">
+          <StackPanel Orientation="Horizontal" Spacing="2">
+            <RadioButton Theme="{StaticResource LanguageButton}" Name="EnglishButton" GroupName="language"
+                         IsChecked="{Binding IsEnglish, Mode=OneWay}" Command="{Binding SetLanguageCommand}"
+                         CommandParameter="{x:Static l:AppLanguage.English}"
+                         ToolTip.Tip="English" AutomationProperties.Name="English">
+              <Border Classes="flag">
+                <Image Source="{StaticResource Flag.English}" Stretch="UniformToFill" />
+              </Border>
+            </RadioButton>
+            <RadioButton Theme="{StaticResource LanguageButton}" Name="VietnameseButton" GroupName="language"
+                         IsChecked="{Binding IsVietnamese, Mode=OneWay}" Command="{Binding SetLanguageCommand}"
+                         CommandParameter="{x:Static l:AppLanguage.Vietnamese}"
+                         ToolTip.Tip="Tiếng Việt" AutomationProperties.Name="Tiếng Việt">
+              <Border Classes="flag">
+                <Image Source="{StaticResource Flag.Vietnamese}" Stretch="UniformToFill" />
+              </Border>
+            </RadioButton>
+          </StackPanel>
+        </Border>
+        <Button Grid.Column="4" Classes="icon" Name="ThemeButton" chrome:WindowDecorationProperties.ElementRole="User" Command="{Binding CycleThemeCommand}"
+                ToolTip.Tip="{Binding ThemeToolTip}"
+                AutomationProperties.Name="{l:Tr Shell_ChangeTheme}">
+          <controls:LucideIcon Kind="{Binding ThemeIconKey}" Width="18" Height="18" />
+        </Button>
+      </Grid>
+    </Border>
+
+    <Grid ColumnDefinitions="Auto,*">
+      <!-- Sidebar -->
+      <Border Name="Sidebar" IsVisible="{Binding !IsSidebarCollapsed}">
+        <DockPanel>
+          <Border DockPanel.Dock="Bottom" BorderBrush="{DynamicResource Brush.Border}" BorderThickness="0,1,0,0" Margin="10,0" Padding="10,10,10,12">
+            <Grid ColumnDefinitions="*,Auto">
+              <TextBlock Classes="hint" Name="VersionText" Text="{Binding VersionLabel}" />
+              <TextBlock Grid.Column="1" Classes="hint" Text="{l:Tr Shell_Offline}" />
+            </Grid>
+          </Border>
+          <ListBox Name="SidebarList" Classes="sidebar" ItemsSource="{Binding SidebarItems}" SelectedItem="{Binding SelectedSidebarItem}"
+                   AutomationProperties.Name="{l:Tr Home_Tools}">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="shell:SidebarItemViewModel">
+                <Panel>
+                  <TextBlock Classes="nav-group" Text="{Binding HeaderText}" IsVisible="{Binding IsHeader}" Margin="0,10,0,2" />
+                  <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10" IsVisible="{Binding IsSelectable}">
+                    <Border Classes="nav-badge">
+                      <TextBlock Text="{Binding Badge}" />
+                    </Border>
+                    <TextBlock Grid.Column="1" Text="{Binding Title}" FontSize="14" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                    <Button Grid.Column="2" Classes="icon star" Padding="4" Classes.favorite="{Binding IsFavorite}" IsVisible="{Binding IsTool}"
+                            Command="{Binding ToggleFavoriteCommand}" ToolTip.Tip="{l:Tr Shell_ToggleFavorite}"
+                            AutomationProperties.Name="{Binding FavoriteAutomationName}">
+                      <controls:LucideIcon Kind="Star" Width="14" Height="14" />
+                    </Button>
+                  </Grid>
+                </Panel>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </DockPanel>
+      </Border>
+
+      <!-- Page -->
+      <DockPanel Grid.Column="1" Name="ContentArea">
+        <Border Name="ContentHeader" DockPanel.Dock="Top" Padding="32,24,32,8" Background="Transparent" IsVisible="{Binding IsToolPage}">
+          <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+            <StackPanel Spacing="4">
+              <TextBlock Classes="page-title" Name="PageTitle" Text="{Binding CurrentPage.Title}" />
+              <TextBlock Classes="page-subtitle" Name="PageDescription" Text="{Binding CurrentDescription}" />
+            </StackPanel>
+            <Button Grid.Column="1" Classes="icon star" Name="CurrentToolFavoriteButton"
+                    Classes.favorite="{Binding CurrentToolPage.IsFavorite, FallbackValue=False}"
+                    Command="{Binding ToggleCurrentToolFavoriteCommand}" ToolTip.Tip="{l:Tr Shell_AddToFavorites}"
+                    AutomationProperties.Name="{l:Tr Shell_FavoriteCurrentTool}">
+              <controls:LucideIcon Kind="Star" Width="18" Height="18" />
+            </Button>
+          </Grid>
+        </Border>
+
+        <ContentControl Name="PageHost" Content="{Binding CurrentPage}">
+          <ContentControl.DataTemplates>
+            <DataTemplate DataType="shell:HomeViewModel">
+              <shell:HomeView />
+            </DataTemplate>
+            <shell:ToolPageTemplate />
+          </ContentControl.DataTemplates>
+        </ContentControl>
+      </DockPanel>
+    </Grid>
+  </DockPanel>
+</Window>

@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Html"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:conv="using:DevToolBox.App.Shared.Converters"
+             x:Class="DevToolBox.App.Tools.Html.HtmlView"
+             x:DataType="vm:HtmlViewModel">
+  <DockPanel>
+    <Border DockPanel.Dock="Bottom" Classes="status-bar">
+      <WrapPanel ItemSpacing="16">
+        <TextBlock Text="{Binding DirectionText}" />
+        <TextBlock Text="{Binding SizeText}" />
+      </WrapPanel>
+    </Border>
+
+    <Grid RowDefinitions="Auto,*" RowSpacing="16" Margin="32,8,32,20">
+      <Border Classes="toolbar">
+        <WrapPanel ItemSpacing="12" LineSpacing="8">
+          <Border Classes="segmented">
+            <StackPanel Orientation="Horizontal">
+              <RadioButton Theme="{StaticResource SegmentButton}" GroupName="direction" Content="{l:Tr Common_Encode}" Name="EncodeMode"
+                           IsChecked="{Binding Direction, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Encode}" />
+              <RadioButton Theme="{StaticResource SegmentButton}" GroupName="direction" Content="{l:Tr Common_Decode}" Name="DecodeMode"
+                           IsChecked="{Binding Direction, Converter={x:Static conv:EnumEqualsConverter.Instance}, ConverterParameter=Decode}" />
+            </StackPanel>
+          </Border>
+          <ComboBox ItemsSource="{Binding Scopes}" SelectedItem="{Binding SelectedScope}" IsVisible="{Binding IsEncoding}"
+                    AutomationProperties.Name="{l:Tr Html_CharactersToEncode}" />
+          <CheckBox Content="{l:Tr Html_PreferNamed}" IsChecked="{Binding PreferNamedEntities}" IsVisible="{Binding IsEncoding}"
+                    VerticalAlignment="Center" />
+        </WrapPanel>
+      </Border>
+
+      <Grid Grid.Row="1" ColumnDefinitions="*,16,*">
+        <controls:ToolPanel Header="{l:Tr Common_Input}" Padding="0">
+          <controls:ToolPanel.Actions>
+            <StackPanel Orientation="Horizontal" Spacing="4">
+              <controls:PasteButton Classes="quiet" Text="{Binding Input}" />
+              <controls:CommandButton Classes="quiet" Icon="FileText" Label="{l:Tr Common_Sample}" Command="{Binding LoadSampleCommand}" />
+              <controls:ClearButton Classes="quiet" Text="{Binding Input}" />
+            </StackPanel>
+          </controls:ToolPanel.Actions>
+          <TextBox Name="InputBox" Classes="mono bare" Text="{Binding Input}" AcceptsReturn="True" TextWrapping="Wrap"
+                   PlaceholderText="{l:Tr Html_Placeholder}" AutomationProperties.Name="{l:Tr Common_Input}" />
+        </controls:ToolPanel>
+
+        <controls:ToolPanel Grid.Column="2" Header="{l:Tr Common_Output}" Padding="0">
+          <controls:ToolPanel.Actions>
+            <StackPanel Orientation="Horizontal" Spacing="4">
+              <controls:CommandButton Classes="quiet" Icon="ArrowDownUp" Label="{l:Tr Common_Swap}" Command="{Binding SwapCommand}" />
+              <controls:CopyButton Classes="quiet" Text="{Binding Output}" />
+            </StackPanel>
+          </controls:ToolPanel.Actions>
+          <TextBox Name="OutputBox" Classes="mono bare" Text="{Binding Output, Mode=OneWay}" IsReadOnly="True"
+                   AcceptsReturn="True" TextWrapping="Wrap" AutomationProperties.Name="{l:Tr Common_Output}" />
+        </controls:ToolPanel>
+      </Grid>
+    </Grid>
+  </DockPanel>
+</UserControl>

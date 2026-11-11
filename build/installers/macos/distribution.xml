@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- productbuild distribution for DevToolBox; build-pkg.sh fills in {Version} and {BundleIdentifier}. -->
+<installer-gui-script minSpecVersion="2">
+  <title>DevToolBox {Version}</title>
+  <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
+  <domains enable_localSystem="true"/>
+  <volume-check>
+    <allowed-os-versions>
+      <os-version min="13.0"/>
+    </allowed-os-versions>
+  </volume-check>
+  <choices-outline>
+    <line choice="default"/>
+  </choices-outline>
+  <choice id="default" title="DevToolBox">
+    <pkg-ref id="{BundleIdentifier}"/>
+  </choice>
+  <pkg-ref id="{BundleIdentifier}" version="{Version}" onConclusion="none">DevToolBox-component.pkg</pkg-ref>
+</installer-gui-script>

@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-test:
+    name: Build & test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            rid: win-x64
+          - os: macos-latest
+            rid: osx-arm64
+          - os: ubuntu-latest
+            rid: linux-x64
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Install Linux native AOT prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y clang zlib1g-dev xvfb
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Check formatting
+        if: runner.os == 'Linux'
+        run: dotnet format --verify-no-changes --no-restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test (Core + headless UI)
+        run: dotnet test --configuration Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.rid }}
+          path: TestResults
+
+      - name: Publish (Native AOT)
+        run: dotnet publish src/DevToolBox.App --configuration Release --runtime ${{ matrix.rid }} --output artifacts/publish/${{ matrix.rid }}
+
+      # Launches the real published app, waits for the main window, prints startup time and exits.
+      - name: Smoke test published app
+        shell: bash
+        run: |
+          cd artifacts/publish/${{ matrix.rid }}
+          if [ "$RUNNER_OS" = "Linux" ]; then
+            xvfb-run -a ./DevToolBox --smoke-exit | tee smoke.log
+          elif [ "$RUNNER_OS" = "Windows" ]; then
+            ./DevToolBox.exe --smoke-exit | tee smoke.log
+          else
+            ./DevToolBox.app/Contents/MacOS/DevToolBox --smoke-exit | tee smoke.log
+          fi
+          grep -q "startup_ms=" smoke.log
+          grep -q "tools_ok=" smoke.log
+          echo "STARTUP=$(grep -h startup_ms smoke.log) $(grep -h tools_ok smoke.log)" >> "$GITHUB_ENV"
+          rm smoke.log
+
+      - name: Report size and startup
+        shell: bash
+        run: |
+          cd artifacts/publish/${{ matrix.rid }}
+          rm -rf *.pdb *.xml *.dSYM
+          SIZE=$(du -sh . | cut -f1)
+          {
+            echo "### ${{ matrix.rid }}"
+            echo "- Published size (uncompressed): ${SIZE}"
+            echo "- Startup on CI runner: ${STARTUP}"
+          } >> "$GITHUB_STEP_SUMMARY"
+          ls -la
+
+      - name: Upload app
+        uses: actions/upload-artifact@v4
+        with:
+          name: DevToolBox-${{ matrix.rid }}
+          path: artifacts/publish/${{ matrix.rid }}
+          if-no-files-found: error

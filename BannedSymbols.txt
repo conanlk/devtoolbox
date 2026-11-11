@@ -1,0 +1,11 @@
+T:System.Net.Http.HttpClient;Offline principle: DevToolBox must not make network requests
+T:System.Net.Http.HttpClientHandler;Offline principle: DevToolBox must not make network requests
+T:System.Net.Http.SocketsHttpHandler;Offline principle: DevToolBox must not make network requests
+T:System.Net.WebClient;Offline principle: DevToolBox must not make network requests
+T:System.Net.WebRequest;Offline principle: DevToolBox must not make network requests
+T:System.Net.HttpWebRequest;Offline principle: DevToolBox must not make network requests
+T:System.Net.Sockets.Socket;Offline principle: DevToolBox must not make network requests
+T:System.Net.Sockets.TcpClient;Offline principle: DevToolBox must not make network requests
+T:System.Net.Sockets.UdpClient;Offline principle: DevToolBox must not make network requests
+T:System.Net.WebSockets.ClientWebSocket;Offline principle: DevToolBox must not make network requests
+T:System.Random;Use System.Security.Cryptography.RandomNumberGenerator (CSPRNG)

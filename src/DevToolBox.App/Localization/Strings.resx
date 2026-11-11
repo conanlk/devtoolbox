@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppIcons_AdaptiveIcon" xml:space="preserve">
+    <value>Adaptive icon (API 26+)</value>
+  </data>
+  <data name="AppIcons_AndroidExtras" xml:space="preserve">
+    <value>Android extras</value>
+  </data>
+  <data name="AppIcons_BackgroundColour" xml:space="preserve">
+    <value>Background colour</value>
+  </data>
+  <data name="AppIcons_BackgroundError" xml:space="preserve">
+    <value>Use a hex colour like #FFFFFF.</value>
+  </data>
+  <data name="AppIcons_BackgroundHint" xml:space="preserve">
+    <value>Used for iOS (no alpha allowed) and the Android adaptive background layer.</value>
+  </data>
+  <data name="AppIcons_CheckSize" xml:space="preserve">
+    <value>At least 1024 px</value>
+  </data>
+  <data name="AppIcons_CheckSquare" xml:space="preserve">
+    <value>Square, at least 1024 px</value>
+  </data>
+  <data name="AppIcons_ChooseImageTitle" xml:space="preserve">
+    <value>Choose an icon image (1024×1024 or larger)</value>
+  </data>
+  <data name="AppIcons_DropHint" xml:space="preserve">
+    <value>Drop a square image of at least 1024×1024 — PNG, JPEG or WebP.</value>
+  </data>
+  <data name="AppIcons_DropToReplace" xml:space="preserve">
+    <value>Drop a new image here to replace it</value>
+  </data>
+  <data name="AppIcons_EmptyStatus" xml:space="preserve">
+    <value>Add an image of at least 1024×1024 pixels</value>
+  </data>
+  <data name="AppIcons_ExportZip" xml:space="preserve">
+    <value>Export ZIP · {0} files</value>
+  </data>
+  <data name="AppIcons_ExportZipName" xml:space="preserve">
+    <value>Export ZIP</value>
+  </data>
+  <data name="AppIcons_FileCount" xml:space="preserve">
+    <value>{0} files</value>
+  </data>
+  <data name="AppIcons_MaskCircle" xml:space="preserve">
+    <value>Android circle</value>
+  </data>
+  <data name="AppIcons_MaskRoundedSquare" xml:space="preserve">
+    <value>Rounded square</value>
+  </data>
+  <data name="AppIcons_MaskSquircle" xml:space="preserve">
+    <value>Squircle</value>
+  </data>
+  <data name="AppIcons_MaskTeardrop" xml:space="preserve">
+    <value>Teardrop</value>
+  </data>
+  <data name="AppIcons_OutputFiles" xml:space="preserve">
+    <value>Output files</value>
+  </data>
+  <data name="AppIcons_Padding" xml:space="preserve">
+    <value>Padding</value>
+  </data>
+  <data name="AppIcons_PaddingTip" xml:space="preserve">
+    <value>Space around the artwork on every icon</value>
+  </data>
+  <data name="AppIcons_Platform" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="AppIcons_PlatformOff" xml:space="preserve">
+    <value>This platform is switched off in Options, so nothing is exported for it.</value>
+  </data>
+  <data name="AppIcons_Platforms" xml:space="preserve">
+    <value>Platforms</value>
+  </data>
+  <data name="AppIcons_PlayStoreIcon" xml:space="preserve">
+    <value>Play Store icon 512 px</value>
+  </data>
+  <data name="AppIcons_PreviewBackground" xml:space="preserve">
+    <value>Preview background</value>
+  </data>
+  <data name="AppIcons_PreviewByMask" xml:space="preserve">
+    <value>Preview by mask</value>
+  </data>
+  <data name="AppIcons_Replace" xml:space="preserve">
+    <value>Replace…</value>
+  </data>
+  <data name="AppIcons_ReplaceImage" xml:space="preserve">
+    <value>Replace image</value>
+  </data>
+  <data name="AppIcons_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="AppIcons_RoundIcon" xml:space="preserve">
+    <value>Round icon</value>
+  </data>
+  <data name="AppIcons_SaveFile" xml:space="preserve">
+    <value>Save {0}</value>
+  </data>
+  <data name="AppIcons_SaveIconTitle" xml:space="preserve">
+    <value>Save icon</value>
+  </data>
+  <data name="AppIcons_SaveThisPng" xml:space="preserve">
+    <value>Save this PNG</value>
+  </data>
+  <data name="AppIcons_SaveZipTitle" xml:space="preserve">
+    <value>Save app icons</value>
+  </data>
+  <data name="AppIcons_SelectPlatform" xml:space="preserve">
+    <value>Select at least one platform to export</value>
+  </data>
+  <data name="AppIcons_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="AppIcons_SourceImage" xml:space="preserve">
+    <value>Source image</value>
+  </data>
+  <data name="AppIcons_UnreadableImage" xml:space="preserve">
+    <value>That file isn't an image this tool can read (use PNG, JPEG, WebP or BMP).</value>
+  </data>
+  <data name="AppIcons_Use" xml:space="preserve">
+    <value>Use</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveBackground" xml:space="preserve">
+    <value>Adaptive background colour</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveDefinition" xml:space="preserve">
+    <value>Adaptive icon definition</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveForeground" xml:space="preserve">
+    <value>Adaptive foreground</value>
+  </data>
+  <data name="AppIcons_Use_AdaptiveRoundDefinition" xml:space="preserve">
+    <value>Adaptive round icon definition</value>
+  </data>
+  <data name="AppIcons_Use_App" xml:space="preserve">
+    <value>App</value>
+  </data>
+  <data name="AppIcons_Use_AppIpadPro" xml:space="preserve">
+    <value>App (iPad Pro)</value>
+  </data>
+  <data name="AppIcons_Use_AppStore" xml:space="preserve">
+    <value>App Store</value>
+  </data>
+  <data name="AppIcons_Use_AssetCatalog" xml:space="preserve">
+    <value>Asset catalog manifest</value>
+  </data>
+  <data name="AppIcons_Use_Launcher" xml:space="preserve">
+    <value>Launcher</value>
+  </data>
+  <data name="AppIcons_Use_LauncherRound" xml:space="preserve">
+    <value>Launcher (round)</value>
+  </data>
+  <data name="AppIcons_Use_Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="AppIcons_Use_PlayStore" xml:space="preserve">
+    <value>Play Store listing</value>
+  </data>
+  <data name="AppIcons_Use_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="AppIcons_Use_Spotlight" xml:space="preserve">
+    <value>Spotlight</value>
+  </data>
+  <data name="AppIcons_ZipArchive" xml:space="preserve">
+    <value>ZIP archive</value>
+  </data>
+  <data name="Barcode_BarHeight" xml:space="preserve">
+    <value>Bar height</value>
+  </data>
+  <data name="Barcode_BarHeightValue" xml:space="preserve">
+    <value>Bar height: {0:0} px</value>
+  </data>
+  <data name="Barcode_Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="Barcode_ContentName" xml:space="preserve">
+    <value>Barcode content</value>
+  </data>
+  <data name="Barcode_CopyImage" xml:space="preserve">
+    <value>Copy image</value>
+  </data>
+  <data name="Barcode_CopySvg" xml:space="preserve">
+    <value>Copy SVG</value>
+  </data>
+  <data name="Barcode_EncodedAs" xml:space="preserve">
+    <value>Encoded as {0} (check digit added)</value>
+  </data>
+  <data name="Barcode_ErrorCorrection" xml:space="preserve">
+    <value>Error correction</value>
+  </data>
+  <data name="Barcode_Format" xml:space="preserve">
+    <value>Barcode format</value>
+  </data>
+  <data name="Barcode_HintCode128" xml:space="preserve">
+    <value>Printable ASCII, up to 80 characters</value>
+  </data>
+  <data name="Barcode_HintCode39" xml:space="preserve">
+    <value>A–Z, 0–9, space and - . $ / + %</value>
+  </data>
+  <data name="Barcode_HintEan13" xml:space="preserve">
+    <value>12 digits (check digit is added) or 13 digits</value>
+  </data>
+  <data name="Barcode_HintQr" xml:space="preserve">
+    <value>Any text or URL (UTF-8)</value>
+  </data>
+  <data name="Barcode_HintUpcA" xml:space="preserve">
+    <value>11 digits (check digit is added) or 12 digits</value>
+  </data>
+  <data name="Barcode_Modules" xml:space="preserve">
+    <value>{0}×{1} modules</value>
+  </data>
+  <data name="Barcode_ModuleSize" xml:space="preserve">
+    <value>Module size</value>
+  </data>
+  <data name="Barcode_ModuleSizeValue" xml:space="preserve">
+    <value>Module size: {0:0} px</value>
+  </data>
+  <data name="Barcode_ModulesWide" xml:space="preserve">
+    <value>{0} modules wide</value>
+  </data>
+  <data name="Barcode_Preview" xml:space="preserve">
+    <value>Barcode preview</value>
+  </data>
+  <data name="Barcode_SavePng" xml:space="preserve">
+    <value>Save PNG</value>
+  </data>
+  <data name="Barcode_SavePngTitle" xml:space="preserve">
+    <value>Save barcode as PNG</value>
+  </data>
+  <data name="Barcode_SaveSvg" xml:space="preserve">
+    <value>Save SVG</value>
+  </data>
+  <data name="Barcode_SaveSvgTitle" xml:space="preserve">
+    <value>Save barcode as SVG</value>
+  </data>
+  <data name="Barcode_ShowText" xml:space="preserve">
+    <value>Show text below</value>
+  </data>
+  <data name="Category_Convert" xml:space="preserve">
+    <value>Convert</value>
+  </data>
+  <data name="Category_EncodeDecode" xml:space="preserve">
+    <value>Encode / Decode</value>
+  </data>
+  <data name="Category_EncodeShort" xml:space="preserve">
+    <value>Encode</value>
+  </data>
+  <data name="Category_FormatAndTest" xml:space="preserve">
+    <value>Format &amp; test</value>
+  </data>
+  <data name="Category_Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="Common_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Common_Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_CaretPosition" xml:space="preserve">
+    <value>Ln {0}, Col {1}</value>
+  </data>
+  <data name="Common_ChooseFile" xml:space="preserve">
+    <value>Choose file…</value>
+  </data>
+  <data name="Common_ChooseFileName" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
+  <data name="Common_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Common_Copied" xml:space="preserve">
+    <value>Copied</value>
+  </data>
+  <data name="Common_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Common_Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="Common_Decode" xml:space="preserve">
+    <value>Decode</value>
+  </data>
+  <data name="Common_DropFileOr" xml:space="preserve">
+    <value>Drop a file here, or</value>
+  </data>
+  <data name="Common_Empty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="Common_Encode" xml:space="preserve">
+    <value>Encode</value>
+  </data>
+  <data name="Common_Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="Common_Input" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="Common_Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="Common_Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="Common_PngImage" xml:space="preserve">
+    <value>PNG image</value>
+  </data>
+  <data name="Common_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Common_Sample" xml:space="preserve">
+    <value>Sample</value>
+  </data>
+  <data name="Common_SizeInOut" xml:space="preserve">
+    <value>{0} in → {1:N0} chars out</value>
+    <comment>{0} = input size, e.g. 12 B; {1} = output characters</comment>
+  </data>
+  <data name="Common_SvgImage" xml:space="preserve">
+    <value>SVG image</value>
+  </data>
+  <data name="Common_Swap" xml:space="preserve">
+    <value>Swap</value>
+  </data>
+  <data name="Common_Uppercase" xml:space="preserve">
+    <value>Uppercase</value>
+  </data>
+  <data name="EncodeDecode_AutoDirection" xml:space="preserve">
+    <value>Auto: {0}</value>
+    <comment>{0} = encoding / decoding</comment>
+  </data>
+  <data name="EncodeDecode_Binary" xml:space="preserve">
+    <value>Binary</value>
+  </data>
+  <data name="EncodeDecode_Decoding" xml:space="preserve">
+    <value>decoding</value>
+  </data>
+  <data name="EncodeDecode_Encoding" xml:space="preserve">
+    <value>encoding</value>
+  </data>
+  <data name="EncodeDecode_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="EncodeDecode_Placeholder" xml:space="preserve">
+    <value>Type or paste text, Base64, hex or binary…</value>
+  </data>
+  <data name="Hash_Algorithm" xml:space="preserve">
+    <value>{0} algorithm</value>
+  </data>
+  <data name="Hash_Algorithms" xml:space="preserve">
+    <value>{0} algorithms</value>
+  </data>
+  <data name="Hash_Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Hash_ChooseFileTitle" xml:space="preserve">
+    <value>Choose a file to hash</value>
+  </data>
+  <data name="Hash_CompareHeader" xml:space="preserve">
+    <value>Compare with expected hash</value>
+  </data>
+  <data name="Hash_ExpectedHash" xml:space="preserve">
+    <value>Expected hash</value>
+  </data>
+  <data name="Hash_ExpectedPlaceholder" xml:space="preserve">
+    <value>Paste a hash (hex or Base64)…</value>
+  </data>
+  <data name="Hash_Hashes" xml:space="preserve">
+    <value>Hashes</value>
+  </data>
+  <data name="Hash_HexLower" xml:space="preserve">
+    <value>hex (lowercase)</value>
+  </data>
+  <data name="Hash_HexUpper" xml:space="preserve">
+    <value>HEX (uppercase)</value>
+  </data>
+  <data name="Hash_HmacKey" xml:space="preserve">
+    <value>HMAC key</value>
+  </data>
+  <data name="Hash_MatchBadge" xml:space="preserve">
+    <value>✓ match</value>
+  </data>
+  <data name="Hash_Matches" xml:space="preserve">
+    <value>✓ Matches {0}</value>
+  </data>
+  <data name="Hash_NoHmacForCrc" xml:space="preserve">
+    <value>— (no HMAC for CRC32)</value>
+  </data>
+  <data name="Hash_NoInput" xml:space="preserve">
+    <value>No input</value>
+  </data>
+  <data name="Hash_NoMatch" xml:space="preserve">
+    <value>✗ No algorithm matches the expected hash</value>
+  </data>
+  <data name="Hash_OutputFormat" xml:space="preserve">
+    <value>Output format</value>
+  </data>
+  <data name="Hash_ReadFailed" xml:space="preserve">
+    <value>Couldn't read the file: {0}</value>
+  </data>
+  <data name="Hash_Sha3Unsupported" xml:space="preserve">
+    <value>SHA-3 isn't available from this operating system's crypto library, so it's hidden.</value>
+  </data>
+  <data name="Hash_SourceFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Hash_SourceText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Hash_StatusFile" xml:space="preserve">
+    <value>File · {0} · {1}</value>
+  </data>
+  <data name="Hash_StatusText" xml:space="preserve">
+    <value>Text · {0} (UTF-8)</value>
+  </data>
+  <data name="Hash_StreamNote" xml:space="preserve">
+    <value>Files are streamed in 1 MB chunks — large files never load into memory.</value>
+  </data>
+  <data name="Hash_TextHeader" xml:space="preserve">
+    <value>Text (UTF-8)</value>
+  </data>
+  <data name="Hash_TextPlaceholder" xml:space="preserve">
+    <value>Text to hash…</value>
+  </data>
+  <data name="Hash_TextToHash" xml:space="preserve">
+    <value>Text to hash</value>
+  </data>
+  <data name="Home_ClipboardNote" xml:space="preserve">
+    <value>Only text you paste into this box is analyzed. The clipboard is never read on its own.</value>
+  </data>
+  <data name="Home_Detected" xml:space="preserve">
+    <value>Detected: {0}</value>
+    <comment>{0} = detected content kind</comment>
+  </data>
+  <data name="Home_Favorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="Home_FilterAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Home_FilterByCategory" xml:space="preserve">
+    <value>Filter by category</value>
+  </data>
+  <data name="Home_NoFavorites" xml:space="preserve">
+    <value>No favorites yet — star a tool in the sidebar to pin it above.</value>
+  </data>
+  <data name="Home_PastedContent" xml:space="preserve">
+    <value>Pasted content</value>
+  </data>
+  <data name="Home_SmartPaste" xml:space="preserve">
+    <value>Smart paste</value>
+  </data>
+  <data name="Home_SmartPasteHint" xml:space="preserve">
+    <value>Paste anything — we'll suggest the right tool</value>
+  </data>
+  <data name="Home_SmartPastePlaceholder" xml:space="preserve">
+    <value>A JWT, JSON, timestamp, UUID, URL, Base64, hash…</value>
+  </data>
+  <data name="Home_Subtitle" xml:space="preserve">
+    <value>{0} utilities that run locally on Windows, macOS and Linux — your data never leaves the machine.</value>
+    <comment>{0} = number of tools</comment>
+  </data>
+  <data name="Home_Title" xml:space="preserve">
+    <value>All tools</value>
+  </data>
+  <data name="Home_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="Html_CharactersToEncode" xml:space="preserve">
+    <value>Characters to encode</value>
+  </data>
+  <data name="Html_Placeholder" xml:space="preserve">
+    <value>Type or paste HTML or text with entities…</value>
+  </data>
+  <data name="Html_PreferNamed" xml:space="preserve">
+    <value>Prefer named entities (&amp;eacute;)</value>
+  </data>
+  <data name="Html_ScopeAllNonAscii" xml:space="preserve">
+    <value>Unsafe + all non-ASCII</value>
+  </data>
+  <data name="Html_ScopeUnsafeOnly" xml:space="preserve">
+    <value>Only unsafe characters (&amp; &lt; &gt; " ')</value>
+  </data>
+  <data name="ImageBase64_Base64Input" xml:space="preserve">
+    <value>Base64 input</value>
+  </data>
+  <data name="ImageBase64_Base64Output" xml:space="preserve">
+    <value>Base64 output</value>
+  </data>
+  <data name="ImageBase64_ChooseImage" xml:space="preserve">
+    <value>Choose image</value>
+  </data>
+  <data name="ImageBase64_ChooseImageEllipsis" xml:space="preserve">
+    <value>Choose image…</value>
+  </data>
+  <data name="ImageBase64_ChooseImageTitle" xml:space="preserve">
+    <value>Choose an image</value>
+  </data>
+  <data name="ImageBase64_DropHint" xml:space="preserve">
+    <value>Drop an image here, choose a file, or paste from the clipboard.</value>
+  </data>
+  <data name="ImageBase64_Images" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="ImageBase64_ImgTag" xml:space="preserve">
+    <value>&lt;img&gt; tag</value>
+  </data>
+  <data name="ImageBase64_InputHeader" xml:space="preserve">
+    <value>Base64 or data: URI</value>
+  </data>
+  <data name="ImageBase64_InputPlaceholder" xml:space="preserve">
+    <value>data:image/png;base64,iVBORw0KGgo… or raw Base64</value>
+  </data>
+  <data name="ImageBase64_LargeWarning" xml:space="preserve">
+    <value>Images over 1 MB make very long data URIs; consider serving the file instead.</value>
+  </data>
+  <data name="ImageBase64_NoClipboardImage" xml:space="preserve">
+    <value>The clipboard doesn't contain an image.</value>
+  </data>
+  <data name="ImageBase64_NoPreview" xml:space="preserve">
+    <value> · preview not available for this format</value>
+  </data>
+  <data name="ImageBase64_PastedImageName" xml:space="preserve">
+    <value>Pasted image.png</value>
+  </data>
+  <data name="ImageBase64_PasteImage" xml:space="preserve">
+    <value>Paste image</value>
+  </data>
+  <data name="ImageBase64_SaveImage" xml:space="preserve">
+    <value>Save image</value>
+  </data>
+  <data name="ImageBase64_SaveImageEllipsis" xml:space="preserve">
+    <value>Save image…</value>
+  </data>
+  <data name="ImageBase64_SaveImageTitle" xml:space="preserve">
+    <value>Save image</value>
+  </data>
+  <data name="ImageBase64_SourceInfo" xml:space="preserve">
+    <value>{0} · {1} · {2} → {3} Base64</value>
+  </data>
+  <data name="ImageBase64_TabDecode" xml:space="preserve">
+    <value>Base64 → Image</value>
+  </data>
+  <data name="ImageBase64_TabEncode" xml:space="preserve">
+    <value>Image → Base64</value>
+  </data>
+  <data name="ImageBase64_TooLarge" xml:space="preserve">
+    <value>Images up to {0} MB are supported.</value>
+  </data>
+  <data name="ImageBase64_Truncated" xml:space="preserve">
+    <value>… ({0:N0} more characters — use Copy for the full value)</value>
+  </data>
+  <data name="Json_Chars" xml:space="preserve">
+    <value>{0} chars</value>
+  </data>
+  <data name="Json_Collapse" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="Json_Expand" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="Json_ExpandOrCollapse" xml:space="preserve">
+    <value>Expand or collapse</value>
+  </data>
+  <data name="Json_Formatted" xml:space="preserve">
+    <value>Formatted JSON</value>
+  </data>
+  <data name="Json_FourSpaces" xml:space="preserve">
+    <value>4 spaces</value>
+  </data>
+  <data name="Json_GoToError" xml:space="preserve">
+    <value>Go to error</value>
+  </data>
+  <data name="Json_Indent" xml:space="preserve">
+    <value>Indent</value>
+  </data>
+  <data name="Json_InputName" xml:space="preserve">
+    <value>JSON input</value>
+  </data>
+  <data name="Json_InvalidStatus" xml:space="preserve">
+    <value>Invalid JSON</value>
+  </data>
+  <data name="Json_Item" xml:space="preserve">
+    <value>{0} item</value>
+  </data>
+  <data name="Json_Items" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="Json_KChars" xml:space="preserve">
+    <value>{0:0.#} K chars</value>
+  </data>
+  <data name="Json_Key" xml:space="preserve">
+    <value>{0} key</value>
+  </data>
+  <data name="Json_Keys" xml:space="preserve">
+    <value>{0} keys</value>
+  </data>
+  <data name="Json_MChars" xml:space="preserve">
+    <value>{0:0.#} M chars</value>
+  </data>
+  <data name="Json_Minify" xml:space="preserve">
+    <value>Minify</value>
+  </data>
+  <data name="Json_Placeholder" xml:space="preserve">
+    <value>Paste JSON here…</value>
+  </data>
+  <data name="Json_SortKeys" xml:space="preserve">
+    <value>Sort keys</value>
+  </data>
+  <data name="Json_Stats" xml:space="preserve">
+    <value>{0} · depth {1}</value>
+  </data>
+  <data name="Json_Status" xml:space="preserve">
+    <value>Valid JSON · {0:N0} values · {1}</value>
+  </data>
+  <data name="Json_Tab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="Json_Tabs" xml:space="preserve">
+    <value>Tabs</value>
+  </data>
+  <data name="Json_TabText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Json_TabTree" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="Json_TopLevelKey" xml:space="preserve">
+    <value>{0} top-level key</value>
+  </data>
+  <data name="Json_TopLevelKeys" xml:space="preserve">
+    <value>{0} top-level keys</value>
+  </data>
+  <data name="Json_Tree" xml:space="preserve">
+    <value>JSON tree</value>
+  </data>
+  <data name="Json_TwoSpaces" xml:space="preserve">
+    <value>2 spaces</value>
+  </data>
+  <data name="Json_Valid" xml:space="preserve">
+    <value>Valid JSON</value>
+  </data>
+  <data name="Jwt_Algorithm" xml:space="preserve">
+    <value>Algorithm</value>
+  </data>
+  <data name="Jwt_DecodedLocally" xml:space="preserve">
+    <value>Decoded locally — tokens are never sent anywhere.</value>
+  </data>
+  <data name="Jwt_EncodedToken" xml:space="preserve">
+    <value>Encoded token</value>
+  </data>
+  <data name="Jwt_Header" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="Jwt_HeaderJson" xml:space="preserve">
+    <value>Header JSON</value>
+  </data>
+  <data name="Jwt_InvalidSignature" xml:space="preserve">
+    <value>Invalid signature</value>
+  </data>
+  <data name="Jwt_NoAlg" xml:space="preserve">
+    <value>no alg</value>
+  </data>
+  <data name="Jwt_None" xml:space="preserve">
+    <value>(none)</value>
+  </data>
+  <data name="Jwt_NoTyp" xml:space="preserve">
+    <value>no typ</value>
+  </data>
+  <data name="Jwt_OutOfRange" xml:space="preserve">
+    <value>{0} (out of range)</value>
+  </data>
+  <data name="Jwt_Payload" xml:space="preserve">
+    <value>Payload</value>
+  </data>
+  <data name="Jwt_PayloadJson" xml:space="preserve">
+    <value>Payload JSON</value>
+  </data>
+  <data name="Jwt_Placeholder" xml:space="preserve">
+    <value>Paste a JWT (header.payload.signature)</value>
+  </data>
+  <data name="Jwt_RegisteredClaim" xml:space="preserve">
+    <value>{0} registered claim</value>
+  </data>
+  <data name="Jwt_RegisteredClaims" xml:space="preserve">
+    <value>{0} registered claims</value>
+  </data>
+  <data name="Jwt_RegisteredClaimsHeader" xml:space="preserve">
+    <value>REGISTERED CLAIMS</value>
+  </data>
+  <data name="Jwt_Secret" xml:space="preserve">
+    <value>Secret</value>
+  </data>
+  <data name="Jwt_SecretIsBase64" xml:space="preserve">
+    <value>Secret is Base64-encoded</value>
+  </data>
+  <data name="Jwt_SecretPlaceholder" xml:space="preserve">
+    <value>Shared secret (optional)</value>
+  </data>
+  <data name="Jwt_SharedSecret" xml:space="preserve">
+    <value>Shared secret</value>
+  </data>
+  <data name="Jwt_ShowSecret" xml:space="preserve">
+    <value>Show secret</value>
+  </data>
+  <data name="Jwt_Signature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="Jwt_SignatureVerified" xml:space="preserve">
+    <value>Signature verified</value>
+  </data>
+  <data name="Jwt_StatusExpired" xml:space="preserve">
+    <value>Expired {0}</value>
+    <comment>{0} = relative time, e.g. 3 hours ago</comment>
+  </data>
+  <data name="Jwt_StatusNoExpiry" xml:space="preserve">
+    <value>No expiry (exp) claim</value>
+  </data>
+  <data name="Jwt_StatusNotYetValid" xml:space="preserve">
+    <value>Not valid yet — starts {0}</value>
+  </data>
+  <data name="Jwt_StatusValid" xml:space="preserve">
+    <value>Valid — expires {0}</value>
+  </data>
+  <data name="Jwt_Summary" xml:space="preserve">
+    <value>{0} · {1} · {2}</value>
+  </data>
+  <data name="Jwt_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Jwt_Unsigned" xml:space="preserve">
+    <value> · unsigned (alg: none)</value>
+  </data>
+  <data name="Jwt_VerifySignature" xml:space="preserve">
+    <value>Verify signature</value>
+  </data>
+  <data name="Password_AddNumber" xml:space="preserve">
+    <value>Add a number</value>
+  </data>
+  <data name="Password_AllGenerated" xml:space="preserve">
+    <value>All generated</value>
+  </data>
+  <data name="Password_AtOnce" xml:space="preserve">
+    <value>at once</value>
+  </data>
+  <data name="Password_Capitalize" xml:space="preserve">
+    <value>Capitalize words</value>
+  </data>
+  <data name="Password_ClearHistory" xml:space="preserve">
+    <value>Clear history</value>
+  </data>
+  <data name="Password_DigitsOption" xml:space="preserve">
+    <value>Digits  0–9</value>
+  </data>
+  <data name="Password_Entropy" xml:space="preserve">
+    <value>≈ {0:0} bits of entropy</value>
+  </data>
+  <data name="Password_Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="Password_ExcludeAmbiguous" xml:space="preserve">
+    <value>Exclude look-alike characters  0 O 1 l I</value>
+  </data>
+  <data name="Password_ExcludeName" xml:space="preserve">
+    <value>Characters to exclude</value>
+  </data>
+  <data name="Password_ExcludePlaceholder" xml:space="preserve">
+    <value>characters to avoid</value>
+  </data>
+  <data name="Password_Fair" xml:space="preserve">
+    <value>Fair</value>
+  </data>
+  <data name="Password_GeneratedPassword" xml:space="preserve">
+    <value>Generated password</value>
+  </data>
+  <data name="Password_GeneratedPasswords" xml:space="preserve">
+    <value>Generated passwords</value>
+  </data>
+  <data name="Password_HowMany" xml:space="preserve">
+    <value>How many passwords</value>
+  </data>
+  <data name="Password_Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="Password_LowercaseOption" xml:space="preserve">
+    <value>Lowercase  a–z</value>
+  </data>
+  <data name="Password_MemoryOnly" xml:space="preserve">
+    <value>Held in memory only and wiped when the app closes.</value>
+  </data>
+  <data name="Password_Mode" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="Password_ModePassphrase" xml:space="preserve">
+    <value>Passphrase</value>
+  </data>
+  <data name="Password_ModePassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password_NoHistory" xml:space="preserve">
+    <value>Nothing yet — regenerate to keep earlier values here.</value>
+  </data>
+  <data name="Password_NumberOfWords" xml:space="preserve">
+    <value>Number of words</value>
+  </data>
+  <data name="Password_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Password_PoolCharacters" xml:space="preserve">
+    <value>characters</value>
+  </data>
+  <data name="Password_PoolWords" xml:space="preserve">
+    <value>words</value>
+  </data>
+  <data name="Password_Regenerate" xml:space="preserve">
+    <value>Regenerate</value>
+  </data>
+  <data name="Password_Separator" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="Password_SeparatorDot" xml:space="preserve">
+    <value>Dot  .</value>
+  </data>
+  <data name="Password_SeparatorHyphen" xml:space="preserve">
+    <value>Hyphen  -</value>
+  </data>
+  <data name="Password_SeparatorNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Password_SeparatorSpace" xml:space="preserve">
+    <value>Space</value>
+  </data>
+  <data name="Password_SeparatorUnderscore" xml:space="preserve">
+    <value>Underscore  _</value>
+  </data>
+  <data name="Password_StrengthStatus" xml:space="preserve">
+    <value>{0} · {1:0} bits of entropy · pool of {2:N0} {3}</value>
+  </data>
+  <data name="Password_Strong" xml:space="preserve">
+    <value>Strong</value>
+  </data>
+  <data name="Password_SymbolsOption" xml:space="preserve">
+    <value>Symbols  !@#$</value>
+  </data>
+  <data name="Password_ThisSession" xml:space="preserve">
+    <value>This session</value>
+  </data>
+  <data name="Password_UppercaseOption" xml:space="preserve">
+    <value>Uppercase  A–Z</value>
+  </data>
+  <data name="Password_VeryStrong" xml:space="preserve">
+    <value>Very strong</value>
+  </data>
+  <data name="Password_VeryWeak" xml:space="preserve">
+    <value>Very weak</value>
+  </data>
+  <data name="Password_Weak" xml:space="preserve">
+    <value>Weak</value>
+  </data>
+  <data name="Password_WordlistNote" xml:space="preserve">
+    <value>Words from the EFF Large Wordlist (7,776 words), picked with the OS cryptographic random source.</value>
+  </data>
+  <data name="Password_Words" xml:space="preserve">
+    <value>Words</value>
+  </data>
+  <data name="Regex_AtPosition" xml:space="preserve">
+    <value>{0} (at position {1})</value>
+  </data>
+  <data name="Regex_ColumnGroups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Regex_ColumnIndex" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Regex_ColumnMatch" xml:space="preserve">
+    <value>Match</value>
+  </data>
+  <data name="Regex_CultureInvariant" xml:space="preserve">
+    <value>Culture invariant</value>
+  </data>
+  <data name="Regex_ExplicitCapture" xml:space="preserve">
+    <value>Explicit capture</value>
+  </data>
+  <data name="Regex_ExplicitCaptureTip" xml:space="preserve">
+    <value>Explicit capture: only named groups capture</value>
+  </data>
+  <data name="Regex_Flavor" xml:space="preserve">
+    <value>.NET flavor</value>
+  </data>
+  <data name="Regex_Group" xml:space="preserve">
+    <value>{0} group</value>
+  </data>
+  <data name="Regex_Groups" xml:space="preserve">
+    <value>{0} groups</value>
+  </data>
+  <data name="Regex_IgnoreCase" xml:space="preserve">
+    <value>Ignore case</value>
+  </data>
+  <data name="Regex_IgnoreWhitespace" xml:space="preserve">
+    <value>Ignore pattern whitespace</value>
+  </data>
+  <data name="Regex_IgnoreWhitespaceTip" xml:space="preserve">
+    <value>Ignore pattern whitespace and # comments</value>
+  </data>
+  <data name="Regex_Match" xml:space="preserve">
+    <value>{0} match</value>
+  </data>
+  <data name="Regex_MatchDetails" xml:space="preserve">
+    <value>Match details</value>
+  </data>
+  <data name="Regex_Matches" xml:space="preserve">
+    <value>{0} matches</value>
+  </data>
+  <data name="Regex_MatchesName" xml:space="preserve">
+    <value>Matches</value>
+  </data>
+  <data name="Regex_Multiline" xml:space="preserve">
+    <value>Multiline</value>
+  </data>
+  <data name="Regex_MultilineTip" xml:space="preserve">
+    <value>Multiline: ^ and $ match at line breaks</value>
+  </data>
+  <data name="Regex_NoMatches" xml:space="preserve">
+    <value>No matches</value>
+  </data>
+  <data name="Regex_NonBacktrackingTip" xml:space="preserve">
+    <value>Linear-time engine: immune to catastrophic backtracking, but no backreferences or lookarounds.</value>
+  </data>
+  <data name="Regex_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Regex_Pattern" xml:space="preserve">
+    <value>Pattern</value>
+  </data>
+  <data name="Regex_PatternHeader" xml:space="preserve">
+    <value>PATTERN</value>
+  </data>
+  <data name="Regex_Placeholder" xml:space="preserve">
+    <value>Regular expression</value>
+  </data>
+  <data name="Regex_QuickReference" xml:space="preserve">
+    <value>QUICK REFERENCE</value>
+  </data>
+  <data name="Regex_Ref_Anchors" xml:space="preserve">
+    <value>start / end (Multiline: per line)</value>
+  </data>
+  <data name="Regex_Ref_Backreference" xml:space="preserve">
+    <value>backreference</value>
+  </data>
+  <data name="Regex_Ref_CharacterClass" xml:space="preserve">
+    <value>character class / negated</value>
+  </data>
+  <data name="Regex_Ref_Classes" xml:space="preserve">
+    <value>digit, word, whitespace</value>
+  </data>
+  <data name="Regex_Ref_Dot" xml:space="preserve">
+    <value>any char except \n (Singleline: any)</value>
+  </data>
+  <data name="Regex_Ref_Group" xml:space="preserve">
+    <value>capture group $1</value>
+  </data>
+  <data name="Regex_Ref_Lookahead" xml:space="preserve">
+    <value>lookahead / negative</value>
+  </data>
+  <data name="Regex_Ref_Lookbehind" xml:space="preserve">
+    <value>lookbehind / negative</value>
+  </data>
+  <data name="Regex_Ref_NamedGroup" xml:space="preserve">
+    <value>named group ${name}</value>
+  </data>
+  <data name="Regex_Ref_NegatedClasses" xml:space="preserve">
+    <value>not digit, word, whitespace</value>
+  </data>
+  <data name="Regex_Ref_NonCapturing" xml:space="preserve">
+    <value>non-capturing group</value>
+  </data>
+  <data name="Regex_Ref_Quantifiers" xml:space="preserve">
+    <value>0+, 1+, 0 or 1 (add ? = lazy)</value>
+  </data>
+  <data name="Regex_Ref_Range" xml:space="preserve">
+    <value>between n and m times</value>
+  </data>
+  <data name="Regex_Ref_WordBoundary" xml:space="preserve">
+    <value>word boundary</value>
+  </data>
+  <data name="Regex_Replacement" xml:space="preserve">
+    <value>Replacement</value>
+  </data>
+  <data name="Regex_ReplaceResult" xml:space="preserve">
+    <value>Replace result</value>
+  </data>
+  <data name="Regex_ReplaceWith" xml:space="preserve">
+    <value>REPLACE WITH</value>
+  </data>
+  <data name="Regex_RightToLeft" xml:space="preserve">
+    <value>Right to left</value>
+  </data>
+  <data name="Regex_ShowingFirst" xml:space="preserve">
+    <value> (showing first {0})</value>
+  </data>
+  <data name="Regex_Singleline" xml:space="preserve">
+    <value>Singleline</value>
+  </data>
+  <data name="Regex_SinglelineTip" xml:space="preserve">
+    <value>Singleline: . matches \n</value>
+  </data>
+  <data name="Regex_Status" xml:space="preserve">
+    <value>{0} · {1} · {2:0.#} ms · {3}</value>
+  </data>
+  <data name="Regex_TestPlaceholder" xml:space="preserve">
+    <value>Text to test the pattern against…</value>
+  </data>
+  <data name="Regex_TestString" xml:space="preserve">
+    <value>Test string</value>
+  </data>
+  <data name="Shell_AddToFavorites" xml:space="preserve">
+    <value>Add to favorites</value>
+  </data>
+  <data name="Shell_ChangeTheme" xml:space="preserve">
+    <value>Change theme</value>
+  </data>
+  <data name="Shell_FavoriteCurrentTool" xml:space="preserve">
+    <value>Favorite current tool</value>
+  </data>
+  <data name="Shell_FavoriteTool" xml:space="preserve">
+    <value>Favorite {0}</value>
+    <comment>{0} = tool name</comment>
+  </data>
+  <data name="Shell_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Shell_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Shell_Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Shell_Version" xml:space="preserve">
+    <value>v{0} (build {1})</value>
+  </data>
+  <data name="Shell_SearchPlaceholder" xml:space="preserve">
+    <value>Search tools…</value>
+  </data>
+  <data name="Shell_SearchTools" xml:space="preserve">
+    <value>Search tools</value>
+  </data>
+  <data name="Shell_ThemeTip" xml:space="preserve">
+    <value>Theme: {0} (click to change)</value>
+    <comment>{0} = System, Light or Dark</comment>
+  </data>
+  <data name="Shell_ToggleFavorite" xml:space="preserve">
+    <value>Toggle favorite</value>
+  </data>
+  <data name="Shell_ToggleSidebar" xml:space="preserve">
+    <value>Toggle sidebar</value>
+  </data>
+  <data name="Shell_ToggleSidebarTip" xml:space="preserve">
+    <value>Toggle sidebar (Cmd/Ctrl+B)</value>
+  </data>
+  <data name="Theme_Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Theme_Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Theme_System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Timestamp_AutoDetect" xml:space="preserve">
+    <value>Auto-detect</value>
+  </data>
+  <data name="Timestamp_DateAndTime" xml:space="preserve">
+    <value>Date and time</value>
+  </data>
+  <data name="Timestamp_DatePlaceholder" xml:space="preserve">
+    <value>2026-10-15 14:30:00 (in the selected zone) or 2026-10-15T07:30:00Z</value>
+  </data>
+  <data name="Timestamp_EpochPlaceholder" xml:space="preserve">
+    <value>Unix timestamp: seconds, ms, µs or ns</value>
+  </data>
+  <data name="Timestamp_InterpretedAs" xml:space="preserve">
+    <value>Interpreted as {0}</value>
+  </data>
+  <data name="Timestamp_IsoUtc" xml:space="preserve">
+    <value>ISO 8601 (UTC)</value>
+  </data>
+  <data name="Timestamp_LocalZone" xml:space="preserve">
+    <value>Local — {0}</value>
+  </data>
+  <data name="Timestamp_Microseconds" xml:space="preserve">
+    <value>Microseconds</value>
+  </data>
+  <data name="Timestamp_Milliseconds" xml:space="preserve">
+    <value>Milliseconds</value>
+  </data>
+  <data name="Timestamp_Nanoseconds" xml:space="preserve">
+    <value>Nanoseconds</value>
+  </data>
+  <data name="Timestamp_Now" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="Timestamp_Seconds" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="Timestamp_TimeZone" xml:space="preserve">
+    <value>Time zone</value>
+  </data>
+  <data name="Timestamp_ToDate" xml:space="preserve">
+    <value>Timestamp → date</value>
+  </data>
+  <data name="Timestamp_ToTimestamp" xml:space="preserve">
+    <value>Date → timestamp</value>
+  </data>
+  <data name="Timestamp_Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="Timestamp_UnixTimestamp" xml:space="preserve">
+    <value>Unix timestamp</value>
+  </data>
+  <data name="Tool_AppIcons_Description" xml:space="preserve">
+    <value>Upload one image and get every launcher icon for iOS and Android, named and sized for each platform.</value>
+  </data>
+  <data name="Tool_AppIcons_Name" xml:space="preserve">
+    <value>App icon generator</value>
+  </data>
+  <data name="Tool_AppIcons_ShortName" xml:space="preserve">
+    <value>App icons</value>
+  </data>
+  <data name="Tool_Barcode_Description" xml:space="preserve">
+    <value>QR, Code 128, EAN-13, UPC-A and Code 39 — export as PNG or SVG.</value>
+  </data>
+  <data name="Tool_Barcode_Name" xml:space="preserve">
+    <value>Barcode generator</value>
+  </data>
+  <data name="Tool_Barcode_ShortName" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="Tool_EncodeDecode_Description" xml:space="preserve">
+    <value>Base64, Base64URL, hex and binary — UTF-8 safe, direction detected for you.</value>
+  </data>
+  <data name="Tool_EncodeDecode_Name" xml:space="preserve">
+    <value>Base64 encode / decode</value>
+  </data>
+  <data name="Tool_EncodeDecode_ShortName" xml:space="preserve">
+    <value>Base64 / Hex</value>
+  </data>
+  <data name="Tool_Hash_Description" xml:space="preserve">
+    <value>MD5, SHA-1, SHA-2, SHA-3 and CRC32 with HMAC — for text or large files.</value>
+  </data>
+  <data name="Tool_Hash_Name" xml:space="preserve">
+    <value>Hash generator</value>
+  </data>
+  <data name="Tool_Hash_ShortName" xml:space="preserve">
+    <value>Hash</value>
+  </data>
+  <data name="Tool_Html_Description" xml:space="preserve">
+    <value>Escape and unescape HTML entities, named or numeric.</value>
+  </data>
+  <data name="Tool_Html_Name" xml:space="preserve">
+    <value>HTML encode / decode</value>
+  </data>
+  <data name="Tool_Html_ShortName" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="Tool_ImageBase64_Description" xml:space="preserve">
+    <value>Drop PNG, JPG, SVG or WebP to get a data URI — or turn Base64 back into an image.</value>
+  </data>
+  <data name="Tool_ImageBase64_Name" xml:space="preserve">
+    <value>Image ⇄ Base64</value>
+  </data>
+  <data name="Tool_ImageBase64_ShortName" xml:space="preserve">
+    <value>Image ⇄ Base64</value>
+  </data>
+  <data name="Tool_Json_Description" xml:space="preserve">
+    <value>Beautify, minify, validate and sort keys. Errors point to the exact line and column.</value>
+  </data>
+  <data name="Tool_Json_Name" xml:space="preserve">
+    <value>JSON formatter</value>
+  </data>
+  <data name="Tool_Json_ShortName" xml:space="preserve">
+    <value>JSON formatter</value>
+  </data>
+  <data name="Tool_Jwt_Description" xml:space="preserve">
+    <value>Decode header and payload, check expiry, verify HMAC signatures.</value>
+  </data>
+  <data name="Tool_Jwt_Name" xml:space="preserve">
+    <value>JWT decoder</value>
+  </data>
+  <data name="Tool_Jwt_ShortName" xml:space="preserve">
+    <value>JWT decoder</value>
+  </data>
+  <data name="Tool_Password_Description" xml:space="preserve">
+    <value>Strong passwords and passphrases from the OS cryptographic random source.</value>
+  </data>
+  <data name="Tool_Password_Name" xml:space="preserve">
+    <value>Password generator</value>
+  </data>
+  <data name="Tool_Password_ShortName" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Tool_Regex_Description" xml:space="preserve">
+    <value>Live match highlighting, groups, options and replace preview (.NET flavor).</value>
+  </data>
+  <data name="Tool_Regex_Name" xml:space="preserve">
+    <value>Regex tester</value>
+  </data>
+  <data name="Tool_Regex_ShortName" xml:space="preserve">
+    <value>Regex tester</value>
+  </data>
+  <data name="Tool_Timestamp_Description" xml:space="preserve">
+    <value>Epoch seconds, ms, µs or ns to local, UTC, ISO 8601 and RFC 2822 — and back.</value>
+  </data>
+  <data name="Tool_Timestamp_Name" xml:space="preserve">
+    <value>Timestamp ⇄ Date</value>
+  </data>
+  <data name="Tool_Timestamp_ShortName" xml:space="preserve">
+    <value>Timestamp</value>
+  </data>
+  <data name="Tool_Url_Description" xml:space="preserve">
+    <value>Percent-encode components and parse query strings into an editable table.</value>
+  </data>
+  <data name="Tool_Url_Name" xml:space="preserve">
+    <value>URL encode / decode</value>
+  </data>
+  <data name="Tool_Url_ShortName" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Tool_Uuid_Description" xml:space="preserve">
+    <value>UUID v4 and v7, bulk generate, and inspect any UUID's version and time.</value>
+  </data>
+  <data name="Tool_Uuid_Name" xml:space="preserve">
+    <value>UUID generator</value>
+  </data>
+  <data name="Tool_Uuid_ShortName" xml:space="preserve">
+    <value>UUID</value>
+  </data>
+  <data name="Tray_NoFavorites" xml:space="preserve">
+    <value>No favorites yet — star a tool</value>
+  </data>
+  <data name="Tray_Open" xml:space="preserve">
+    <value>Open DevToolBox</value>
+  </data>
+  <data name="Tray_OpenAtLogin" xml:space="preserve">
+    <value>Open at login</value>
+  </data>
+  <data name="Tray_Quit" xml:space="preserve">
+    <value>Quit DevToolBox</value>
+  </data>
+  <data name="Url_DefaultPort" xml:space="preserve">
+    <value>(default)</value>
+  </data>
+  <data name="Url_EncodingMode" xml:space="preserve">
+    <value>Encoding mode</value>
+  </data>
+  <data name="Url_Fragment" xml:space="preserve">
+    <value>Fragment</value>
+  </data>
+  <data name="Url_Host" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="Url_KeyPlaceholder" xml:space="preserve">
+    <value>key</value>
+  </data>
+  <data name="Url_ModeComponent" xml:space="preserve">
+    <value>Component — encodeURIComponent</value>
+  </data>
+  <data name="Url_ModeFullUri" xml:space="preserve">
+    <value>Full URL — encodeURI</value>
+  </data>
+  <data name="Url_ParameterName" xml:space="preserve">
+    <value>Parameter name</value>
+  </data>
+  <data name="Url_ParameterValue" xml:space="preserve">
+    <value>Parameter value</value>
+  </data>
+  <data name="Url_Parts" xml:space="preserve">
+    <value>Parts</value>
+  </data>
+  <data name="Url_Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="Url_Placeholder" xml:space="preserve">
+    <value>Text to percent-encode, or %XX-encoded text to decode…</value>
+  </data>
+  <data name="Url_PlusForSpace" xml:space="preserve">
+    <value>Space as '+' (form encoding)</value>
+  </data>
+  <data name="Url_Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Url_QueryParameters" xml:space="preserve">
+    <value>Query parameters</value>
+  </data>
+  <data name="Url_Rebuilt" xml:space="preserve">
+    <value>Rebuilt URL</value>
+  </data>
+  <data name="Url_RemoveParameter" xml:space="preserve">
+    <value>Remove parameter</value>
+  </data>
+  <data name="Url_Scheme" xml:space="preserve">
+    <value>Scheme</value>
+  </data>
+  <data name="Url_TabEncodeDecode" xml:space="preserve">
+    <value>Encode / Decode</value>
+  </data>
+  <data name="Url_TabParser" xml:space="preserve">
+    <value>URL parser</value>
+  </data>
+  <data name="Url_UrlToParse" xml:space="preserve">
+    <value>URL to parse</value>
+  </data>
+  <data name="Url_UserInfo" xml:space="preserve">
+    <value>User info</value>
+  </data>
+  <data name="Url_ValuePlaceholder" xml:space="preserve">
+    <value>value</value>
+  </data>
+  <data name="Uuid_Braces" xml:space="preserve">
+    <value>Braces {}</value>
+  </data>
+  <data name="Uuid_Canonical" xml:space="preserve">
+    <value>Canonical</value>
+  </data>
+  <data name="Uuid_Generated" xml:space="preserve">
+    <value>Generated</value>
+  </data>
+  <data name="Uuid_GeneratedName" xml:space="preserve">
+    <value>Generated UUIDs</value>
+  </data>
+  <data name="Uuid_Hyphens" xml:space="preserve">
+    <value>Hyphens</value>
+  </data>
+  <data name="Uuid_Inspect" xml:space="preserve">
+    <value>Inspect</value>
+  </data>
+  <data name="Uuid_InspectFirst" xml:space="preserve">
+    <value>Inspect first</value>
+  </data>
+  <data name="Uuid_Placeholder" xml:space="preserve">
+    <value>Paste a UUID to validate and inspect…</value>
+  </data>
+  <data name="Uuid_TimestampLocal" xml:space="preserve">
+    <value>Timestamp (local)</value>
+  </data>
+  <data name="Uuid_TimestampUtc" xml:space="preserve">
+    <value>Timestamp (UTC)</value>
+  </data>
+  <data name="Uuid_ToInspect" xml:space="preserve">
+    <value>UUID to inspect</value>
+  </data>
+  <data name="Uuid_V4" xml:space="preserve">
+    <value>v4 — random</value>
+  </data>
+  <data name="Uuid_V7" xml:space="preserve">
+    <value>v7 — time-ordered</value>
+  </data>
+  <data name="Uuid_Variant" xml:space="preserve">
+    <value>Variant</value>
+  </data>
+  <data name="Uuid_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Uuid_VersionName" xml:space="preserve">
+    <value>UUID version</value>
+  </data>
+</root>

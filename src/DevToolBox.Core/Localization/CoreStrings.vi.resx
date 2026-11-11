@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppIcons_NotSquare" xml:space="preserve">
+    <value>Ảnh có kích thước {0}×{1}, không vuông — phần giữa {2}×{2} sẽ được dùng.</value>
+  </data>
+  <data name="AppIcons_TooSmall" xml:space="preserve">
+    <value>Ảnh có kích thước {0}×{1}. Biểu tượng ứng dụng cần tối thiểu {2}×{2} pixel.</value>
+  </data>
+  <data name="AppIcons_Transparent" xml:space="preserve">
+    <value>Ảnh có pixel trong suốt. Biểu tượng iOS và Android vuông sẽ được tô màu nền (Apple từ chối biểu tượng trong suốt).</value>
+  </data>
+  <data name="Barcode_Checksum" xml:space="preserve">
+    <value>Chữ số kiểm tra sai: chữ số cuối phải là {0}.</value>
+  </data>
+  <data name="Barcode_Code128Charset" xml:space="preserve">
+    <value>Code 128 chỉ nhận ký tự ASCII in được; '{0}' không được hỗ trợ.</value>
+  </data>
+  <data name="Barcode_Code39Charset" xml:space="preserve">
+    <value>Code 39 không mã hóa được '{0}'. Cho phép: A–Z, 0–9, dấu cách và - . $ / + %.</value>
+  </data>
+  <data name="Barcode_DigitsOnly" xml:space="preserve">
+    <value>{0} chỉ chấp nhận chữ số.</value>
+  </data>
+  <data name="Barcode_Empty" xml:space="preserve">
+    <value>Nhập văn bản cần mã hóa.</value>
+  </data>
+  <data name="Barcode_Encode" xml:space="preserve">
+    <value>Không mã hóa được: {0}</value>
+  </data>
+  <data name="Barcode_Length" xml:space="preserve">
+    <value>{0} cần {1} chữ số (chữ số kiểm tra được thêm tự động) hoặc {2} chữ số.</value>
+  </data>
+  <data name="Barcode_QrTooLong" xml:space="preserve">
+    <value>Mã QR chứa tối đa {0:N0} byte (với mức sửa lỗi L).</value>
+  </data>
+  <data name="Barcode_TooLong" xml:space="preserve">
+    <value>Dữ liệu {0} giới hạn {1} ký tự để vẫn quét được.</value>
+  </data>
+  <data name="Codec_BinaryWholeBytes" xml:space="preserve">
+    <value>Dữ liệu nhị phân phải là các byte đầy đủ (nhóm 8 bit).</value>
+  </data>
+  <data name="Codec_HexOdd" xml:space="preserve">
+    <value>Dữ liệu hex phải có số chữ số chẵn (hai chữ số mỗi byte).</value>
+  </data>
+  <data name="Codec_InvalidBase64" xml:space="preserve">
+    <value>Không phải Base64 hợp lệ: dùng A–Z, a–z, 0–9, +/ (hoặc -_) và có thể đệm bằng =.</value>
+  </data>
+  <data name="Codec_NotBinaryDigit" xml:space="preserve">
+    <value>'{0}' không phải chữ số nhị phân (0 hoặc 1).</value>
+  </data>
+  <data name="Codec_NotHexDigit" xml:space="preserve">
+    <value>'{0}' không phải chữ số hex (0–9, a–f).</value>
+  </data>
+  <data name="Codec_NotUtf8" xml:space="preserve">
+    <value>Các byte sau giải mã không phải văn bản UTF-8 hợp lệ.</value>
+  </data>
+  <data name="Hash_Crypto" xml:space="preserve">
+    <value>Bộ mã hóa của hệ thống từ chối: {0}</value>
+  </data>
+  <data name="Hash_Io" xml:space="preserve">
+    <value>Không đọc được tệp: {0}</value>
+  </data>
+  <data name="Image_DataEmpty" xml:space="preserve">
+    <value>Dữ liệu trống.</value>
+  </data>
+  <data name="Image_DecodedUnknownFormat" xml:space="preserve">
+    <value>Dữ liệu sau giải mã không phải định dạng ảnh được hỗ trợ.</value>
+  </data>
+  <data name="Image_EmptyInput" xml:space="preserve">
+    <value>Hãy dán dữ liệu Base64 hoặc data: URI.</value>
+  </data>
+  <data name="Image_FileEmpty" xml:space="preserve">
+    <value>Tệp trống.</value>
+  </data>
+  <data name="Image_InvalidBase64" xml:space="preserve">
+    <value>Không phải Base64 hợp lệ.</value>
+  </data>
+  <data name="Image_MalformedDataUri" xml:space="preserve">
+    <value>Data URI sai định dạng: thiếu ',' trước dữ liệu.</value>
+  </data>
+  <data name="Image_TooLarge" xml:space="preserve">
+    <value>Chỉ hỗ trợ ảnh tối đa {0} MB.</value>
+  </data>
+  <data name="Image_UnknownFormat" xml:space="preserve">
+    <value>Không nhận ra định dạng ảnh (PNG, JPEG, GIF, WebP, BMP, ICO, SVG, AVIF, TIFF).</value>
+  </data>
+  <data name="Json_Empty" xml:space="preserve">
+    <value>Dữ liệu đầu vào trống.</value>
+  </data>
+  <data name="Json_Invalid" xml:space="preserve">
+    <value>Dòng {0}, cột {1}: {2}</value>
+  </data>
+  <data name="Jwt_AlgUnsupported" xml:space="preserve">
+    <value>Chỉ chữ ký HMAC (HS256/HS384/HS512) mới xác minh được bằng khóa bí mật dùng chung; token này dùng {0}.</value>
+  </data>
+  <data name="Jwt_Claim_Audience" xml:space="preserve">
+    <value>Đối tượng nhận</value>
+  </data>
+  <data name="Jwt_Claim_AuthenticatedAt" xml:space="preserve">
+    <value>Xác thực lúc</value>
+  </data>
+  <data name="Jwt_Claim_Expires" xml:space="preserve">
+    <value>Hết hạn</value>
+  </data>
+  <data name="Jwt_Claim_IssuedAt" xml:space="preserve">
+    <value>Phát hành lúc</value>
+  </data>
+  <data name="Jwt_Claim_Issuer" xml:space="preserve">
+    <value>Bên phát hành</value>
+  </data>
+  <data name="Jwt_Claim_JwtId" xml:space="preserve">
+    <value>JWT ID</value>
+  </data>
+  <data name="Jwt_Claim_NotBefore" xml:space="preserve">
+    <value>Hiệu lực từ</value>
+  </data>
+  <data name="Jwt_Claim_Subject" xml:space="preserve">
+    <value>Chủ thể</value>
+  </data>
+  <data name="Jwt_Empty" xml:space="preserve">
+    <value>Hãy dán một JWT (header.payload.signature).</value>
+  </data>
+  <data name="Jwt_Encrypted" xml:space="preserve">
+    <value>Đây là JWT đã mã hóa (JWE, 5 phần). Không thể giải mã nếu không có khóa giải mã.</value>
+  </data>
+  <data name="Jwt_Header" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="Jwt_NoAlgorithm" xml:space="preserve">
+    <value>không có thuật toán</value>
+  </data>
+  <data name="Jwt_PartNotBase64Url" xml:space="preserve">
+    <value>{0} không phải Base64URL hợp lệ.</value>
+  </data>
+  <data name="Jwt_PartNotJsonObject" xml:space="preserve">
+    <value>{0} không phải đối tượng JSON.</value>
+  </data>
+  <data name="Jwt_PartNotUtf8" xml:space="preserve">
+    <value>{0} không phải văn bản UTF-8 hợp lệ.</value>
+  </data>
+  <data name="Jwt_Parts" xml:space="preserve">
+    <value>JWT gồm 3 phần ngăn cách bởi dấu chấm (header.payload.signature); tìm thấy {0}.</value>
+  </data>
+  <data name="Jwt_Payload" xml:space="preserve">
+    <value>Payload</value>
+  </data>
+  <data name="Jwt_SecretEmpty" xml:space="preserve">
+    <value>Nhập khóa bí mật dùng chung để xác minh chữ ký.</value>
+  </data>
+  <data name="Jwt_SecretNotBase64" xml:space="preserve">
+    <value>Khóa bí mật không phải Base64 hợp lệ.</value>
+  </data>
+  <data name="Jwt_SignatureNotBase64Url" xml:space="preserve">
+    <value>Phần chữ ký không phải Base64URL hợp lệ.</value>
+  </data>
+  <data name="Passphrase_Separator" xml:space="preserve">
+    <value>Dấu phân cách tối đa {0} ký tự.</value>
+  </data>
+  <data name="Passphrase_Words" xml:space="preserve">
+    <value>Dùng từ {0} đến {1} từ.</value>
+  </data>
+  <data name="Password_AllExcluded" xml:space="preserve">
+    <value>Mọi ký tự {0} đều bị loại trừ.</value>
+  </data>
+  <data name="Password_Count" xml:space="preserve">
+    <value>Số lượng phải từ 1 đến {0}.</value>
+  </data>
+  <data name="Password_Failed" xml:space="preserve">
+    <value>Không thể đáp ứng các tùy chọn đã chọn. Hãy tăng độ dài hoặc cho phép thêm ký tự.</value>
+  </data>
+  <data name="Password_Length" xml:space="preserve">
+    <value>Độ dài phải từ {0} đến {1}.</value>
+  </data>
+  <data name="Password_NoTypes" xml:space="preserve">
+    <value>Chọn ít nhất một loại ký tự.</value>
+  </data>
+  <data name="Password_TooShort" xml:space="preserve">
+    <value>Độ dài phải ít nhất {0} để có đủ mọi loại ký tự đã chọn.</value>
+  </data>
+  <data name="Password_Type_Digit" xml:space="preserve">
+    <value>chữ số</value>
+  </data>
+  <data name="Password_Type_Lowercase" xml:space="preserve">
+    <value>chữ thường</value>
+  </data>
+  <data name="Password_Type_Symbol" xml:space="preserve">
+    <value>ký hiệu</value>
+  </data>
+  <data name="Password_Type_Uppercase" xml:space="preserve">
+    <value>chữ hoa</value>
+  </data>
+  <data name="Regex_Timeout" xml:space="preserve">
+    <value>Việc so khớp mất hơn {0:0.#} giây — mẫu có thể bị quay lui thảm họa. Hãy đơn giản hóa mẫu hoặc bật NonBacktracking.</value>
+  </data>
+  <data name="Relative_Ago" xml:space="preserve">
+    <value>{0} trước</value>
+  </data>
+  <data name="Relative_Day" xml:space="preserve">
+    <value>{0} ngày</value>
+  </data>
+  <data name="Relative_Days" xml:space="preserve">
+    <value>{0} ngày</value>
+  </data>
+  <data name="Relative_Hour" xml:space="preserve">
+    <value>{0} giờ</value>
+  </data>
+  <data name="Relative_Hours" xml:space="preserve">
+    <value>{0} giờ</value>
+  </data>
+  <data name="Relative_In" xml:space="preserve">
+    <value>{0} nữa</value>
+  </data>
+  <data name="Relative_JustNow" xml:space="preserve">
+    <value>vừa xong</value>
+  </data>
+  <data name="Relative_Minute" xml:space="preserve">
+    <value>{0} phút</value>
+  </data>
+  <data name="Relative_Minutes" xml:space="preserve">
+    <value>{0} phút</value>
+  </data>
+  <data name="Relative_Month" xml:space="preserve">
+    <value>{0} tháng</value>
+  </data>
+  <data name="Relative_Months" xml:space="preserve">
+    <value>{0} tháng</value>
+  </data>
+  <data name="Relative_Second" xml:space="preserve">
+    <value>{0} giây</value>
+  </data>
+  <data name="Relative_Seconds" xml:space="preserve">
+    <value>{0} giây</value>
+  </data>
+  <data name="Relative_Year" xml:space="preserve">
+    <value>{0} năm</value>
+  </data>
+  <data name="Relative_Years" xml:space="preserve">
+    <value>{0} năm</value>
+  </data>
+  <data name="SmartPaste_Base64Decode" xml:space="preserve">
+    <value>Giải mã Base64</value>
+  </data>
+  <data name="SmartPaste_Base64Encode" xml:space="preserve">
+    <value>Mã hóa Base64</value>
+  </data>
+  <data name="SmartPaste_CompareHash" xml:space="preserve">
+    <value>So sánh với mã băm</value>
+  </data>
+  <data name="SmartPaste_ConvertTimestamp" xml:space="preserve">
+    <value>Chuyển đổi timestamp</value>
+  </data>
+  <data name="SmartPaste_HashIt" xml:space="preserve">
+    <value>Tạo mã băm</value>
+  </data>
+  <data name="SmartPaste_HexDecode" xml:space="preserve">
+    <value>Giải mã hex</value>
+  </data>
+  <data name="SmartPaste_HtmlDecode" xml:space="preserve">
+    <value>Giải mã HTML</value>
+  </data>
+  <data name="SmartPaste_HtmlEncode" xml:space="preserve">
+    <value>Mã hóa HTML</value>
+  </data>
+  <data name="SmartPaste_InspectUuid" xml:space="preserve">
+    <value>Kiểm tra UUID</value>
+  </data>
+  <data name="SmartPaste_Kind_Hash" xml:space="preserve">
+    <value>Mã băm</value>
+  </data>
+  <data name="SmartPaste_Kind_HtmlEntities" xml:space="preserve">
+    <value>Thực thể HTML</value>
+  </data>
+  <data name="SmartPaste_Kind_ImageDataUri" xml:space="preserve">
+    <value>Data URI ảnh</value>
+  </data>
+  <data name="SmartPaste_Kind_Text" xml:space="preserve">
+    <value>Văn bản</value>
+  </data>
+  <data name="SmartPaste_Kind_UnixTimestamp" xml:space="preserve">
+    <value>Unix timestamp</value>
+  </data>
+  <data name="SmartPaste_Kind_UrlEncodedText" xml:space="preserve">
+    <value>Văn bản mã hóa URL</value>
+  </data>
+  <data name="SmartPaste_MakeAppIcons" xml:space="preserve">
+    <value>Tạo biểu tượng ứng dụng</value>
+  </data>
+  <data name="SmartPaste_MakeQrCode" xml:space="preserve">
+    <value>Tạo mã QR</value>
+  </data>
+  <data name="SmartPaste_OpenJsonFormatter" xml:space="preserve">
+    <value>Mở bằng Định dạng JSON</value>
+  </data>
+  <data name="SmartPaste_OpenJwtDecoder" xml:space="preserve">
+    <value>Mở bằng Giải mã JWT</value>
+  </data>
+  <data name="SmartPaste_ParseUrl" xml:space="preserve">
+    <value>Phân tích URL</value>
+  </data>
+  <data name="SmartPaste_PreviewImage" xml:space="preserve">
+    <value>Xem trước ảnh</value>
+  </data>
+  <data name="SmartPaste_TestRegex" xml:space="preserve">
+    <value>Thử regex với nội dung này</value>
+  </data>
+  <data name="SmartPaste_UrlDecode" xml:space="preserve">
+    <value>Giải mã URL</value>
+  </data>
+  <data name="SmartPaste_UrlEncode" xml:space="preserve">
+    <value>Mã hóa URL</value>
+  </data>
+  <data name="Timestamp_DstGap" xml:space="preserve">
+    <value>{0} không tồn tại ở {1} (bị bỏ qua do chuyển giờ mùa hè).</value>
+  </data>
+  <data name="Timestamp_EmptyDate" xml:space="preserve">
+    <value>Nhập ngày và giờ, ví dụ 2026-10-15 14:30:00.</value>
+  </data>
+  <data name="Timestamp_Field_DayOfWeek" xml:space="preserve">
+    <value>Thứ trong tuần</value>
+  </data>
+  <data name="Timestamp_Field_DayOfYear" xml:space="preserve">
+    <value>Ngày trong năm</value>
+  </data>
+  <data name="Timestamp_Field_IsoWeek" xml:space="preserve">
+    <value>Tuần ISO</value>
+  </data>
+  <data name="Timestamp_Field_Local" xml:space="preserve">
+    <value>Giờ địa phương ({0})</value>
+  </data>
+  <data name="Timestamp_Field_Relative" xml:space="preserve">
+    <value>Tương đối</value>
+  </data>
+  <data name="Timestamp_Field_UnixMicroseconds" xml:space="preserve">
+    <value>Unix (micro giây)</value>
+  </data>
+  <data name="Timestamp_Field_UnixMilliseconds" xml:space="preserve">
+    <value>Unix (mili giây)</value>
+  </data>
+  <data name="Timestamp_Field_UnixNanoseconds" xml:space="preserve">
+    <value>Unix (nano giây)</value>
+  </data>
+  <data name="Timestamp_Field_UnixSeconds" xml:space="preserve">
+    <value>Unix (giây)</value>
+  </data>
+  <data name="Timestamp_InvalidDate" xml:space="preserve">
+    <value>Không đọc được ngày này. Thử 2026-10-15 14:30:00 hoặc 2026-10-15T07:30:00Z.</value>
+  </data>
+  <data name="Timestamp_NotANumber" xml:space="preserve">
+    <value>Nhập Unix timestamp dạng số, ví dụ 1760500000 hoặc 1760500000123.</value>
+  </data>
+  <data name="Timestamp_OutOfRange" xml:space="preserve">
+    <value>Giá trị {0} này nằm ngoài khoảng năm 0001–9999.</value>
+  </data>
+  <data name="Timestamp_Unit_Microseconds" xml:space="preserve">
+    <value>micro giây</value>
+  </data>
+  <data name="Timestamp_Unit_Milliseconds" xml:space="preserve">
+    <value>mili giây</value>
+  </data>
+  <data name="Timestamp_Unit_Nanoseconds" xml:space="preserve">
+    <value>nano giây</value>
+  </data>
+  <data name="Timestamp_Unit_Seconds" xml:space="preserve">
+    <value>giây</value>
+  </data>
+  <data name="Url_InvalidUtf8" xml:space="preserve">
+    <value>Chuỗi thoát bắt đầu ở vị trí {0} không phải UTF-8 hợp lệ.</value>
+  </data>
+  <data name="Url_LoneSurrogate" xml:space="preserve">
+    <value>Ký tự không hợp lệ ở vị trí {0} (surrogate không có cặp).</value>
+  </data>
+  <data name="Url_MalformedEscape" xml:space="preserve">
+    <value>Chuỗi thoát sai ở vị trí {0}: sau '%' phải là hai chữ số hex.</value>
+  </data>
+  <data name="Url_NotAbsolute" xml:space="preserve">
+    <value>Không phải URL tuyệt đối. Hãy kèm giao thức, ví dụ https://example.com/path?x=1.</value>
+  </data>
+  <data name="Uuid_Count" xml:space="preserve">
+    <value>Số lượng phải từ 1 đến {0:N0}.</value>
+  </data>
+  <data name="Uuid_Invalid" xml:space="preserve">
+    <value>Không phải UUID hợp lệ. Cần 32 chữ số hex, ví dụ 550e8400-e29b-41d4-a716-446655440000.</value>
+  </data>
+  <data name="Uuid_Variant_Future" xml:space="preserve">
+    <value>Tương lai (dành riêng)</value>
+  </data>
+  <data name="Uuid_Variant_Microsoft" xml:space="preserve">
+    <value>Microsoft (dành riêng)</value>
+  </data>
+  <data name="Uuid_Variant_Ncs" xml:space="preserve">
+    <value>NCS (dành riêng)</value>
+  </data>
+  <data name="Uuid_Version1" xml:space="preserve">
+    <value>Phiên bản 1 (theo thời gian)</value>
+  </data>
+  <data name="Uuid_Version2" xml:space="preserve">
+    <value>Phiên bản 2 (DCE security)</value>
+  </data>
+  <data name="Uuid_Version3" xml:space="preserve">
+    <value>Phiên bản 3 (theo tên, MD5)</value>
+  </data>
+  <data name="Uuid_Version4" xml:space="preserve">
+    <value>Phiên bản 4 (ngẫu nhiên)</value>
+  </data>
+  <data name="Uuid_Version5" xml:space="preserve">
+    <value>Phiên bản 5 (theo tên, SHA-1)</value>
+  </data>
+  <data name="Uuid_Version6" xml:space="preserve">
+    <value>Phiên bản 6 (thời gian sắp xếp lại)</value>
+  </data>
+  <data name="Uuid_Version7" xml:space="preserve">
+    <value>Phiên bản 7 (sắp theo thời gian Unix)</value>
+  </data>
+  <data name="Uuid_Version8" xml:space="preserve">
+    <value>Phiên bản 8 (tùy biến)</value>
+  </data>
+  <data name="Uuid_VersionUnknown" xml:space="preserve">
+    <value>Phiên bản không xác định ({0})</value>
+  </data>
+</root>

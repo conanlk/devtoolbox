@@ -1,0 +1,182 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!--
+    DevToolBox design tokens (Claude Design canvas "DevToolbox UI").
+    Dark values are taken from the design; Light values are derived to keep the same contrast roles.
+  -->
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Dark">
+      <!-- Surfaces -->
+      <SolidColorBrush x:Key="Brush.Window" Color="#0E1014" />
+      <SolidColorBrush x:Key="Brush.Chrome" Color="#12151B" />
+      <SolidColorBrush x:Key="Brush.Sidebar" Color="#12151B" />
+      <SolidColorBrush x:Key="Brush.SidebarTranslucent" Color="#CC12151B" />
+      <SolidColorBrush x:Key="Brush.Panel" Color="#151820" />
+      <SolidColorBrush x:Key="Brush.Card" Color="#151820" />
+      <SolidColorBrush x:Key="Brush.CardHover" Color="#1B1F28" />
+      <SolidColorBrush x:Key="Brush.Well" Color="#0E1014" />
+      <SolidColorBrush x:Key="Brush.Input" Color="#1B1F28" />
+      <SolidColorBrush x:Key="Brush.InputBorder" Color="#2B313D" />
+      <SolidColorBrush x:Key="Brush.Border" Color="#262B35" />
+      <SolidColorBrush x:Key="Brush.BorderSubtle" Color="#1F242E" />
+      <SolidColorBrush x:Key="Brush.BorderStrong" Color="#343A47" />
+      <SolidColorBrush x:Key="Brush.Selected" Color="#262C38" />
+      <SolidColorBrush x:Key="Brush.SegmentSelected" Color="#2A303C" />
+      <SolidColorBrush x:Key="Brush.Badge" Color="#222733" />
+      <SolidColorBrush x:Key="Brush.BadgeNav" Color="#1E232D" />
+      <!-- Text -->
+      <SolidColorBrush x:Key="Brush.TextPrimary" Color="#E7E9EE" />
+      <SolidColorBrush x:Key="Brush.TextStrong" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="Brush.TextSubtle" Color="#C3C9D4" />
+      <SolidColorBrush x:Key="Brush.TextSecondary" Color="#A0A8B8" />
+      <SolidColorBrush x:Key="Brush.TextMuted" Color="#8A93A5" />
+      <SolidColorBrush x:Key="Brush.TextFaint" Color="#7D8596" />
+      <!-- Accent (amber) -->
+      <SolidColorBrush x:Key="Brush.Accent" Color="#F2B544" />
+      <SolidColorBrush x:Key="Brush.AccentHover" Color="#FFD07A" />
+      <SolidColorBrush x:Key="Brush.OnAccent" Color="#1A1406" />
+      <SolidColorBrush x:Key="Brush.AccentText" Color="#F2B544" />
+      <!-- Status -->
+      <SolidColorBrush x:Key="Brush.Success" Color="#6FD3B8" />
+      <SolidColorBrush x:Key="Brush.SuccessBg" Color="#173229" />
+      <SolidColorBrush x:Key="Brush.Warning" Color="#F2B544" />
+      <SolidColorBrush x:Key="Brush.WarningBg" Color="#3A2E12" />
+      <SolidColorBrush x:Key="Brush.Error" Color="#F28B82" />
+      <SolidColorBrush x:Key="Brush.ErrorBg" Color="#3A1D1D" />
+      <SolidColorBrush x:Key="Brush.DropHighlight" Color="#33F2B544" />
+      <!-- Code -->
+      <SolidColorBrush x:Key="Brush.Json.Key" Color="#7CC4F5" />
+      <SolidColorBrush x:Key="Brush.Json.String" Color="#E8C27A" />
+      <SolidColorBrush x:Key="Brush.Json.Number" Color="#C9A2F5" />
+      <SolidColorBrush x:Key="Brush.Json.Keyword" Color="#F28B5B" />
+      <SolidColorBrush x:Key="Brush.Jwt.Header" Color="#F28B5B" />
+      <SolidColorBrush x:Key="Brush.Jwt.Payload" Color="#C9A2F5" />
+      <SolidColorBrush x:Key="Brush.Jwt.Signature" Color="#6FD3B8" />
+      <SolidColorBrush x:Key="Brush.Match" Color="#4A3A14" />
+      <SolidColorBrush x:Key="Brush.MatchText" Color="#FFE2A3" />
+      <!-- Fluent control overrides -->
+      <SolidColorBrush x:Key="TextControlBackground" Color="#1B1F28" />
+      <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#1B1F28" />
+      <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="#0E1014" />
+      <SolidColorBrush x:Key="TextControlBorderBrush" Color="#2B313D" />
+      <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="#343A47" />
+      <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#F2B544" />
+      <SolidColorBrush x:Key="TextControlForeground" Color="#E7E9EE" />
+      <SolidColorBrush x:Key="TextControlForegroundFocused" Color="#E7E9EE" />
+      <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="#7D8596" />
+      <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused" Color="#7D8596" />
+      <SolidColorBrush x:Key="ButtonBackground" Color="Transparent" />
+      <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#1B1F28" />
+      <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#222733" />
+      <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="Transparent" />
+      <SolidColorBrush x:Key="ButtonBorderBrush" Color="#343A47" />
+      <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#4A5161" />
+      <SolidColorBrush x:Key="ButtonBorderBrushPressed" Color="#4A5161" />
+      <SolidColorBrush x:Key="ButtonForeground" Color="#E7E9EE" />
+      <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="ButtonForegroundPressed" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="ComboBoxBackground" Color="#1B1F28" />
+      <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="#222733" />
+      <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#2B313D" />
+      <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="#343A47" />
+      <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="#151820" />
+      <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="#2B313D" />
+      <SolidColorBrush x:Key="ListBoxItemBackgroundSelected" Color="#262C38" />
+      <SolidColorBrush x:Key="ListBoxItemBackgroundSelectedPointerOver" Color="#2A303C" />
+      <SolidColorBrush x:Key="ListBoxItemBackgroundPointerOver" Color="#1B1F28" />
+      <SolidColorBrush x:Key="ListBoxItemForegroundSelected" Color="#FFFFFF" />
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="Brush.Window" Color="#F6F7F9" />
+      <SolidColorBrush x:Key="Brush.Chrome" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="Brush.Sidebar" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="Brush.SidebarTranslucent" Color="#CCFFFFFF" />
+      <SolidColorBrush x:Key="Brush.Panel" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="Brush.Card" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="Brush.CardHover" Color="#F1F3F6" />
+      <SolidColorBrush x:Key="Brush.Well" Color="#F6F7F9" />
+      <SolidColorBrush x:Key="Brush.Input" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="Brush.InputBorder" Color="#CBD1DB" />
+      <SolidColorBrush x:Key="Brush.Border" Color="#E3E6EC" />
+      <SolidColorBrush x:Key="Brush.BorderSubtle" Color="#EEF0F4" />
+      <SolidColorBrush x:Key="Brush.BorderStrong" Color="#CBD1DB" />
+      <SolidColorBrush x:Key="Brush.Selected" Color="#E9ECF2" />
+      <SolidColorBrush x:Key="Brush.SegmentSelected" Color="#E3E7EE" />
+      <SolidColorBrush x:Key="Brush.Badge" Color="#EEF0F4" />
+      <SolidColorBrush x:Key="Brush.BadgeNav" Color="#EEF0F4" />
+      <SolidColorBrush x:Key="Brush.TextPrimary" Color="#14171E" />
+      <SolidColorBrush x:Key="Brush.TextStrong" Color="#0B0D12" />
+      <SolidColorBrush x:Key="Brush.TextSubtle" Color="#343A47" />
+      <SolidColorBrush x:Key="Brush.TextSecondary" Color="#4B5263" />
+      <SolidColorBrush x:Key="Brush.TextMuted" Color="#5F6778" />
+      <SolidColorBrush x:Key="Brush.TextFaint" Color="#6B7385" />
+      <SolidColorBrush x:Key="Brush.Accent" Color="#F2B544" />
+      <SolidColorBrush x:Key="Brush.AccentHover" Color="#E5A52F" />
+      <SolidColorBrush x:Key="Brush.OnAccent" Color="#1A1406" />
+      <SolidColorBrush x:Key="Brush.AccentText" Color="#8A5A00" />
+      <SolidColorBrush x:Key="Brush.Success" Color="#0F7A5F" />
+      <SolidColorBrush x:Key="Brush.SuccessBg" Color="#DDF3EC" />
+      <SolidColorBrush x:Key="Brush.Warning" Color="#8A5A00" />
+      <SolidColorBrush x:Key="Brush.WarningBg" Color="#FCEFD2" />
+      <SolidColorBrush x:Key="Brush.Error" Color="#B42318" />
+      <SolidColorBrush x:Key="Brush.ErrorBg" Color="#FDE4E1" />
+      <SolidColorBrush x:Key="Brush.DropHighlight" Color="#33F2B544" />
+      <SolidColorBrush x:Key="Brush.Json.Key" Color="#0B5CAD" />
+      <SolidColorBrush x:Key="Brush.Json.String" Color="#8A5A00" />
+      <SolidColorBrush x:Key="Brush.Json.Number" Color="#7A3FC2" />
+      <SolidColorBrush x:Key="Brush.Json.Keyword" Color="#C2410C" />
+      <SolidColorBrush x:Key="Brush.Jwt.Header" Color="#C2410C" />
+      <SolidColorBrush x:Key="Brush.Jwt.Payload" Color="#7A3FC2" />
+      <SolidColorBrush x:Key="Brush.Jwt.Signature" Color="#0F7A5F" />
+      <SolidColorBrush x:Key="Brush.Match" Color="#FCE7B0" />
+      <SolidColorBrush x:Key="Brush.MatchText" Color="#4A3A14" />
+      <SolidColorBrush x:Key="TextControlBackground" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="TextControlBorderBrush" Color="#CBD1DB" />
+      <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="#AEB6C3" />
+      <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#D99A1E" />
+      <SolidColorBrush x:Key="TextControlForeground" Color="#14171E" />
+      <SolidColorBrush x:Key="TextControlForegroundFocused" Color="#14171E" />
+      <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="#6B7385" />
+      <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused" Color="#6B7385" />
+      <SolidColorBrush x:Key="ButtonBackground" Color="Transparent" />
+      <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#F1F3F6" />
+      <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#E9ECF2" />
+      <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="Transparent" />
+      <SolidColorBrush x:Key="ButtonBorderBrush" Color="#CBD1DB" />
+      <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#AEB6C3" />
+      <SolidColorBrush x:Key="ButtonBorderBrushPressed" Color="#AEB6C3" />
+      <SolidColorBrush x:Key="ButtonForeground" Color="#14171E" />
+      <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="#0B0D12" />
+      <SolidColorBrush x:Key="ButtonForegroundPressed" Color="#0B0D12" />
+      <SolidColorBrush x:Key="ComboBoxBackground" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="#F1F3F6" />
+      <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#CBD1DB" />
+      <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="#AEB6C3" />
+      <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="#CBD1DB" />
+      <SolidColorBrush x:Key="ListBoxItemBackgroundSelected" Color="#E9ECF2" />
+      <SolidColorBrush x:Key="ListBoxItemBackgroundSelectedPointerOver" Color="#E3E7EE" />
+      <SolidColorBrush x:Key="ListBoxItemBackgroundPointerOver" Color="#F1F3F6" />
+      <SolidColorBrush x:Key="ListBoxItemForegroundSelected" Color="#0B0D12" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+
+  <SolidColorBrush x:Key="Brush.Star" Color="#F2B544" />
+  <!-- Text and glyphs drawn on the amber accent must be dark to stay readable (4.5:1). -->
+  <SolidColorBrush x:Key="AccentButtonForeground" Color="#1A1406" />
+  <SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="#1A1406" />
+  <SolidColorBrush x:Key="AccentButtonForegroundPressed" Color="#1A1406" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked" Color="#1A1406" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPointerOver" Color="#1A1406" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPressed" Color="#1A1406" />
+  <SolidColorBrush x:Key="RadioButtonCheckGlyphFill" Color="#1A1406" />
+  <SolidColorBrush x:Key="RadioButtonCheckGlyphFillPointerOver" Color="#1A1406" />
+  <SolidColorBrush x:Key="Brush.Selection" Color="#66F2B544" />
+  <FontFamily x:Key="Font.Sans">avares://DevToolBox/Assets/Fonts#IBM Plex Sans</FontFamily>
+  <FontFamily x:Key="Font.Mono">avares://DevToolBox/Assets/Fonts#JetBrains Mono</FontFamily>
+  <x:Double x:Key="Size.SidebarWidth">240</x:Double>
+  <x:Double x:Key="Size.HeaderHeight">48</x:Double>
+</ResourceDictionary>

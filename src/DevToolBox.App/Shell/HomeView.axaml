@@ -1,0 +1,107 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:shell="using:DevToolBox.App.Shell"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             xmlns:l="using:DevToolBox.App.Localization"
+             x:Class="DevToolBox.App.Shell.HomeView"
+             x:DataType="shell:HomeViewModel">
+  <UserControl.Resources>
+    <DataTemplate x:Key="ToolCardTemplate" x:DataType="shell:ToolCardViewModel">
+      <Button Classes="card" Command="{Binding OpenCommand}" CommandParameter="{Binding ToolId}"
+              AutomationProperties.Name="{Binding Name}">
+        <StackPanel Spacing="10">
+          <Grid ColumnDefinitions="Auto,*">
+            <Border Classes="tool-badge">
+              <TextBlock Text="{Binding Badge}" />
+            </Border>
+            <TextBlock Grid.Column="1" Text="{Binding CategoryLabel}" FontSize="11" LetterSpacing="0.7" HorizontalAlignment="Right"
+                       VerticalAlignment="Center" Foreground="{DynamicResource Brush.TextMuted}" />
+          </Grid>
+          <TextBlock Text="{Binding Name}" FontSize="15" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+          <TextBlock Text="{Binding Description}" FontSize="13" LineHeight="19" TextWrapping="Wrap"
+                     Foreground="{DynamicResource Brush.TextSecondary}" />
+        </StackPanel>
+      </Button>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <ScrollViewer>
+    <StackPanel Margin="40,32,40,32" Spacing="28">
+      <StackPanel Spacing="6">
+        <TextBlock Classes="home-title" Name="HomeTitle" Text="{l:Tr Home_Title}" />
+        <TextBlock Classes="page-subtitle" FontSize="14"
+                   Text="{Binding Subtitle}" />
+      </StackPanel>
+
+      <!-- Smart paste: analyzes only what is pasted here; the clipboard is never read automatically. -->
+      <Border Classes="panel" CornerRadius="12" Padding="20" DataContext="{Binding SmartPaste}">
+        <StackPanel Spacing="14">
+          <Grid ColumnDefinitions="*,Auto">
+            <TextBlock Classes="section-title" Text="{l:Tr Home_SmartPaste}" />
+            <TextBlock Grid.Column="1" Classes="page-subtitle" Text="{l:Tr Home_SmartPasteHint}" />
+          </Grid>
+          <TextBox Name="SmartPasteBox" Classes="mono" Text="{Binding Text}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="64" MaxHeight="160"
+                   Background="{DynamicResource Brush.Well}" PlaceholderText="{l:Tr Home_SmartPastePlaceholder}"
+                   AutomationProperties.Name="{l:Tr Home_PastedContent}" />
+          <WrapPanel ItemSpacing="10" LineSpacing="8" IsVisible="{Binding DetectedKind, Converter={x:Static ObjectConverters.IsNotNull}}">
+            <TextBlock Classes="field-label" Name="DetectedText" Text="{Binding DetectedText}" />
+            <ItemsControl Name="SuggestionList" ItemsSource="{Binding Suggestions}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <WrapPanel ItemSpacing="8" LineSpacing="8" />
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="shell:SuggestionViewModel">
+                  <Button Classes="tool" Classes.primary="{Binding IsPrimary}" Content="{Binding Label}" Height="36" Padding="14,0"
+                          Command="{Binding Command}" AutomationProperties.Name="{Binding Label}" />
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </WrapPanel>
+          <TextBlock Classes="hint" Text="{l:Tr Home_ClipboardNote}" />
+        </StackPanel>
+      </Border>
+
+      <StackPanel Spacing="14" IsVisible="{Binding HasFavorites}">
+        <TextBlock Classes="section-title" Text="{l:Tr Home_Favorites}" />
+        <ItemsControl Name="FavoritesList" ItemsSource="{Binding Favorites}" ItemTemplate="{StaticResource ToolCardTemplate}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <controls:AdaptiveGridPanel MinItemWidth="250" Spacing="12" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+        </ItemsControl>
+      </StackPanel>
+
+      <StackPanel Spacing="14">
+        <Grid ColumnDefinitions="*,Auto">
+          <TextBlock Classes="section-title" Text="{l:Tr Home_Tools}" VerticalAlignment="Center" />
+          <ItemsControl Grid.Column="1" Name="FilterChips" ItemsSource="{Binding Filters}" AutomationProperties.Name="{l:Tr Home_FilterByCategory}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" Spacing="4" />
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="shell:CategoryFilter">
+                <RadioButton Theme="{StaticResource SegmentButton}" GroupName="home-filter" Content="{Binding Label}" Height="32"
+                             IsChecked="{Binding IsSelected, Mode=OneWay}" Command="{Binding SelectCommand}"
+                             AutomationProperties.Name="{Binding Label}" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Grid>
+        <TextBlock Classes="hint" Text="{l:Tr Home_NoFavorites}"
+                   IsVisible="{Binding !HasFavorites}" Name="NoFavoritesHint" />
+        <ItemsControl Name="ToolCards" ItemsSource="{Binding VisibleCards}" ItemTemplate="{StaticResource ToolCardTemplate}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <controls:AdaptiveGridPanel MinItemWidth="250" Spacing="12" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+        </ItemsControl>
+      </StackPanel>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

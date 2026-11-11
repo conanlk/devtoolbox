@@ -1,0 +1,7 @@
+<!-- DevToolBox app icon, concept A "Cursor" (Claude Design canvas "DevToolbox UI"). 1024×1024 master. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" rx="228" fill="#161A22"/>
+  <rect x="8" y="8" width="1008" height="1008" rx="222" fill="none" stroke="#2E3442" stroke-width="16"/>
+  <path d="M400 290C330 290 330 330 330 390V460C330 500 310 512 270 512C310 512 330 524 330 564V634C330 694 330 734 400 734M624 290C694 290 694 330 694 390V460C694 500 714 512 754 512C714 512 694 524 694 564V634C694 694 694 734 624 734" fill="none" stroke="#E7E9EE" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="447" y="447" width="130" height="130" rx="24" fill="#F2B544"/>
+</svg>

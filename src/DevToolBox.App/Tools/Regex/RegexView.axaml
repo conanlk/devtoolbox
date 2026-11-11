@@ -1,0 +1,136 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:DevToolBox.App.Localization"
+             xmlns:vm="using:DevToolBox.App.Tools.Regex"
+             xmlns:controls="using:DevToolBox.App.Shared.Controls"
+             x:Class="DevToolBox.App.Tools.Regex.RegexView"
+             x:DataType="vm:RegexViewModel">
+  <DockPanel>
+    <Border DockPanel.Dock="Bottom" Classes="status-bar">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Name="StatusBarText" Text="{Binding StatusText}" />
+        <TextBlock Grid.Column="1" Classes="mono" FontSize="12" Text="{Binding #TestEditor.CaretText}" />
+      </Grid>
+    </Border>
+
+    <Grid ColumnDefinitions="*,16,260" Margin="32,8,32,16">
+      <Grid RowDefinitions="Auto,Auto,*,Auto,Auto" RowSpacing="14">
+        <!-- Pattern -->
+        <StackPanel Spacing="6">
+          <Grid ColumnDefinitions="*,Auto">
+            <TextBlock Classes="section-label" Text="{l:Tr Regex_PatternHeader}" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="4">
+              <controls:CommandButton Classes="quiet" Icon="FileText" Label="{l:Tr Common_Sample}" Command="{Binding LoadSampleCommand}" />
+              <controls:CopyButton Classes="quiet" Text="{Binding Pattern}" />
+            </StackPanel>
+          </Grid>
+          <Border Background="{DynamicResource Brush.Panel}" BorderBrush="{DynamicResource Brush.Accent}" BorderThickness="1" CornerRadius="10"
+                  Padding="14,4,6,4">
+            <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="6">
+              <TextBlock Classes="mono" Text="/" FontSize="16" Foreground="{DynamicResource Brush.TextFaint}" VerticalAlignment="Center" />
+              <TextBox Grid.Column="1" Name="PatternBox" Classes="mono bare" Text="{Binding Pattern}" FontSize="15" Background="Transparent"
+                       BorderThickness="0" PlaceholderText="{l:Tr Regex_Placeholder}" AutomationProperties.Name="{l:Tr Regex_Pattern}" />
+              <TextBlock Grid.Column="2" Classes="mono" Text="/" FontSize="16" Foreground="{DynamicResource Brush.TextFaint}" VerticalAlignment="Center" />
+              <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="2" AutomationProperties.Name="{l:Tr Regex_Options}">
+                <ToggleButton Theme="{StaticResource FlagToggle}" Name="IgnoreCaseBox" Content="i" IsChecked="{Binding IgnoreCase}"
+                              ToolTip.Tip="{l:Tr Regex_IgnoreCase}" AutomationProperties.Name="{l:Tr Regex_IgnoreCase}" />
+                <ToggleButton Theme="{StaticResource FlagToggle}" Content="m" IsChecked="{Binding Multiline}"
+                              ToolTip.Tip="{l:Tr Regex_MultilineTip}" AutomationProperties.Name="{l:Tr Regex_Multiline}" />
+                <ToggleButton Theme="{StaticResource FlagToggle}" Content="s" IsChecked="{Binding Singleline}"
+                              ToolTip.Tip="{l:Tr Regex_SinglelineTip}" AutomationProperties.Name="{l:Tr Regex_Singleline}" />
+                <ToggleButton Theme="{StaticResource FlagToggle}" Content="x" IsChecked="{Binding IgnorePatternWhitespace}"
+                              ToolTip.Tip="{l:Tr Regex_IgnoreWhitespaceTip}" AutomationProperties.Name="{l:Tr Regex_IgnoreWhitespace}" />
+                <ToggleButton Theme="{StaticResource FlagToggle}" Content="n" IsChecked="{Binding ExplicitCapture}"
+                              ToolTip.Tip="{l:Tr Regex_ExplicitCaptureTip}" AutomationProperties.Name="{l:Tr Regex_ExplicitCapture}" />
+              </StackPanel>
+            </Grid>
+          </Border>
+          <WrapPanel ItemSpacing="16">
+            <Border Classes="chip">
+              <TextBlock Text=".NET" />
+            </Border>
+            <CheckBox Content="{l:Tr Regex_RightToLeft}" IsChecked="{Binding RightToLeft}" />
+            <CheckBox Content="{l:Tr Regex_CultureInvariant}" IsChecked="{Binding CultureInvariant}" />
+            <CheckBox Content="NonBacktracking" IsChecked="{Binding NonBacktracking}"
+                      ToolTip.Tip="{l:Tr Regex_NonBacktrackingTip}" />
+          </WrapPanel>
+          <TextBlock Classes="error" Name="ErrorText" Text="{Binding ErrorMessage}" TextWrapping="Wrap"
+                     IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}" />
+        </StackPanel>
+
+        <!-- Test string -->
+        <controls:ToolPanel Grid.Row="1" Grid.RowSpan="2" Header="{l:Tr Regex_TestString}" Padding="0">
+          <controls:ToolPanel.Actions>
+            <StackPanel Orientation="Horizontal" Spacing="8">
+              <TextBlock Classes="accent-text" FontSize="12" Name="SummaryText" Text="{Binding Summary}" VerticalAlignment="Center"
+                         IsVisible="{Binding Summary, Converter={x:Static ObjectConverters.IsNotNull}}" />
+              <controls:PasteButton Classes="quiet" Text="{Binding TestText}" />
+              <controls:ClearButton Classes="quiet" Text="{Binding TestText}" />
+            </StackPanel>
+          </controls:ToolPanel.Actions>
+          <controls:CodeEditor Name="TestEditor" Classes="bare" Text="{Binding TestText}" Highlights="{Binding Highlights}" WordWrap="True"
+                               PlaceholderText="{l:Tr Regex_TestPlaceholder}" AutomationProperties.Name="{l:Tr Regex_TestString}" />
+        </controls:ToolPanel>
+
+        <!-- Matches -->
+        <controls:ToolPanel Grid.Row="3" Header="{l:Tr Regex_MatchDetails}" Padding="0" MaxHeight="220">
+          <DockPanel>
+            <Grid DockPanel.Dock="Top" ColumnDefinitions="44,*,100,2*" Margin="14,8" ColumnSpacing="8">
+              <TextBlock Classes="hint" Text="#" />
+              <TextBlock Grid.Column="1" Classes="hint" Text="{l:Tr Regex_ColumnMatch}" />
+              <TextBlock Grid.Column="2" Classes="hint" Text="{l:Tr Regex_ColumnIndex}" />
+              <TextBlock Grid.Column="3" Classes="hint" Text="{l:Tr Regex_ColumnGroups}" />
+            </Grid>
+            <ListBox Name="MatchList" ItemsSource="{Binding Matches}" Background="Transparent" AutomationProperties.Name="{l:Tr Regex_MatchesName}">
+              <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:RegexMatchRow">
+                  <Grid ColumnDefinitions="44,*,100,2*" ColumnSpacing="8">
+                    <TextBlock Classes="mono" Text="{Binding Number}" Foreground="{DynamicResource Brush.TextMuted}" />
+                    <SelectableTextBlock Grid.Column="1" Classes="mono" Text="{Binding Value}" Foreground="{DynamicResource Brush.MatchText}"
+                                         TextTrimming="CharacterEllipsis" />
+                    <TextBlock Grid.Column="2" Classes="mono" Text="{Binding Position}" Foreground="{DynamicResource Brush.Json.Number}" />
+                    <TextBlock Grid.Column="3" Classes="mono" Text="{Binding Groups}" Foreground="{DynamicResource Brush.Json.Key}"
+                               TextTrimming="CharacterEllipsis" />
+                  </Grid>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+          </DockPanel>
+        </controls:ToolPanel>
+
+        <!-- Replace -->
+        <Border Grid.Row="4" Classes="panel">
+          <StackPanel Spacing="10">
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+              <CheckBox Name="ReplaceBox" Content="{l:Tr Regex_ReplaceWith}" FontSize="12" FontWeight="SemiBold" IsChecked="{Binding ReplaceEnabled}" />
+              <TextBox Grid.Column="1" Classes="mono" Name="ReplacementBox" Text="{Binding Replacement}" IsEnabled="{Binding ReplaceEnabled}"
+                       PlaceholderText="$1, ${name}, $$" AutomationProperties.Name="{l:Tr Regex_Replacement}" />
+              <controls:CopyButton Grid.Column="2" Classes="quiet" Text="{Binding ReplaceResult}" />
+            </Grid>
+            <TextBox Classes="mono" Name="ReplaceResultBox" Text="{Binding ReplaceResult, Mode=OneWay}" IsReadOnly="True" IsVisible="{Binding ReplaceEnabled}"
+                     AcceptsReturn="True" TextWrapping="Wrap" MaxHeight="110" Background="{DynamicResource Brush.Well}"
+                     AutomationProperties.Name="{l:Tr Regex_ReplaceResult}" />
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <!-- Quick reference -->
+      <Border Grid.Column="2" Classes="panel" Background="{DynamicResource Brush.Chrome}" VerticalAlignment="Top">
+        <StackPanel Spacing="2">
+          <TextBlock Classes="section-label" Text="{l:Tr Regex_QuickReference}" Margin="0,0,0,8" />
+          <ItemsControl ItemsSource="{Binding QuickReference}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="vm:RegexReferenceRow">
+                <Grid ColumnDefinitions="96,*" ColumnSpacing="10" Margin="0,4">
+                  <TextBlock Classes="mono" FontSize="12" Text="{Binding Token}" Foreground="{DynamicResource Brush.AccentText}" />
+                  <TextBlock Grid.Column="1" FontSize="12" Text="{Binding Description}" TextWrapping="Wrap"
+                             Foreground="{DynamicResource Brush.TextSubtle}" />
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </DockPanel>
+</UserControl>
